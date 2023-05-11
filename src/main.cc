@@ -8,6 +8,6 @@ int main() {
   do {
       monjeu.affiche();
       stop = monjeu.coup();
- } while (!stop);
- return 0;
+  } while (!stop);
+  return 0;
 }

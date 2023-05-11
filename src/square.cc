@@ -3,18 +3,21 @@
 Square::Square(int x, int y, Piece * piece = nullptr)
     : Pos(x,y), piece(piece){}
 
+Square::Square(string pos, Piece * piece = nullptr)
+    : Pos(pos), piece(piece){}
+
 Square::~Square() {}
 
-bool Square::estVide() {return (this->piece == nullptr);}
+bool Square::est_vide() {return (piece == nullptr);}
 
 void Square::affiche(){
-    if (estVide())
+    if (est_vide())
     {
-        cout << string(5,' ');
+        cout << "     ";
     }
     else {
         cout << "\u0020\u0020";
-        piece->affiche();
+        this->piece->affiche();
         cout << "\u0020" << " ";
     }
     

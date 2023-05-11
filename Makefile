@@ -1,35 +1,44 @@
-CC ?= g++
+CC := g++
 CFLAGS ?= -Wall -Werror -g -std=c++11
+LDLIBS ?= -lm
 
-LDLIBS?=-lm 
+EXEC = chess
 
-INCLUDE_PATH = ./include
+INCLUDE_PATH ?= ./includes
+SRC_PATH = ./src
+OBJ_PATH = ./obj
+BIN_PATH = ./bin
 
-TARGET   = projet
+SOURCES := $(filter-out $(SRC_PATH)/main.cc, $(wildcard $(SRC_PATH)/*.cc $(SRC_PATH)/*/*.cc $(SRC_PATH)/*/*/*.cc))
+INCLUDES := $(wildcard $(INCLUDE_PATH)/*.hpp $(INCLUDE_PATH)/*/*.hpp $(INCLUDE_PATH)/*/*/*.hpp)
+OBJECTS  := $(SOURCES:$(SRC_PATH)/%.cc=$(OBJ_PATH)/%.o)
 
-SRCDIR   = src
-OBJDIR   = obj
-BINDIR   = bin
+.PHONY: cli
+cli:
+	$(MAKE) $(BIN_PATH)/$(EXEC)
 
-SOURCES  := $(wildcard $(SRCDIR)/*.cc)
-INCLUDES := $(wildcard $(INCLUDE_PATH)/*.hpp)
-OBJECTS  := $(SOURCES:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
+test: cli
+	$(MAKE) -C ./test	
 
-$(BINDIR)/$(TARGET): $(OBJECTS)
-	mkdir -p $(BINDIR)
-	$(CC) -o $@ $^ $(CFLAGS) $(LDLIBS)
-	@echo "Linking complete!"
-
-$(OBJECTS): $(OBJDIR)/%.o : $(SRCDIR)/%.cc
-	mkdir -p $(OBJDIR)
-	$(CC) -o $@ -cc $< $(CFLAGS) -I$(INCLUDE_PATH)
-
-doc:
+docs:
+	mkdir -p ./docs
 	doxygen Doxyfile
 
-.PHONY: clean cov
+$(BIN_PATH)/$(EXEC): $(OBJ_PATH)/main.o $(OBJECTS)
+	mkdir -p $(BIN_PATH)
+	$(CC) -o $@ $^ $(CFLAGS)
+	@echo "Linking complete!"
+
+$(OBJECTS): $(OBJ_PATH)/%.o : $(SRC_PATH)/%.cc 
+	mkdir -p $(dir $@)
+	$(CC) -o $@ -c $< $(CFLAGS) -I$(INCLUDE_PATH) 
+
+$(OBJ_PATH)/main.o: $(SRC_PATH)/main.cc
+	mkdir -p $(dir $@)
+	$(CC) -o $@ -c $< $(CFLAGS) -I$(INCLUDE_PATH)
+
+
+.PHONY: clean
 clean:
-	rm -f $(OBJDIR)/*.o
-	rm -f $(OBJDIR)/*.gcda
-	rm -f $(OBJDIR)/*.gcno
-	rm -f $(BINDIR)/$(TARGET)
+	rm -fr $(OBJ_PATH)
+	rm -fr $(BIN_PATH)

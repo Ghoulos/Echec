@@ -1,10 +1,12 @@
 #ifndef H_SQUARE
 #define H_SQUARE
 
-#include "../include/piece.hpp"
 #include "../include/pos.hpp"
+#include "../include/piece.hpp"
 #include <iostream>
 #include <memory>
+
+class Piece;
 
 using namespace std;
 
@@ -14,8 +16,9 @@ class Square : public Pos {
 
   public:
     Square(int, int, Piece*);
+    Square(string, Piece*);
     ~Square();
-    bool estVide();
+    bool est_vide();
     void affiche();
     void setPiece(Piece* piece);
     Piece* getPiece() const;
