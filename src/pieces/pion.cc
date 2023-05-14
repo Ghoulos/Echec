@@ -3,8 +3,8 @@
 Pion::Pion(couleur_t color, int id, Square *pos) :
         Piece(color, (color == Noir) ? "\u265F" : "\u2659", id, pos) {}
 
-bool Pion::mouvement_legal(Square dest, bool isCatch) {
-    if (isCatch){
+bool Pion::mouvement_legal(Square dest, bool mouvementCapture) {
+    if (mouvementCapture){
         if (this->getCouleur() == Blanc){
             if (// diagonale gauche
                 (dest.getY() == this->position->getY() - 1

@@ -4,12 +4,16 @@
 #include <iostream>
 #include "../include/echiquier.hpp"
 #include <memory>
+#include <iostream>
+#include <regex>
+
+using namespace std;
 
 class Jeu
 {
   private:
     Echiquier *echiquier;
-    string mouvement_en_cours;
+    string dernier_mouvement;
     couleur_t couleur_joueur;
 
   public:
@@ -17,20 +21,19 @@ class Jeu
     ~Jeu();
     void affiche();
     bool coup();
-    bool est_coup_legal(Pos org, Pos );
-    bool rien_ne_bloque(Pos org, Pos );
-    bool coup();
+    bool est_coup_legal(Pos, Pos );
+    bool rien_ne_bloque(Pos, Pos );
     void setJoueur(couleur_t c);
     couleur_t getJoueur();
-    bool isPathClear(Pos start, Pos end);
+    bool passage_possible(Pos start, Pos end);
     bool deplace_piece(Pos start, Pos end, bool isPassingThroughAllowed = false);
     void displayEndGame(string result);
     bool echec_au_roi(couleur_t c);
     bool isCapturable(Pos pos, couleur_t c);
-    bool isCheckMove(Pos start, Pos end ,couleur_t c);
-    bool isTakingInPassing(Pos start, Pos end);
+    bool met_en_echec(Pos start, Pos end ,couleur_t c);
+    bool prise_en_passant(Pos start, Pos end);
     void setLastMove(string move);
-    string getLastMove();
+    string getDernierMouv();
     bool smallRookMove(couleur_t c);
     bool bigRookMove(couleur_t c);
     bool isPromotion();

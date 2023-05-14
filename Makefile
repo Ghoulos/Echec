@@ -2,7 +2,7 @@ CC := g++
 CFLAGS ?= -Wall -Werror -g -std=c++11
 LDLIBS ?= -lm
 
-EXEC = chess
+EXEC = echecs
 
 INCLUDE_PATH ?= ./includes
 SRC_PATH = ./src

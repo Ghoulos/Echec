@@ -15,8 +15,8 @@ class Square : public Pos {
     Piece* piece;
 
   public:
-    Square(int, int, Piece*);
-    Square(string, Piece*);
+    Square(int, int, Piece* =nullptr);
+    Square(string, Piece* =nullptr);
     ~Square();
     bool est_vide();
     void affiche();

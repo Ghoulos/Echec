@@ -18,18 +18,21 @@ public:
     Echiquier(bool);
     ~Echiquier();
     void affiche() const; 
-    void deplace_piece(Square, Square );
-    void deplace_piece(Pos, Pos );
     void alloc_mem_echiquier();
     void init_echiquier();
     void placement_initial();
-    void pose_piece(Piece *piece, Square pos);
-    void pose_piece(Piece *piece, Pos pos);
-    void deplace_piece(const Square, const Square);
-    void deplace_piece(Pos, Pos);
-    Square getSquare(int,int);
-    Square getSquare(Pos);
+    void pose_piece(Piece *, Square *pos);
+    void pose_piece(Piece *, Pos pos);
+    void deplace_piece(const Square&, const Square&);
+    void deplace_piece(const Pos, const Pos);
+    string pgnPieceName(const string , bool , bool ) const;
+    string canonicalPosition() const;
+    Square* position_roi(couleur_t) const;
+    Square* getSquare(int,int);
+    Square* getSquare(Pos);
     Piece* getPiece(Pos);
+    void setPiece(Piece*, const Square&);
+    void promotion(Piece *, const string&);
 };
 
 #endif

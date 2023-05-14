@@ -1,7 +1,7 @@
 #include "../include/piece.hpp"
 
-Piece::Piece(couleur_t couleur, string icone, int id, Square *pos, etat_t etat)
-    : couleur(couleur), icone(icone), position(pos), etat(etat) {}
+Piece::Piece(couleur_t couleur, string icone, int id, Square *pos)
+    : couleur(couleur), icone(icone), position(pos), etat(EnJeu), nbDeplacement(0) {}
 
 Piece::~Piece() {}
 
@@ -10,22 +10,32 @@ void Piece::capture(bool revient = false) {
     else {this->etat = Capture;}
 }
 
-void Piece::setSquare(Square dest){
-    this->position = &dest;
+void Piece::setSquare(Square *dest){
+    this->position = dest;
 }
 
-Square Piece::getSquare() {
-    return *this->position;
+Square* Piece::getSquare() const {
+    return this->position;
 }
-couleur_t Piece::getCouleur(){
+couleur_t Piece::getCouleur() const{
     return this->couleur;
 }
 
-size_t Piece::getNbDeplacement(){
-    return this->nb_deplacement;
+size_t Piece::getNbDeplacement() const{
+    return this->nbDeplacement;
+}
+void Piece::setNbDeplacement(size_t i){
+    this->nbDeplacement = i;
+}
+string Piece::getIcone() const {
+    return this->icone;
+}
+
+int Piece::getId() const {
+    return this->id;
 }
 void Piece::incr_nb_deplacement(){
-    (this->nb_deplacement)++;
+    (this->nbDeplacement)++;
 }
 void Piece::affiche()
 {

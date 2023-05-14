@@ -1,9 +1,9 @@
 #include "../include/square.hpp"
 
-Square::Square(int x, int y, Piece * piece = nullptr)
+Square::Square(int x, int y, Piece * piece)
     : Pos(x,y), piece(piece){}
 
-Square::Square(string pos, Piece * piece = nullptr)
+Square::Square(string pos, Piece * piece)
     : Pos(pos), piece(piece){}
 
 Square::~Square() {}

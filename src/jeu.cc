@@ -1,66 +1,16 @@
 #include "../include/jeu.hpp"
-#include <iostream>
-#include <regex>
+#include "../include/utilitaires.hpp"
 
-using namespace std;
 
 Jeu::Jeu ()
-    : echiquier(&Echiquier(true)), couleur_joueur(Blanc)  {
+    : echiquier(new Echiquier(true)), couleur_joueur(Blanc)  {
         cout << "La Partie a été créée !" << endl;
     }
 
 Jeu::~Jeu () {
         cout << "La Partie est finie !" << endl;
     }
-bool Jeu::coup() {return true;}
-
-void Jeu::affiche() {this->echiquier.affiche();}
-
-bool entree_mouvement(string const & input){
-    regex pattern("^ *[a-h][1-8][a-h][1-8] *$|^ */(quit|draw|resign) *$");
-    return regex_match(input, pattern);
-}
-
-bool entree_petit_rock(string const & input) {
-    regex pattern("(O|o|0)-(O|o|0)\\s*");
-    return regex_match(input,pattern);
-}
-
-bool entree_grand_rock(string const & input) {
-    regex pattern("(O|o|0)-(O|o|0)-(O|o|0)\\s*");
-    return regex_match(input,pattern);
-}
-
-bool entree_sortie(string const & input){
-    regex pattern("/quit\\s*");
-    return regex_match(input,pattern);
-}
-
-bool entree_egalite(string const & input){
-    regex pattern("/draw\\s*");
-    return regex_match(input,pattern);
-}
-
-bool entree_abandon(string const & input){
-    regex pattern("/resign\\s*");
-    return regex_match(input,pattern);
-}
-
-bool entree_valide(string const & input){
-    return (entree_mouvement(input)
-        || entree_petit_rock(input)
-        || entree_grand_rock(input)
-        || entree_sortie(input)
-        || entree_egalite(input)
-        || entree_abandon(input));
-}
-
-bool promotion_valide(string const & input){
-    return promotion_reine(input)
-        || isValidRookPromotion(input)
-        || isValidBishopPromotion(input)
-        || isValidKnightPromotion(input);
-}
+void Jeu::affiche() {echiquier->affiche();}
 
 bool Jeu::coup() {
     string input;
@@ -99,13 +49,13 @@ bool Jeu::coup() {
                 }
                 return false;
             }else if (entree_petit_rock(input)){
-                cout << "small rook move" << endl;
+                cout << "petit roque" << endl;
                 stop = this->smallRookMove(this->couleur_joueur);
             }else if (entree_grand_rock(input)){
-                cout << "big rook move" << endl;
+                cout << "grand roque" << endl;
                 stop = this->bigRookMove(this->couleur_joueur);
             }else{
-                cout << "move" << endl;
+                cout << "mouvement classique" << endl;
                 stop = this->deplace_piece((Pos(input.substr(0,2))),
                                        Pos(input.substr(2,2))
                 );
@@ -122,7 +72,7 @@ bool Jeu::coup() {
     return true;
 }
 
-bool Jeu::isPathClear(Pos start, Pos end){
+bool Jeu::passage_possible(Pos start, Pos end){
     int x0 = start.getX();
     int y0 = start.getY();
     int xFinal = end.getX();
@@ -210,60 +160,54 @@ bool Jeu::isPathClear(Pos start, Pos end){
     return true;
 }
 
-bool Jeu::deplace_piece(Pos start, Pos end, bool isPassingThroughAllowed) {
+bool Jeu::deplace_piece(Pos start, Pos end, bool PasseAuTravers) {
 
-    Piece *moving_piece = echiquier.getPiece(start);
-    Piece *destination_piece = echiquier.getPiece(end);
+    Piece *pieceEnDeplacement = echiquier->getPiece(start);
+    Piece *pieceADestination = echiquier->getPiece(end);
 
-    /*===== Vérification si la piece existe ======*/
-    if (moving_piece == nullptr){
-        cout << "Il n'y a pas de piece a cette position" << endl;
+    if (pieceEnDeplacement == nullptr){
+        cout << "Il n'y a pas de piece a cette position !" << endl;
         return false;
     }
 
-    if (moving_piece->getCouleur() != couleur_joueur){
-        cout << "Ce n'est pas votre piece !" << endl;
+    if (pieceEnDeplacement->getCouleur() != couleur_joueur){
+        cout << "Pièce de la mauvaise couleur !" << endl;
         return false;
     }
 
-    const char *class_name = typeid(*moving_piece).name() + 1;
-
-    /*===== Vérification si c'est une prise en passant ======*/
-
-    if (strcmp(class_name, "Pion") == 0){
-        if (this->isTakingInPassing(start, end)){
+    // Cas spécial : prise en passant
+    const char *NomDeClasse = typeid(*pieceEnDeplacement).name() + 1;
+    if (strcmp(NomDeClasse, "Pion") == 0){
+        if (this->prise_en_passant(start, end)){
             cout << "Prise en passant" << endl;
-            this->echiquier->pose_piece(nullptr, Pos(this->getLastMove().substr(2,2)));
+            this->echiquier->pose_piece(nullptr, Pos(getDernierMouv().substr(2,2)));
             this->echiquier->deplace_piece(start, end);
-            moving_piece->incr_nb_deplacement();
+            pieceEnDeplacement->incr_nb_deplacement();
             return true;
         }
     }
 
-
-    /*===== Vérification de la validité des coups ======*/
-
-    if(!(strcmp(class_name, "King") == 0 && isPassingThroughAllowed)){
-        if (destination_piece != nullptr){
-            if (destination_piece->getCouleur() != moving_piece->getCouleur()){
-                if (strcmp(class_name, "Pion") == 0){
-                    if (!moving_piece->mouvement_legal(end, true)) {
-                        cout << "Le coup n'est pas valide : mouvement non valide" << endl;
+    if(!(strcmp(NomDeClasse, "Roi") == 0 && PasseAuTravers)){
+        if (pieceADestination != nullptr){
+            if (pieceADestination->getCouleur() != pieceEnDeplacement->getCouleur()){
+                if (strcmp(NomDeClasse, "Pion") == 0){
+                    if (!pieceEnDeplacement->mouvement_legal(*echiquier->getSquare(end), true)) {
+                        cout << "Mouvement invalide !" << endl;
                         return false;
                     }
                 }else{
-                    if (!moving_piece->mouvement_legal(end)) {
-                        cout << "Le coup n'est pas valide : mouvement non valide" << endl;
+                    if (!pieceEnDeplacement->mouvement_legal(*echiquier->getSquare(end))) {
+                        cout << "Mouvement invalide !" << endl;
                         return false;
                     }
                 }
             } else{
-                cout << "Il y a deja une piece de la meme couleur a cette position" << endl;
+                cout << "La case de destination est dejà occupée par une de vos pièce !" << endl;
                 return false;
             }
         }else{
-            if (!moving_piece->mouvement_legal(end)) {
-                cout << "Le coup n'est pas valide : mouvement non valide" << endl;
+            if (!pieceEnDeplacement->mouvement_legal(*echiquier->getSquare(end))) {
+                cout << "Mouvement invalide !" << endl;
                 return false;
             }
         }
@@ -271,26 +215,26 @@ bool Jeu::deplace_piece(Pos start, Pos end, bool isPassingThroughAllowed) {
 
     /*===== Vérification si le chemin est libre ======*/
 
-    if (strcmp(class_name, "Pion") == 0
-        || strcmp(class_name, "King") == 0
-        || strcmp(class_name, "Queen") == 0
-        || strcmp(class_name, "Bishop") == 0
-        || strcmp(class_name, "Rook") == 0){
-        if (!this->isPathClear(start, end) && !isPassingThroughAllowed){
-            cout << "Le chemin n'est pas libre" << endl;
+    if (strcmp(NomDeClasse, "Pion") == 0
+        || strcmp(NomDeClasse, "Roi") == 0
+        || strcmp(NomDeClasse, "Reine") == 0
+        || strcmp(NomDeClasse, "Fou") == 0
+        || strcmp(NomDeClasse, "Tour") == 0){
+        if (!this->passage_possible(start, end) && !PasseAuTravers){
+            cout << "Passage impossible !" << endl;
             return false;
         }
     }
 
     /*===== Vérification si le joueur se place en echec ======*/
 
-    if (this->isCheckMove(start, end ,this->getJoueur())){
-        cout << "Le coup n'est pas valide vous etes en echec" << endl;
+    if (this->met_en_echec(start, end ,this->getJoueur())){
+        cout << "Ce coup vous met en échec !" << endl;
         return false;
     }
 
     this->echiquier->deplace_piece(start, end);
-    moving_piece->incr_nb_deplacement();
+    pieceEnDeplacement->incr_nb_deplacement();
 
     /*===== Vérification si il y a une promotion ======*/
 
@@ -308,7 +252,7 @@ bool Jeu::deplace_piece(Pos start, Pos end, bool isPassingThroughAllowed) {
             getline(cin, promotion);
         }
 
-        this->echiquier->promote(promotion_piece, promotion);
+        this->echiquier->promotion(promotion_piece, promotion);
 
     }
 
@@ -320,28 +264,29 @@ void Jeu::displayEndGame(string result) {
 }
 
 bool Jeu::echec_au_roi(couleur_t c){
-    Pos king_Pos = this->echiquier->getKingPos(c);
-    if (king_Pos == Pos(-1, -1)){
+    Pos posRoi = *this->echiquier->position_roi(c);
+    if (posRoi == Pos(-1, -1)){
         cerr << "Le roi n'a pas ete trouve" << endl;
         exit(1);
     }
 
-    return this->isCapturable(king_Pos, c);
+    return this->isCapturable(posRoi, c);
 }
 
 bool Jeu::isCapturable(Pos pos, couleur_t c){
+    Square dest = *this->echiquier->getSquare(pos);
     for (int i = 0 ; i < TAILLE_PLATEAU ; ++i){
         for (int j = 0 ; j < TAILLE_PLATEAU ; ++j){
-            pos position_actuelle(i, j);
+            Pos position_actuelle(i, j);
             Piece *piece = this->echiquier->getPiece(position_actuelle);
             if (piece != nullptr && piece->getCouleur() != c){
-                if (strcmp(typeid(*piece).name() + 1, "Knight") == 0){
-                    if (piece->mouvement_legal(pos)){
+                if (strcmp(typeid(*piece).name() + 1, "Cavalier") == 0){
+                    if (piece->mouvement_legal(dest)){
                         return true;
                     }
                 }else{
-                    if (piece->mouvement_legal(pos, true)
-                        && this->isPathClear(position_actuelle, pos)
+                    if (piece->mouvement_legal(dest, true)
+                        && this->passage_possible(position_actuelle, dest)
                     ){
                         return true;
                     }
@@ -361,51 +306,51 @@ couleur_t Jeu::getJoueur(){
     return this->couleur_joueur;
 }
 
-bool Jeu::isCheckMove(Pos start, Pos end ,couleur_t c){
-    Piece *start_piece = this->echiquier->getPiece(start);
-    Piece *end_piece = this->echiquier->getPiece(end);
+bool Jeu::met_en_echec(Pos start, Pos end ,couleur_t c){
+    Piece *pieceDepart = echiquier->getPiece(start);
+    Piece *pieceFin = echiquier->getPiece(end);
 
-    this->echiquier->deplace_piece(start, end);
+    echiquier->deplace_piece(start, end);
 
-    if(this->echec_au_roi(c)){
-        this->echiquier->pose_piece(start_piece, start);
-        this->echiquier->pose_piece(end_piece, end);
-        if (start_piece != nullptr){
-            start_piece->setPos(start);
+    if(echec_au_roi(c)){
+        echiquier->pose_piece(pieceDepart, start);
+        echiquier->pose_piece(pieceFin, end);
+        if (pieceDepart != nullptr){
+            pieceDepart->setSquare(echiquier->getSquare(start));
         }
-        if (end_piece != nullptr){
-            end_piece->setPos(end);
+        if (pieceFin != nullptr){
+            pieceFin->setSquare(echiquier->getSquare(end));
         }
         return true;
     }else{
-        this->echiquier->pose_piece(start_piece, start);
-        this->echiquier->pose_piece(end_piece, end);
-        if (start_piece != nullptr){
-            start_piece->setPos(start);
+        echiquier->pose_piece(pieceDepart, start);
+        echiquier->pose_piece(pieceFin, end);
+        if (pieceDepart != nullptr){
+            pieceDepart->setSquare(echiquier->getSquare(start));
         }
-        if (end_piece != nullptr){
-            end_piece->setPos(end);
+        if (pieceFin != nullptr){
+            pieceFin->setSquare(echiquier->getSquare(end));
         }
         return false;
     }
 }
 
-bool Jeu::isTakingInPassing(Pos start, Pos end){
-    if (this->getLastMove().empty() || this->getLastMove().size() < 4){
+bool Jeu::prise_en_passant(Pos start, Pos end){
+    if (getDernierMouv().empty() || getDernierMouv().size() < 4){
         return false;
     }
-    Pos last_move_start = this->getLastMove().substr(0,2);
-    Pos last_move_end = this->getLastMove().substr(2,2);
+    Pos debutDernierMouv = getDernierMouv().substr(0,2);
+    Pos finDernierMouv = getDernierMouv().substr(2,2);
 
-    Piece *last_move_piece = this->echiquier->getPiece(last_move_end);
+    Piece *dernierePieceJouee = echiquier->getPiece(finDernierMouv);
 
-    if (last_move_piece != nullptr && strcmp(typeid(*last_move_piece).name() + 1, "Pion") == 0){
-        if (last_move_piece->getNbDeplacement() == 1){
-            if (last_move_start.getX() == last_move_end.getX() + 2
-                || last_move_start.getX() == last_move_end.getX() - 2){
-                if (last_move_piece->getPos().getY() == end.getY()
-                    && abs(start.getX() - end.getX()) == abs(start.getY() - end.getY()) // si le pion se deplace en diagonale
-                    && abs(last_move_end.getX() - end.getX()) != 0 // si le pion ne se retouve par sur la meme ligne que le pion qui a bouge
+    if (dernierePieceJouee != nullptr && strcmp(typeid(*dernierePieceJouee).name() + 1, "Pion") == 0){
+        if (dernierePieceJouee->getNbDeplacement() == 1){
+            if (debutDernierMouv.getX() == finDernierMouv.getX() + 2
+                || debutDernierMouv.getX() == finDernierMouv.getX() - 2){
+                if (dernierePieceJouee->getSquare()->getY() == end.getY()
+                    && abs(start.getX() - end.getX()) == abs(start.getY() - end.getY())
+                    && abs(finDernierMouv.getX() - end.getX()) != 0
                     ){
                     return true;
                 }
@@ -417,16 +362,16 @@ bool Jeu::isTakingInPassing(Pos start, Pos end){
 }
 
 void Jeu::setLastMove(string move){
-    this->last_move = move;
+    this->dernier_mouvement = move;
 }
 
-string Jeu::getLastMove() {
-    return this->last_move;
+string Jeu::getDernierMouv() {
+    return this->dernier_mouvement;
 }
 
 bool Jeu::smallRookMove(couleur_t c) {
     if (c == Blanc){
-        if(this->isPathClear(Pos("e1"), Pos("h1" ))
+        if(this->passage_possible(Pos("e1"), Pos("h1" ))
             && this->echiquier->getPiece(Pos("e1")) != nullptr
             && this->echiquier->getPiece(Pos("h1")) != nullptr
             && this->echiquier->getPiece(Pos("e1"))->getNbDeplacement() == 0
@@ -439,7 +384,7 @@ bool Jeu::smallRookMove(couleur_t c) {
             return true;
         }
     }else{
-        if(this->isPathClear(Pos("e8"), Pos("h8" ))
+        if(this->passage_possible(Pos("e8"), Pos("h8" ))
             && this->echiquier->getPiece(Pos("e8")) != nullptr
             && this->echiquier->getPiece(Pos("h8")) != nullptr
             && this->echiquier->getPiece(Pos("e8"))->getNbDeplacement() == 0
@@ -459,7 +404,7 @@ bool Jeu::smallRookMove(couleur_t c) {
 
 bool Jeu::bigRookMove(couleur_t c) {
     if (c == Blanc){
-        if(this->isPathClear(Pos("e1"), Pos("a1" ))
+        if(this->passage_possible(Pos("e1"), Pos("a1" ))
             && this->echiquier->getPiece(Pos("e1")) != nullptr
             && this->echiquier->getPiece(Pos("a1")) != nullptr
             && this->echiquier->getPiece(Pos("e1"))->getNbDeplacement() == 0
@@ -472,7 +417,7 @@ bool Jeu::bigRookMove(couleur_t c) {
             return true;
         }
     }else{
-        if(this->isPathClear(Pos("e8"), Pos("a8" ))
+        if(this->passage_possible(Pos("e8"), Pos("a8" ))
             && this->echiquier->getPiece(Pos("e8")) != nullptr
             && this->echiquier->getPiece(Pos("a8")) != nullptr
             && this->echiquier->getPiece(Pos("e8"))->getNbDeplacement() == 0
@@ -495,8 +440,8 @@ bool Jeu::isPromotion(){
         Piece *piece1 = this->echiquier->getPiece(Pos(0, i));
 
         if (piece1 != nullptr){
-            const char *class_name1 = typeid(*piece1).name() + 1;
-            if (strcmp(class_name1, "Pion") == 0){
+            const char *NomDeClasse1 = typeid(*piece1).name() + 1;
+            if (strcmp(NomDeClasse1, "Pion") == 0){
                 return true;
             }
         }
@@ -504,8 +449,8 @@ bool Jeu::isPromotion(){
         Piece *piece2 = this->echiquier->getPiece(Pos(7, i));
 
         if (piece2 != nullptr){
-            const char *class_name2 = typeid(*piece2).name() + 1;
-            if (strcmp(class_name2, "Pion") == 0){
+            const char *NomDeClasse2 = typeid(*piece2).name() + 1;
+            if (strcmp(NomDeClasse2, "Pion") == 0){
                 return true;
             }
         }
