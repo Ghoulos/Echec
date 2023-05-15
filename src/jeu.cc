@@ -7,9 +7,8 @@ Jeu::Jeu ()
         cout << "La Partie a été créée !" << endl;
     }
 
-Jeu::~Jeu () {
-        cout << "La Partie est finie !" << endl;
-    }
+Jeu::~Jeu () {}
+
 void Jeu::affiche() {echiquier->affiche();}
 
 bool Jeu::coup() {
@@ -33,16 +32,16 @@ bool Jeu::coup() {
                 cout << "Attente du coup :  ";
                 getline(cin, input);
             }
-
+            //Les commandes faisant s'arreter la partie
             if (entree_sortie(input)){
                 cout << "quit" << endl;
                 this->affichage_fin_jeu("?-?");
-                return false;
+                return true;
 
             } else if (entree_egalite(input)){
                 cout << "draw" << endl;
                 this->affichage_fin_jeu("1/2-1/2");
-                return false;
+                return true;
 
             } else if (entree_abandon(input)) {
                 cout << "resign" << endl;
@@ -51,8 +50,8 @@ bool Jeu::coup() {
                 }else{
                     this->affichage_fin_jeu("1-0");
                 }
-                return false;
-
+                return true;
+            //Les commandes classiques du jeu
             }else if (entree_petit_rock(input)){
                 cout << "petit roque" << endl;
                 stop = this->petit_roque(this->couleur_joueur);
@@ -70,12 +69,12 @@ bool Jeu::coup() {
         }while(this->echec_au_roi(this->couleur_joueur));
 
     } while (!stop);
-
-    this->setLastMove(input);
-
+    //On garde le dernier mouvement en memoire
+    this->setDernierMouv(input);
+    //Changement de joueur
     this->couleur_joueur = (this->couleur_joueur == Blanc) ? Noir : Blanc;
-
-    return true;
+    //Tout se passe bien donc on n'arrete pas la partie
+    return false;
 }
 
 bool Jeu::passage_possible(Pos start, Pos end){
@@ -167,10 +166,14 @@ bool Jeu::passage_possible(Pos start, Pos end){
 }
 
 bool Jeu::deplace_piece(Pos start, Pos end, bool PasseAuTravers) {
-
+    cout << "Origine : ";
+    start.affiche_xy() ;
+    cout << "Fin : " ;
+    end.affiche_xy();
     Piece *pieceEnDeplacement = echiquier->getPiece(start);
     Piece *pieceADestination = echiquier->getPiece(end);
-
+    Square *CaseDeb = echiquier->getSquare(start);
+    Square *CaseFin = echiquier->getSquare(end);
     if (pieceEnDeplacement == nullptr){
         cout << "Il n'y a pas de piece a cette position !" << endl;
         return false;
@@ -186,12 +189,13 @@ bool Jeu::deplace_piece(Pos start, Pos end, bool PasseAuTravers) {
     if (strcmp(NomDeClasse, "Pion") == 0){
         if (this->prise_en_passant(start, end)){
             cout << "Prise en passant" << endl;
-            this->echiquier->pose_piece(nullptr, Pos(getDernierMouv().substr(2,2)));
-            this->echiquier->deplace_piece(start, end);
+            this->echiquier->pose_piece(nullptr, this->echiquier->getSquare(Pos(getDernierMouv().substr(2,2))));
+            this->echiquier->deplace_piece(CaseDeb, CaseFin);
             pieceEnDeplacement->incr_nb_deplacement();
             return true;
         }
     }
+    cout << "Pas de prise en passant" << endl;
 
     if(!(strcmp(NomDeClasse, "Roi") == 0 && PasseAuTravers)){
         if (pieceADestination != nullptr){
@@ -218,7 +222,7 @@ bool Jeu::deplace_piece(Pos start, Pos end, bool PasseAuTravers) {
             }
         }
     }
-
+    cout << "Verification de la validité du coup passée !" << endl;
     /*===== Vérification si le chemin est libre ======*/
 
     if (strcmp(NomDeClasse, "Pion") == 0
@@ -231,6 +235,7 @@ bool Jeu::deplace_piece(Pos start, Pos end, bool PasseAuTravers) {
             return false;
         }
     }
+        cout << "Passage libre !" << endl;
 
     /*===== Vérification si le joueur se place en echec ======*/
 
@@ -238,29 +243,31 @@ bool Jeu::deplace_piece(Pos start, Pos end, bool PasseAuTravers) {
         cout << "Ce coup vous met en échec !" << endl;
         return false;
     }
+    cout << "Ne met pas en echec !" << endl;
 
-    this->echiquier->deplace_piece(start, end);
+    this->echiquier->deplace_piece(CaseDeb, CaseFin);
     pieceEnDeplacement->incr_nb_deplacement();
-
+    cout << "Piece déplacée !" << endl;
     /*===== Vérification si il y a une promotion ======*/
 
     if (this->promotion_possible()){
-        cout << "[Promotion] choisir sa promotion (Q R B K) :" << endl;
+        cout << "Promotion disponible !\n Attente de la promotion (Q R B K) :" << endl;
 
-        string promotion;
+        string prom_input;
         Piece *promotion_piece = this->echiquier->getPiece(end);
 
-        getline(cin, promotion);
+        getline(cin, prom_input);
 
-        while (!promotion_valide(promotion)){
-            cout << "L'input n'est pas valide" << endl;
-            cout << "Promotion ? (eg Q) " << endl;
-            getline(cin, promotion);
+        while (!promotion_valide(prom_input)){
+            cout << "L'input n'est pas valide !" << endl;
+            cout << " Attente de la promotion (Q R B K) :" << endl;
+            getline(cin, prom_input);
         }
 
-        this->echiquier->promotion(promotion_piece, promotion);
+        this->echiquier->promotion(promotion_piece, prom_input);
 
     }
+    cout << "Pas de promotion !" << endl;
 
     return true;
 }
@@ -276,10 +283,10 @@ bool Jeu::echec_au_roi(couleur_t c){
         exit(1);
     }
 
-    return this->isCapturable(*posRoi, c);
+    return this->est_capturable(*posRoi, c);
 }
 
-bool Jeu::isCapturable(Pos pos, couleur_t c){
+bool Jeu::est_capturable(Pos pos, couleur_t c){
     Square dest = *this->echiquier->getSquare(pos);
     for (int i = 0 ; i < TAILLE_PLATEAU ; ++i){
         for (int j = 0 ; j < TAILLE_PLATEAU ; ++j){
@@ -313,43 +320,45 @@ couleur_t Jeu::getJoueur(){
 }
 
 bool Jeu::met_en_echec(Pos start, Pos end ,couleur_t c){
-    Piece *pieceDepart = echiquier->getPiece(start);
-    Piece *pieceFin = echiquier->getPiece(end);
+    Square *CaseDeb = echiquier->getSquare(start);
+    Square *CaseFin = echiquier->getSquare(end);
+    Piece *pieceDepart = CaseDeb->getPiece();
+    Piece *pieceFin = CaseFin->getPiece();
 
-    echiquier->deplace_piece(start, end);
+    echiquier->deplace_piece(CaseDeb, CaseFin);
 
     if(echec_au_roi(c)){
-        echiquier->pose_piece(pieceDepart, start);
-        echiquier->pose_piece(pieceFin, end);
+        echiquier->pose_piece(pieceDepart,CaseDeb);
+        echiquier->pose_piece(pieceFin, CaseFin);
         if (pieceDepart != nullptr){
-            pieceDepart->setSquare(echiquier->getSquare(start));
+            pieceDepart->setSquare(CaseDeb);
         }
         if (pieceFin != nullptr){
-            pieceFin->setSquare(echiquier->getSquare(end));
+            pieceFin->setSquare(CaseFin);
         }
         return true;
     }else{
-        echiquier->pose_piece(pieceDepart, start);
-        echiquier->pose_piece(pieceFin, end);
+        echiquier->pose_piece(pieceDepart,CaseDeb);
+        echiquier->pose_piece(pieceFin, CaseFin);
         if (pieceDepart != nullptr){
-            pieceDepart->setSquare(echiquier->getSquare(start));
+            pieceDepart->setSquare(CaseDeb);
         }
         if (pieceFin != nullptr){
-            pieceFin->setSquare(echiquier->getSquare(end));
+            pieceFin->setSquare(CaseFin);
         }
         return false;
     }
 }
 
 bool Jeu::prise_en_passant(Pos start, Pos end){
-    if (getDernierMouv().empty() || getDernierMouv().size() < 4){
+    if (getDernierMouv().empty() || !entree_mouvement(getDernierMouv())){
         return false;
     }
     Pos debutDernierMouv = Pos(getDernierMouv().substr(0,2));
     Pos finDernierMouv = Pos(getDernierMouv().substr(2,2));
     Piece *dernierePieceJouee = echiquier->getPiece(finDernierMouv);
 
-    if (dernierePieceJouee != nullptr && strcmp(typeid(*dernierePieceJouee).name() + 1, "Pion") == 0){
+    if (dernierePieceJouee != nullptr && strcmp(typeid(*dernierePieceJouee).name()+1, "Pion") == 0){
         if (dernierePieceJouee->getNbDeplacement() == 1){
             if (debutDernierMouv.getX() == finDernierMouv.getX() + 2
                 || debutDernierMouv.getX() == finDernierMouv.getX() - 2){
@@ -366,7 +375,7 @@ bool Jeu::prise_en_passant(Pos start, Pos end){
     return false;
 }
 
-void Jeu::setLastMove(string move){
+void Jeu::setDernierMouv(string move){
     this->dernier_mouvement = move;
 }
 

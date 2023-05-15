@@ -3,12 +3,14 @@
 Pos::Pos(int x = 0, int y = 0) 
     : x(x), y(y) {}
 
-Pos::Pos(string couple){
-    x = couple[0] - 'a';
-    y = couple[1] - '0' - 1;
-}
+Pos::Pos(string couple):
+    x( couple[1] - '0' - 1), y(couple[0] - 'a') {}
 Pos::~Pos() {}
 
+void Pos::affiche_xy() const{
+    cout << "x = " << to_string(this->getX()) 
+            << " y = " << to_string(this->getY()) << endl;
+}
 int Pos::getX() const { return this->x; }
 
 int Pos::getY() const { return this->y; }

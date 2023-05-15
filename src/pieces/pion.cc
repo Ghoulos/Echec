@@ -1,7 +1,7 @@
 #include "../../include/pieces/pion.hpp"
 
 Pion::Pion(couleur_t color, int id, Square *pos) :
-        Piece(color, (color == Noir) ? "\u265F" : "\u2659", id, pos) {}
+        Piece(color, (color == Blanc) ? "\u265F" : "\u2659", id, pos) {}
 
 bool Pion::mouvement_legal(Square dest, bool mouvementCapture) {
     if (mouvementCapture){

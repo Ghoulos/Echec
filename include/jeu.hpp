@@ -20,11 +20,9 @@ class Jeu
     Jeu();
     ~Jeu();
 
-    void setLastMove(string move);
+    void setDernierMouv(string move);
     string getDernierMouv();
     couleur_t getJoueur();
-    bool est_coup_legal(Pos, Pos );
-    bool rien_ne_bloque(Pos, Pos );
     void setJoueur(couleur_t c);
   
     void affiche();
@@ -33,7 +31,7 @@ class Jeu
     bool deplace_piece(Pos start, Pos end, bool isPassingThroughAllowed = false);
     void affichage_fin_jeu(string result);
     bool echec_au_roi(couleur_t c);
-    bool isCapturable(Pos pos, couleur_t c);
+    bool est_capturable(Pos pos, couleur_t c);
     bool met_en_echec(Pos start, Pos end ,couleur_t c);
     bool prise_en_passant(Pos start, Pos end);
 

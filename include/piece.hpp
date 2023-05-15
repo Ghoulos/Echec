@@ -23,8 +23,7 @@ protected:
 public:
     Piece(couleur_t, string, int, Square*);
     virtual ~Piece();
-    void affiche();
-    void capture(bool);
+    
     void setSquare(Square*);
     Square* getSquare() const;
     couleur_t getCouleur() const;
@@ -32,6 +31,9 @@ public:
     int getId() const ;
     size_t getNbDeplacement() const;
     void setNbDeplacement(size_t);
+    
+    void affiche();
+    void capture(bool);
     void incr_nb_deplacement();
     virtual bool mouvement_legal(Square, bool = false);
 };

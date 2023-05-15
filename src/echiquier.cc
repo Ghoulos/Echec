@@ -51,11 +51,7 @@ void Echiquier::pose_piece(Piece *p, Square *pos) {
     }
 }
 
-void Echiquier::pose_piece(Piece *p, Pos pos) {
-    this->pose_piece(p,getSquare(pos));
-}
-
-Square* Echiquier::getSquare(int x, int y){
+Square* Echiquier::getSquare(int x, int y) const{
     if((0 <= x && x < TAILLE_PLATEAU)&&
         (0 <= y && y < TAILLE_PLATEAU)){
             return this->plateau[x][y];
@@ -63,7 +59,7 @@ Square* Echiquier::getSquare(int x, int y){
     else { return nullptr;}
 }
 
-Square* Echiquier::getSquare(Pos pos){
+Square* Echiquier::getSquare(Pos pos) const{
     int x = pos.getX();
     int y = pos.getY();
     if((0 <= x && x < TAILLE_PLATEAU)&&
@@ -122,27 +118,30 @@ void Echiquier::placement_initial() {
         pose_piece(p, p->getSquare());
 }
 
-Piece* Echiquier::getPiece(Pos pos){
-    return getSquare(pos.getX(), pos.getY())->getPiece();
+Piece* Echiquier::getPiece(Pos pos) const{
+    return getSquare(pos)->getPiece();
 }
 
-void Echiquier::deplace_piece(const Square& posDebut, const Square& posFin) {
-    Piece *end_piece = this->getPiece(posFin);
-    if (end_piece != nullptr){
-        end_piece->capture(false);
+Piece* Echiquier::deplace_piece( Square* CaseDeb, Square* CaseFin) {
+    cout << "entree deplacepiece echiquier" << endl;
+    Piece *pieceSortante = CaseFin->getPiece();
+    if (pieceSortante != nullptr){
+        pieceSortante->capture(false);
     }
-    this->pose_piece(this->getPiece(posDebut), posFin);
-    this->pose_piece(nullptr, posDebut);
+    this->pose_piece(CaseDeb->getPiece(), CaseFin);
+    this->pose_piece(nullptr, CaseDeb);
+    cout << pgnPieceName(CaseFin->getPiece()->getIcone(), 1, 1)<< endl ;
+    return pieceSortante;
 }
 
-void Echiquier::deplace_piece(const Pos posDebut, const Pos posFin){
-    Square deb = *getSquare(posDebut);
-    Square fin = *getSquare(posFin);
-    deplace_piece(deb, fin);
+Piece* Echiquier::deplace_piece(const Pos posDebut, const Pos posFin){
+    Square* deb = getSquare(posDebut);
+    Square* fin = getSquare(posFin);
+    return deplace_piece(deb, fin);
 }
 
 string Echiquier::pgnPieceName(string const icone, bool view_pawn, bool view_color) const {
-
+    //Modification du code originale pour la couleur
     string psymb;
     if      (icone=="\u2656") psymb="R";  // Tour W
     else if (icone=="\u2658") psymb="N";  // Cavalier W
@@ -150,9 +149,9 @@ string Echiquier::pgnPieceName(string const icone, bool view_pawn, bool view_col
     else if (icone=="\u2655") psymb="Q";  // Dame W
     else if (icone=="\u2654") psymb="K";  // Roi W
     else if (icone.rfind("\u2659",0)==0 && view_pawn) psymb= "P"; // Pawn W
-    if (psymb.size()>0) { // one of the white piece has been found
+    if (psymb.size()>0) { // one of the BLACK piece has been found
         if (view_color)
-            return "w"+psymb;
+            return "b"+psymb;
         else
             return psymb;
     }
@@ -162,9 +161,9 @@ string Echiquier::pgnPieceName(string const icone, bool view_pawn, bool view_col
     else if (icone=="\u265B") psymb= "Q";  // Dame B
     else if (icone=="\u265A") psymb= "K";  // Roi B
     else if (icone.rfind("\u265F",0)==0 && view_pawn) psymb= "P"; // Pawn B
-    if (psymb.size()>0) { // one of the black piece has been found
+    if (psymb.size()>0) { // one of the White piece has been found
         if (view_color)
-            return "b"+psymb;
+            return "w"+psymb;
         else
             return psymb;
     }
@@ -173,13 +172,13 @@ string Echiquier::pgnPieceName(string const icone, bool view_pawn, bool view_col
 
 string Echiquier::canonicalPosition() const{
     string output;
-    for (size_t row(1); row<=TAILLE_PLATEAU; row++){
-        for (char col('a');col<='h';col++) {
-            Square square(col+to_string(row));
-            if (square.getPiece() != nullptr)
+    for (size_t i = 0; i<TAILLE_PLATEAU; i++){
+        for (int j =0;j < TAILLE_PLATEAU;j++) {
+            Pos pos_i = Pos(i, j);
+            if (this->getPiece(pos_i) != nullptr)
                 // get pieces with theit PGN names,
                 // true -> with P for pawns, true -> w/b for colors.
-                output += pgnPieceName(square.getPiece()->getIcone(),true,true);
+                output += pgnPieceName(getPiece(pos_i)->getIcone(),true,true);
             output += ",";
         }
     }
@@ -193,12 +192,12 @@ Square* Echiquier::position_roi(couleur_t const color) const{
     return nullptr;
 }
 
-void Echiquier::setPiece(Piece *p, const Square& pos){
-    this->plateau[pos.getX()][pos.getY()]->setPiece(p);
+void Echiquier::setPiece(Piece *p, Square caseCible){
+    caseCible.setPiece(p);
 }
 
 
-void Echiquier::promotion(Piece *piece, const string& type){
+void Echiquier::promotion(Piece *piece, const string type){
     int indice = piece->getId();
     couleur_t couleur = piece->getCouleur();
     Piece *nouvellePiece;

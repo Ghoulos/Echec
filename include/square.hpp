@@ -18,10 +18,12 @@ class Square : public Pos {
     Square(int, int, Piece* =nullptr);
     Square(string, Piece* =nullptr);
     ~Square();
-    bool est_vide();
-    void affiche();
     void setPiece(Piece* piece);
     Piece* getPiece() const;
+    
+    bool est_vide();
+    void affiche();
+    
 };
 
 #endif

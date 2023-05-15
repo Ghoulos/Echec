@@ -23,16 +23,16 @@ public:
     void placement_initial();
     void pose_piece(Piece *, Square *pos);
     void pose_piece(Piece *, Pos pos);
-    void deplace_piece(const Square&, const Square&);
-    void deplace_piece(const Pos, const Pos);
+    Piece* deplace_piece( Square*, Square*);
+    Piece* deplace_piece(const Pos, const Pos);
     string pgnPieceName(const string , bool , bool ) const;
     string canonicalPosition() const;
     Square* position_roi(couleur_t) const;
-    Square* getSquare(int,int);
-    Square* getSquare(Pos);
-    Piece* getPiece(Pos);
-    void setPiece(Piece*, const Square&);
-    void promotion(Piece *, const string&);
+    Square* getSquare(int,int) const;
+    Square* getSquare(Pos) const;
+    Piece* getPiece(Pos) const;
+    void setPiece(Piece*, Square);
+    void promotion(Piece *, const string);
 };
 
 #endif

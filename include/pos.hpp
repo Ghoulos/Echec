@@ -15,6 +15,7 @@ public:
     Pos(int x, int y);
     Pos(string);
     ~Pos();
+    void affiche_xy() const;
     int getX() const;
     int getY() const;
     void setX(int x);

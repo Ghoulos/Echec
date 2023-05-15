@@ -1,7 +1,7 @@
 #include "../../include/pieces/cavalier.hpp"
 
 Cavalier::Cavalier(couleur_t color,int id,Square* pos)
-    : Piece(color,(color == Noir) ? "\u265E" : "\u2658",id,pos){}
+    : Piece(color,(color == Blanc) ? "\u265E" : "\u2658",id,pos){}
 
 bool Cavalier::mouvement_legal(Square dest, bool mouvementCapture){
     if (((abs(dest.getX() - this->position->getX()) == 2) && (abs(dest.getY() - this->position->getY()) == 1))
