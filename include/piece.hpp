@@ -21,7 +21,7 @@ protected:
     size_t nbDeplacement;
 
 public:
-    virtual Piece(couleur_t, string, int, Square*);
+    Piece(couleur_t, string, int, Square*);
     virtual ~Piece();
     void affiche();
     void capture(bool);

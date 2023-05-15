@@ -22,13 +22,4 @@ public:
     bool operator==(const Pos &other) const;
 };
 
-class Dir : public Pos
-{
-private:
-    /* data */
-public:
-    Dir(int, int);
-    ~Dir();
-};
-
 #endif

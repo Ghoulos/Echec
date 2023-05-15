@@ -1,9 +1,9 @@
-#include "../../include/pieces/reine.hpp"
+#include "../../include/pieces/dame.hpp"
 
-Reine::Reine(couleur_t color,int id,Square *pos)
+Dame::Dame(couleur_t color,int id,Square *pos)
     : Piece(color,(color == Noir) ? "\u265B" : "\u2655",id,pos){}
 
-bool Reine::mouvement_legal(Square dest, bool mouvementCapture){
+bool Dame::mouvement_legal(Square dest, bool mouvementCapture){
     if (abs(dest.getY() - this->position->getY()) == abs(dest.getX() - this->position->getX())){
         return true;
     }

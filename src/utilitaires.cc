@@ -11,7 +11,7 @@ bool entree_valide(string const & input){
 }
 
 bool promotion_valide(string const & input){
-    return promotion_reine(input)
+    return promotion_dame(input)
         || promotion_tour(input)
         || promotion_fou(input)
         || promotion_cavalier(input);
@@ -47,7 +47,7 @@ bool entree_abandon(string const & input){
     return regex_match(input,pattern);
 }
 
-bool promotion_reine(string const & input){
+bool promotion_dame(string const & input){
     regex pattern("(Q|q)\\s*");
     return regex_match(input,pattern);
 }

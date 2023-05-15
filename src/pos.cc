@@ -20,8 +20,3 @@ void Pos::setY(int y) { this->y = y; }
 bool Pos::operator==(const Pos &other) const{
     return (this->x == other.getX() && this->y == other.getY());
 }
-
-Dir::Dir(int x = 0, int y = 0)
-    : Pos(x, y)  {}
-
-Dir::~Dir() {}

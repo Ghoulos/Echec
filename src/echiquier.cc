@@ -1,7 +1,7 @@
 #include "../include/echiquier.hpp"
 #include "../include/utilitaires.hpp"
 #include "../include/pieces/roi.hpp"
-#include "../include/pieces/reine.hpp"
+#include "../include/pieces/dame.hpp"
 #include "../include/pieces/cavalier.hpp"
 #include "../include/pieces/fou.hpp"
 #include "../include/pieces/tour.hpp"
@@ -94,7 +94,7 @@ void Echiquier::placement_initial() {
         new Tour    (Blanc, 0, this->plateau[0][0]),
         new Cavalier(Blanc, 1, this->plateau[0][1]),
         new Fou     (Blanc, 2, this->plateau[0][2]),
-        new Reine   (Blanc, 3, this->plateau[0][3]),
+        new Dame   (Blanc, 3, this->plateau[0][3]),
         new Roi     (Blanc, 4, this->plateau[0][4]),
         new Fou     (Blanc, 5, this->plateau[0][5]),
         new Cavalier(Blanc, 6, this->plateau[0][6]),
@@ -104,7 +104,7 @@ void Echiquier::placement_initial() {
         new Tour    (Noir, 0, this->plateau[7][0]),
         new Cavalier(Noir, 1, this->plateau[7][1]),
         new Fou     (Noir, 2, this->plateau[7][2]),
-        new Reine   (Noir, 3, this->plateau[7][3]),
+        new Dame   (Noir, 3, this->plateau[7][3]),
         new Roi     (Noir, 4, this->plateau[7][4]),
         new Fou     (Noir, 5, this->plateau[7][5]),
         new Cavalier(Noir, 6, this->plateau[7][6]),
@@ -147,7 +147,7 @@ string Echiquier::pgnPieceName(string const icone, bool view_pawn, bool view_col
     if      (icone=="\u2656") psymb="R";  // Tour W
     else if (icone=="\u2658") psymb="N";  // Cavalier W
     else if (icone=="\u2657") psymb="B";  // Fou W
-    else if (icone=="\u2655") psymb="Q";  // Reine W
+    else if (icone=="\u2655") psymb="Q";  // Dame W
     else if (icone=="\u2654") psymb="K";  // Roi W
     else if (icone.rfind("\u2659",0)==0 && view_pawn) psymb= "P"; // Pawn W
     if (psymb.size()>0) { // one of the white piece has been found
@@ -159,7 +159,7 @@ string Echiquier::pgnPieceName(string const icone, bool view_pawn, bool view_col
     if      (icone=="\u265C") psymb= "R";  // Tour B
     else if (icone=="\u265E") psymb= "N";  // Cavalier B
     else if (icone=="\u265D") psymb= "B";  // Fou B
-    else if (icone=="\u265B") psymb= "Q";  // Reine B
+    else if (icone=="\u265B") psymb= "Q";  // Dame B
     else if (icone=="\u265A") psymb= "K";  // Roi B
     else if (icone.rfind("\u265F",0)==0 && view_pawn) psymb= "P"; // Pawn B
     if (psymb.size()>0) { // one of the black piece has been found
@@ -202,8 +202,8 @@ void Echiquier::promotion(Piece *piece, const string& type){
     int indice = piece->getId();
     couleur_t couleur = piece->getCouleur();
     Piece *nouvellePiece;
-    if(promotion_reine(type)){
-        nouvellePiece = (new Reine(couleur, indice, piece->getSquare()));
+    if(promotion_dame(type)){
+        nouvellePiece = (new Dame(couleur, indice, piece->getSquare()));
 
     } else if(promotion_tour(type)){
         nouvellePiece = (new Tour(couleur, indice, piece->getSquare()));

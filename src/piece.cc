@@ -34,6 +34,8 @@ string Piece::getIcone() const {
 int Piece::getId() const {
     return this->id;
 }
+bool Piece::mouvement_legal(Square sqr, bool f) {return false; };
+
 void Piece::incr_nb_deplacement(){
     (this->nbDeplacement)++;
 }

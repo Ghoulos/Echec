@@ -8,9 +8,9 @@
 
 using namespace std;
 
-class Reine : public Piece{
+class Dame : public Piece{
 public:
-    Reine(couleur_t c,int id,Square* pos);
+    Dame(couleur_t c,int id,Square* pos);
 
     bool mouvement_legal(Square , bool );
 };
