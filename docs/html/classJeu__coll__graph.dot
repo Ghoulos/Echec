@@ -1,0 +1,24 @@
+digraph "Jeu"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{Jeu\n|- couleur_joueur\l|+ Jeu()\l+ ~Jeu()\l+ setDernierMouv()\l+ getDernierMouv()\l+ getJoueur()\l+ setJoueur()\l+ affiche()\l+ passage_possible()\l+ affichage_fin_jeu()\l+ est_capturable()\l+ echec_au_roi()\l+ met_en_echec()\l+ prise_en_passant()\l+ petit_roque()\l+ grand_roque()\l+ promotion_possible()\l+ deplace_piece()\l+ coup()\l+ mat()\l+ enleve_echec()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Classe représentant le jeu d'échecs."];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -echiquier" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{Echiquier\n||+ Echiquier()\l+ ~Echiquier()\l+ getSquare()\l+ getSquare()\l+ getPiece()\l+ getPieces()\l+ setPiece()\l+ position_roi()\l+ pgnPieceName()\l+ canonicalPosition()\l+ affiche()\l+ alloc_mem_echiquier()\l+ init_echiquier()\l+ placement_initial()\l+ pose_piece()\l+ deplace_piece()\l+ deplace_piece()\l+ promotion()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classEchiquier.html",tooltip="Classe représentant l'échiquier du jeu d'échecs."];
+  Node3 -> Node2 [color="grey25",fontsize="10",style="solid",label=" -pieces" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 [label="{std::vector\< Piece * \>\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node4 -> Node3 [color="grey25",fontsize="10",style="solid",label=" +elements" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node4 [label="{Piece\n|# couleur\l# etat\l# id\l# nbDeplacement\l|+ Piece()\l+ ~Piece()\l+ setSquare()\l+ getSquare()\l+ getCouleur()\l+ getEtat()\l+ getIcone()\l+ getId()\l+ getNbDeplacement()\l+ setNbDeplacement()\l+ incr_nb_deplacement()\l+ affiche()\l+ set_etat()\l+ mouvement_legal()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPiece.html",tooltip="Classe abstraite représentant une pièce du jeu d'échecs."];
+  Node5 -> Node4 [color="grey25",fontsize="10",style="solid",label=" #icone" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node5 [label="{std::string\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip="STL class."];
+  Node6 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node6 [label="{std::basic_string\<\l char \>\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip="STL class."];
+  Node7 -> Node4 [color="grey25",fontsize="10",style="solid",label=" #position" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node7 [label="{Square\n||+ Square()\l+ Square()\l+ ~Square()\l+ setPiece()\l+ getPiece()\l+ est_vide()\l+ affiche()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSquare.html",tooltip="Classe représentant une case d'un plateau de jeu."];
+  Node8 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node8 [label="{Pos\n|- x\l- y\l|+ Pos()\l+ Pos()\l+ ~Pos()\l+ getX()\l+ getY()\l+ setX()\l+ setY()\l+ affiche_xy()\l+ operator==()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPos.html",tooltip="Classe représentant une position dans un espace bidimensionnel."];
+  Node4 -> Node7 [color="grey25",fontsize="10",style="solid",label=" -piece" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node7 -> Node2 [color="grey25",fontsize="10",style="solid",label=" -plateau" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node5 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -dernier_mouvement" ,arrowhead="odiamond",fontname="Helvetica"];
+}

@@ -1,0 +1,18 @@
+digraph "Cavalier"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{Cavalier\n||+ Cavalier()\l+ mouvement_legal()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{Piece\n|# couleur\l# etat\l# id\l# nbDeplacement\l|+ Piece()\l+ ~Piece()\l+ setSquare()\l+ getSquare()\l+ getCouleur()\l+ getEtat()\l+ getIcone()\l+ getId()\l+ getNbDeplacement()\l+ setNbDeplacement()\l+ incr_nb_deplacement()\l+ affiche()\l+ set_etat()\l+ mouvement_legal()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPiece.html",tooltip="Classe abstraite représentant une pièce du jeu d'échecs."];
+  Node3 -> Node2 [color="grey25",fontsize="10",style="solid",label=" #icone" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 [label="{std::string\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip="STL class."];
+  Node4 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node4 [label="{std::basic_string\<\l char \>\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip="STL class."];
+  Node5 -> Node2 [color="grey25",fontsize="10",style="solid",label=" #position" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node5 [label="{Square\n||+ Square()\l+ Square()\l+ ~Square()\l+ setPiece()\l+ getPiece()\l+ est_vide()\l+ affiche()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSquare.html",tooltip="Classe représentant une case d'un plateau de jeu."];
+  Node6 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node6 [label="{Pos\n|- x\l- y\l|+ Pos()\l+ Pos()\l+ ~Pos()\l+ getX()\l+ getY()\l+ setX()\l+ setY()\l+ affiche_xy()\l+ operator==()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPos.html",tooltip="Classe représentant une position dans un espace bidimensionnel."];
+  Node2 -> Node5 [color="grey25",fontsize="10",style="solid",label=" -piece" ,arrowhead="odiamond",fontname="Helvetica"];
+}

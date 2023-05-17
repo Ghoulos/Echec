@@ -18,7 +18,7 @@ contenus respectivement dans les dossiers include et source (le dossier obj serv
 
 ## Compilation
 
-Le projet peut être compilé à l'aide du Makefile :
+Le projet peut être compilé à l'aide du Makefile, il n'est pas compilé de base dans le .zip:
 Exemple de compilation : `make`
 Pour nettoyer les dossier : `make clean`
 
@@ -42,6 +42,10 @@ Suivez les instructions affichées à l'écran pour entrer les mouvements et int
     - Revoir la promotion
     - Echec et math implémenté mais à revoir
     - Path
+
+## Documentation
+    La documentation est dans le dossier docs.
+    Elle se genere avec `make docs`.
 
 ## Tests
 Passe tous les tests 1, 2. Une partie des 3, pas les 4.

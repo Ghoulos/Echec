@@ -1,0 +1,35 @@
+\hypertarget{main_8cc}{}\doxysection{src/main.cc File Reference}
+\label{main_8cc}\index{src/main.cc@{src/main.cc}}
+{\ttfamily \#include \char`\"{}../include/jeu.\+hpp\char`\"{}}\newline
+Include dependency graph for main.\+cc\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{main.cc@{main.cc}!main@{main}}
+\index{main@{main}!main.cc@{main.cc}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{3            \{}
+\DoxyCodeLine{4   \mbox{\hyperlink{classJeu}{Jeu}} monjeu;}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6   \textcolor{comment}{// boucle de jeu, s'arrete a la fin de la partie}}
+\DoxyCodeLine{7   \textcolor{keywordtype}{bool} stop(\textcolor{keyword}{false});}
+\DoxyCodeLine{8   \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{9       }
+\DoxyCodeLine{10       monjeu.\mbox{\hyperlink{classJeu_a7931f8054847abc19e33e73967a3807e}{affiche}}();}
+\DoxyCodeLine{11       stop = monjeu.\mbox{\hyperlink{classJeu_a4b1fafb4d4cd869152ee21928ba4ebac}{coup}}();}
+\DoxyCodeLine{12   \} \textcolor{keywordflow}{while} (!stop);}
+\DoxyCodeLine{13   \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{14 \}}
+
+\end{DoxyCode}

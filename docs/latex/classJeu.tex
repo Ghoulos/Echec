@@ -1,0 +1,995 @@
+\hypertarget{classJeu}{}\doxysection{Jeu Class Reference}
+\label{classJeu}\index{Jeu@{Jeu}}
+
+
+Classe représentant le jeu d\textquotesingle{}échecs.  
+
+
+
+
+{\ttfamily \#include $<$jeu.\+hpp$>$}
+
+
+
+Collaboration diagram for Jeu\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classJeu_acc5795ee00edf75516d3dfe65be3e6d6}{Jeu}} ()
+\begin{DoxyCompactList}\small\item\em Constructeur par défaut de la classe \mbox{\hyperlink{classJeu}{Jeu}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classJeu_a9cd19e73df169d7f09397be61ba8548c}{$\sim$\+Jeu}} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de la classe \mbox{\hyperlink{classJeu}{Jeu}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classJeu_a2595cf7d26df14628da14fbaa5c39dcb}{set\+Dernier\+Mouv}} (string move)
+\begin{DoxyCompactList}\small\item\em Définit le dernier mouvement effectué. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classJeu_af6d80557d3b8670c60f3feb555b9f868}{get\+Dernier\+Mouv}} ()
+\begin{DoxyCompactList}\small\item\em Obtient le dernier mouvement effectué. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23f}{couleur\+\_\+t}} \mbox{\hyperlink{classJeu_a80cc49d2972e1cce9446e81d49e4db33}{get\+Joueur}} ()
+\begin{DoxyCompactList}\small\item\em Obtient la couleur du joueur actuel. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classJeu_a183c45e05d91a601c1dd417d4fca4660}{set\+Joueur}} (\mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23f}{couleur\+\_\+t}} c)
+\begin{DoxyCompactList}\small\item\em Définit la couleur du joueur actuel. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classJeu_a7931f8054847abc19e33e73967a3807e}{affiche}} ()
+\begin{DoxyCompactList}\small\item\em Affiche l\textquotesingle{}état actuel de l\textquotesingle{}échiquier. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classJeu_a89c279c3ba4caebd5b2fcb9f0ee3a704}{passage\+\_\+possible}} (\mbox{\hyperlink{classPos}{Pos}} pos\+Deb, \mbox{\hyperlink{classPos}{Pos}} pos\+Fin)
+\begin{DoxyCompactList}\small\item\em Vérifie si le passage entre deux cases est possible, ie il n\textquotesingle{}y a pas de pièces (adverses ou pas) gènant le chemin. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classJeu_abb9672b017aa7505c21b61e90200346d}{affichage\+\_\+fin\+\_\+jeu}} (string result)
+\begin{DoxyCompactList}\small\item\em Affiche le message de fin de jeu soit la position canonique de l\textquotesingle{}échiquier et le résultat de fin. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classJeu_a3b9c6e6562c1d7770d9afd80514cbd1e}{est\+\_\+capturable}} (\mbox{\hyperlink{classPos}{Pos}} pos, \mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23f}{couleur\+\_\+t}} c)
+\begin{DoxyCompactList}\small\item\em Vérifie si une position donnée est capturable par une couleur donnée. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classJeu_afd352838388e22cf37e40c500a06b195}{echec\+\_\+au\+\_\+roi}} (\mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23f}{couleur\+\_\+t}} c)
+\begin{DoxyCompactList}\small\item\em Vérifie si le roi d\textquotesingle{}une couleur donnée est en échec. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classJeu_a4f56d830f99805ab770b7280e91d9cb6}{met\+\_\+en\+\_\+echec}} (\mbox{\hyperlink{classPos}{Pos}} pos\+Deb, \mbox{\hyperlink{classPos}{Pos}} pos\+Fin, \mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23f}{couleur\+\_\+t}} c)
+\begin{DoxyCompactList}\small\item\em Vérifie si un déplacement entre deux positions met en échec le roi d\textquotesingle{}une couleur donnée. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classJeu_af33483b23b0a1fce94b5be66ad054a63}{prise\+\_\+en\+\_\+passant}} (\mbox{\hyperlink{classPos}{Pos}} pos\+Deb, \mbox{\hyperlink{classPos}{Pos}} pos\+Fin)
+\begin{DoxyCompactList}\small\item\em Vérifie si une prise en passant est possible entre deux positions. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classJeu_aa6370a47a4f8c408e513cac9459802e1}{petit\+\_\+roque}} (\mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23f}{couleur\+\_\+t}} c)
+\begin{DoxyCompactList}\small\item\em Réalise le petit roque pour une couleur donnée. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classJeu_a975f3402c4ab078646f67cff6887551c}{grand\+\_\+roque}} (\mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23f}{couleur\+\_\+t}} c)
+\begin{DoxyCompactList}\small\item\em Réalise le grand roque pour une couleur donnée. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classJeu_a9404843266b400a3c1bffeae20f84d67}{promotion\+\_\+possible}} (\mbox{\hyperlink{classPos}{Pos}} pos\+Fin)
+\begin{DoxyCompactList}\small\item\em Vérifie si une promotion est possible. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classJeu_aa548c275b683a929846d6839bc2d2e5d}{deplace\+\_\+piece}} (\mbox{\hyperlink{classPos}{Pos}} pos\+Deb, \mbox{\hyperlink{classPos}{Pos}} pos\+Fin, bool continue\+Jeu=true)
+\begin{DoxyCompactList}\small\item\em Déplace une pièce d\textquotesingle{}une position à une autre. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classJeu_a4b1fafb4d4cd869152ee21928ba4ebac}{coup}} ()
+\begin{DoxyCompactList}\small\item\em Gère le déroulement d\textquotesingle{}un coup. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classJeu_af7603b939ebf4958cba03f06ceb4890f}{mat}} (\mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23f}{couleur\+\_\+t}} c)
+\begin{DoxyCompactList}\small\item\em regarde si le roi est en mat /!\textbackslash{} ne fonctionne pas \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classJeu_a10abf60cf771330ed6aba4b2f77db63f}{enleve\+\_\+echec}} (\mbox{\hyperlink{classPiece}{Piece}} $\ast$piece)
+\begin{DoxyCompactList}\small\item\em Teste tous les mouvements possibles de la piece pour voir si elle peut enlever si il en existe un où son roi n\textquotesingle{}est pas en echec. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEchiquier}{Echiquier}} $\ast$ \mbox{\hyperlink{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}{echiquier}}
+\item 
+string \mbox{\hyperlink{classJeu_ae17948f23ecc46694cc005e91d756003}{dernier\+\_\+mouvement}}
+\item 
+\mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23f}{couleur\+\_\+t}} \mbox{\hyperlink{classJeu_a724434ea22d2d5a1d1f5bcb3c0db11d1}{couleur\+\_\+joueur}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe représentant le jeu d\textquotesingle{}échecs. 
+
+La classe \mbox{\hyperlink{classJeu}{Jeu}} gère le déroulement du jeu d\textquotesingle{}échecs, les interactions avec les joueurs, et les règles du jeu. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classJeu_acc5795ee00edf75516d3dfe65be3e6d6}\label{classJeu_acc5795ee00edf75516d3dfe65be3e6d6}} 
+\index{Jeu@{Jeu}!Jeu@{Jeu}}
+\index{Jeu@{Jeu}!Jeu@{Jeu}}
+\doxysubsubsection{\texorpdfstring{Jeu()}{Jeu()}}
+{\footnotesize\ttfamily Jeu\+::\+Jeu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructeur par défaut de la classe \mbox{\hyperlink{classJeu}{Jeu}}. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{6     : \mbox{\hyperlink{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}{echiquier}}(\textcolor{keyword}{new} \mbox{\hyperlink{classEchiquier}{Echiquier}}(\textcolor{keyword}{true})), \mbox{\hyperlink{classJeu_a724434ea22d2d5a1d1f5bcb3c0db11d1}{couleur\_joueur}}(\mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23fa58b0623118011f228f9e035e740ca481}{Blanc}})  \{}
+\DoxyCodeLine{7         cout << \textcolor{stringliteral}{"La Partie a été créée !"} << endl;}
+\DoxyCodeLine{8     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classJeu_a9cd19e73df169d7f09397be61ba8548c}\label{classJeu_a9cd19e73df169d7f09397be61ba8548c}} 
+\index{Jeu@{Jeu}!````~Jeu@{$\sim$Jeu}}
+\index{````~Jeu@{$\sim$Jeu}!Jeu@{Jeu}}
+\doxysubsubsection{\texorpdfstring{$\sim$Jeu()}{~Jeu()}}
+{\footnotesize\ttfamily Jeu\+::$\sim$\+Jeu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructeur de la classe \mbox{\hyperlink{classJeu}{Jeu}}. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{10 \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classJeu_abb9672b017aa7505c21b61e90200346d}\label{classJeu_abb9672b017aa7505c21b61e90200346d}} 
+\index{Jeu@{Jeu}!affichage\_fin\_jeu@{affichage\_fin\_jeu}}
+\index{affichage\_fin\_jeu@{affichage\_fin\_jeu}!Jeu@{Jeu}}
+\doxysubsubsection{\texorpdfstring{affichage\_fin\_jeu()}{affichage\_fin\_jeu()}}
+{\footnotesize\ttfamily void Jeu\+::affichage\+\_\+fin\+\_\+jeu (\begin{DoxyParamCaption}\item[{string}]{result }\end{DoxyParamCaption})}
+
+
+
+Affiche le message de fin de jeu soit la position canonique de l\textquotesingle{}échiquier et le résultat de fin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em result} & Résultat de la partie (ex\+: \char`\"{}Échec et mat\char`\"{}). \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{119                                            \{}
+\DoxyCodeLine{120     cout << this-\/>\mbox{\hyperlink{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}{echiquier}}-\/>\mbox{\hyperlink{classEchiquier_af80b43248dc2e3d4b6bf8942cbaca65d}{canonicalPosition}}() << \textcolor{stringliteral}{" "} << resultat << endl;}
+\DoxyCodeLine{121 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classJeu_a7931f8054847abc19e33e73967a3807e}\label{classJeu_a7931f8054847abc19e33e73967a3807e}} 
+\index{Jeu@{Jeu}!affiche@{affiche}}
+\index{affiche@{affiche}!Jeu@{Jeu}}
+\doxysubsubsection{\texorpdfstring{affiche()}{affiche()}}
+{\footnotesize\ttfamily void Jeu\+::affiche (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Affiche l\textquotesingle{}état actuel de l\textquotesingle{}échiquier. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{28 \{\mbox{\hyperlink{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}{echiquier}}-\/>\mbox{\hyperlink{classEchiquier_af22265120d527dfb2fa91187c4ce01cf}{affiche}}();\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classJeu_a4b1fafb4d4cd869152ee21928ba4ebac}\label{classJeu_a4b1fafb4d4cd869152ee21928ba4ebac}} 
+\index{Jeu@{Jeu}!coup@{coup}}
+\index{coup@{coup}!Jeu@{Jeu}}
+\doxysubsubsection{\texorpdfstring{coup()}{coup()}}
+{\footnotesize\ttfamily bool Jeu\+::coup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gère le déroulement d\textquotesingle{}un coup. 
+
+\begin{DoxyReturn}{Returns}
+retourne true si fin de partie et false sinon. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{403                \{}
+\DoxyCodeLine{404     }
+\DoxyCodeLine{405     \textcolor{keywordtype}{string} input;}
+\DoxyCodeLine{406     \textcolor{keywordtype}{bool} stop = \textcolor{keyword}{false};}
+\DoxyCodeLine{407     \textcolor{keywordtype}{bool} echec = \textcolor{keyword}{false};}
+\DoxyCodeLine{408 }
+\DoxyCodeLine{409     cout << \textcolor{stringliteral}{"C'est au joueur "} << }
+\DoxyCodeLine{410             ((\mbox{\hyperlink{classJeu_a724434ea22d2d5a1d1f5bcb3c0db11d1}{couleur\_joueur}} == \mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23fa58b0623118011f228f9e035e740ca481}{Blanc}}) ? \textcolor{stringliteral}{"blanc "} : \textcolor{stringliteral}{"noir "}) }
+\DoxyCodeLine{411             << \textcolor{stringliteral}{"de jouer"} << endl;}
+\DoxyCodeLine{412 }
+\DoxyCodeLine{413     \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{414         \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{415             \textcolor{keywordflow}{if} (\mbox{\hyperlink{classJeu_afd352838388e22cf37e40c500a06b195}{echec\_au\_roi}}(this-\/>\mbox{\hyperlink{classJeu_a724434ea22d2d5a1d1f5bcb3c0db11d1}{couleur\_joueur}}))\{}
+\DoxyCodeLine{416                 cout << \textcolor{stringliteral}{"Echec !"}  << endl;}
+\DoxyCodeLine{417                 echec = \textcolor{keyword}{true};}
+\DoxyCodeLine{418             \}}
+\DoxyCodeLine{419             \textcolor{keywordflow}{if} (\mbox{\hyperlink{classJeu_af7603b939ebf4958cba03f06ceb4890f}{mat}}(\mbox{\hyperlink{classJeu_a724434ea22d2d5a1d1f5bcb3c0db11d1}{couleur\_joueur}}))\{}
+\DoxyCodeLine{420                 cout << \textcolor{stringliteral}{"Mat !"} << endl;}
+\DoxyCodeLine{421                 \textcolor{keywordflow}{if} (echec)\{}
+\DoxyCodeLine{422                     \textcolor{keywordflow}{if} (this-\/>\mbox{\hyperlink{classJeu_a80cc49d2972e1cce9446e81d49e4db33}{getJoueur}}() == \mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23faa7b5bb6c14d7e04bce22bf5ee184be20}{Noir}})\{}
+\DoxyCodeLine{423                         this-\/>\mbox{\hyperlink{classJeu_abb9672b017aa7505c21b61e90200346d}{affichage\_fin\_jeu}}(\textcolor{stringliteral}{"0-\/1"});}
+\DoxyCodeLine{424                     \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{425                         this-\/>\mbox{\hyperlink{classJeu_abb9672b017aa7505c21b61e90200346d}{affichage\_fin\_jeu}}(\textcolor{stringliteral}{"1-\/0"});}
+\DoxyCodeLine{426                     \}}
+\DoxyCodeLine{427                     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{428                 \}}
+\DoxyCodeLine{429                 this-\/>\mbox{\hyperlink{classJeu_abb9672b017aa7505c21b61e90200346d}{affichage\_fin\_jeu}}(\textcolor{stringliteral}{"1/2-\/1/2"});}
+\DoxyCodeLine{430                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{431             \}}
+\DoxyCodeLine{432             cout << \textcolor{stringliteral}{"Attente du coup :  "};}
+\DoxyCodeLine{433             getline(cin, input);}
+\DoxyCodeLine{434 }
+\DoxyCodeLine{435             \textcolor{keywordflow}{while} (!\mbox{\hyperlink{utilitaires_8cc_a708c31f2c27fa7e1a774667dc6114b11}{entree\_valide}}(input)) \{}
+\DoxyCodeLine{436                 cout << \textcolor{stringliteral}{"L'entrée n'est pas valide !"} << endl;}
+\DoxyCodeLine{437                 cout << \textcolor{stringliteral}{"Attente du coup :  "};}
+\DoxyCodeLine{438                 getline(cin, input);}
+\DoxyCodeLine{439             \}}
+\DoxyCodeLine{440             \textcolor{comment}{//Les commandes faisant s'arreter la partie}}
+\DoxyCodeLine{441             \textcolor{keywordflow}{if} (\mbox{\hyperlink{utilitaires_8cc_acca1db4fdc3b52fcde650d1cdf753a28}{entree\_sortie}}(input))\{}
+\DoxyCodeLine{442                 cout << \textcolor{stringliteral}{"quit"} << endl;}
+\DoxyCodeLine{443                 this-\/>\mbox{\hyperlink{classJeu_abb9672b017aa7505c21b61e90200346d}{affichage\_fin\_jeu}}(\textcolor{stringliteral}{"?-\/?"});}
+\DoxyCodeLine{444                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{445 }
+\DoxyCodeLine{446             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{utilitaires_8cc_a8406ace430e41be02609c14428f5b071}{entree\_egalite}}(input))\{}
+\DoxyCodeLine{447                 cout << \textcolor{stringliteral}{"draw"} << endl;}
+\DoxyCodeLine{448                 this-\/>\mbox{\hyperlink{classJeu_abb9672b017aa7505c21b61e90200346d}{affichage\_fin\_jeu}}(\textcolor{stringliteral}{"1/2-\/1/2"});}
+\DoxyCodeLine{449                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{450 }
+\DoxyCodeLine{451             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{utilitaires_8cc_aec0d18758c74ffb21d50f1a97b64168a}{entree\_abandon}}(input)) \{}
+\DoxyCodeLine{452                 cout << \textcolor{stringliteral}{"resign"} << endl;}
+\DoxyCodeLine{453                 \textcolor{keywordflow}{if} (this-\/>\mbox{\hyperlink{classJeu_a80cc49d2972e1cce9446e81d49e4db33}{getJoueur}}() == \mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23fa58b0623118011f228f9e035e740ca481}{Blanc}})\{}
+\DoxyCodeLine{454                     this-\/>\mbox{\hyperlink{classJeu_abb9672b017aa7505c21b61e90200346d}{affichage\_fin\_jeu}}(\textcolor{stringliteral}{"0-\/1"});}
+\DoxyCodeLine{455                 \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{456                     this-\/>\mbox{\hyperlink{classJeu_abb9672b017aa7505c21b61e90200346d}{affichage\_fin\_jeu}}(\textcolor{stringliteral}{"1-\/0"});}
+\DoxyCodeLine{457                 \}}
+\DoxyCodeLine{458                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{459             \textcolor{comment}{//Les commandes classiques du jeu}}
+\DoxyCodeLine{460             \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{utilitaires_8cc_a49e83092091959f73ed86065a3d2931e}{entree\_petit\_rock}}(input))\{}
+\DoxyCodeLine{461                 cout << \textcolor{stringliteral}{"petit roque"} << endl;}
+\DoxyCodeLine{462                 stop = this-\/>\mbox{\hyperlink{classJeu_aa6370a47a4f8c408e513cac9459802e1}{petit\_roque}}(this-\/>\mbox{\hyperlink{classJeu_a724434ea22d2d5a1d1f5bcb3c0db11d1}{couleur\_joueur}});}
+\DoxyCodeLine{463 }
+\DoxyCodeLine{464             \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{utilitaires_8cc_ae9894de126527cec4d9282bd82584fc9}{entree\_grand\_rock}}(input))\{}
+\DoxyCodeLine{465                 cout << \textcolor{stringliteral}{"grand roque"} << endl;}
+\DoxyCodeLine{466                 stop = this-\/>\mbox{\hyperlink{classJeu_a975f3402c4ab078646f67cff6887551c}{grand\_roque}}(this-\/>\mbox{\hyperlink{classJeu_a724434ea22d2d5a1d1f5bcb3c0db11d1}{couleur\_joueur}});}
+\DoxyCodeLine{467 }
+\DoxyCodeLine{468             \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{469                 cout << \textcolor{stringliteral}{"mouvement classique"} << endl;}
+\DoxyCodeLine{470                 stop = this-\/>\mbox{\hyperlink{classJeu_aa548c275b683a929846d6839bc2d2e5d}{deplace\_piece}}((\mbox{\hyperlink{classPos}{Pos}}(input.substr(0,2))),}
+\DoxyCodeLine{471                                        \mbox{\hyperlink{classPos}{Pos}}(input.substr(2,2))}
+\DoxyCodeLine{472                 );}
+\DoxyCodeLine{473             \}}
+\DoxyCodeLine{474         \}\textcolor{keywordflow}{while}(this-\/>\mbox{\hyperlink{classJeu_afd352838388e22cf37e40c500a06b195}{echec\_au\_roi}}(this-\/>\mbox{\hyperlink{classJeu_a724434ea22d2d5a1d1f5bcb3c0db11d1}{couleur\_joueur}}));}
+\DoxyCodeLine{475 }
+\DoxyCodeLine{476     \} \textcolor{keywordflow}{while} (!stop);}
+\DoxyCodeLine{477     \textcolor{comment}{//On garde le dernier mouvement en memoire}}
+\DoxyCodeLine{478     this-\/>\mbox{\hyperlink{classJeu_a2595cf7d26df14628da14fbaa5c39dcb}{setDernierMouv}}(input);}
+\DoxyCodeLine{479     \textcolor{comment}{//Changement de joueur}}
+\DoxyCodeLine{480     this-\/>\mbox{\hyperlink{classJeu_a724434ea22d2d5a1d1f5bcb3c0db11d1}{couleur\_joueur}} = (this-\/>\mbox{\hyperlink{classJeu_a724434ea22d2d5a1d1f5bcb3c0db11d1}{couleur\_joueur}} == \mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23fa58b0623118011f228f9e035e740ca481}{Blanc}}) ? \mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23faa7b5bb6c14d7e04bce22bf5ee184be20}{Noir}} : \mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23fa58b0623118011f228f9e035e740ca481}{Blanc}};}
+\DoxyCodeLine{481     }
+\DoxyCodeLine{482     \textcolor{comment}{//Tout se passe bien donc on n'arrete pas la partie}}
+\DoxyCodeLine{483     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{484 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classJeu_aa548c275b683a929846d6839bc2d2e5d}\label{classJeu_aa548c275b683a929846d6839bc2d2e5d}} 
+\index{Jeu@{Jeu}!deplace\_piece@{deplace\_piece}}
+\index{deplace\_piece@{deplace\_piece}!Jeu@{Jeu}}
+\doxysubsubsection{\texorpdfstring{deplace\_piece()}{deplace\_piece()}}
+{\footnotesize\ttfamily bool Jeu\+::deplace\+\_\+piece (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPos}{Pos}}}]{pos\+Deb,  }\item[{\mbox{\hyperlink{classPos}{Pos}}}]{pos\+Fin,  }\item[{bool}]{continue\+Jeu = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Déplace une pièce d\textquotesingle{}une position à une autre. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos\+Deb} & Position de départ. \\
+\hline
+{\em pos\+Fin} & Position d\textquotesingle{}arrivée. \\
+\hline
+{\em continue\+Jeu} & Indique sion continue le jeu (utilisé pour les tests) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si le déplacement a été effectué avec succès, false sinon. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{285                                                                 \{}
+\DoxyCodeLine{286     cout << \textcolor{stringliteral}{"======= TEST DU COUP ======="} << endl;}
+\DoxyCodeLine{287     cout << \textcolor{stringliteral}{"Origine : "};}
+\DoxyCodeLine{288     posDeb.\mbox{\hyperlink{classPos_aa9deb49d60d6a863be83054932b4d357}{affiche\_xy}}() ;}
+\DoxyCodeLine{289     cout << \textcolor{stringliteral}{"Fin : "} ;}
+\DoxyCodeLine{290     posFin.\mbox{\hyperlink{classPos_aa9deb49d60d6a863be83054932b4d357}{affiche\_xy}}();}
+\DoxyCodeLine{291     \mbox{\hyperlink{classPiece}{Piece}} *pieceEnDeplacement = \mbox{\hyperlink{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}{echiquier}}-\/>\mbox{\hyperlink{classEchiquier_a94d5f39cc1d0cb8628914cbb2f7701e5}{getPiece}}(posDeb);}
+\DoxyCodeLine{292     \mbox{\hyperlink{classPiece}{Piece}} *pieceADestination = \mbox{\hyperlink{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}{echiquier}}-\/>\mbox{\hyperlink{classEchiquier_a94d5f39cc1d0cb8628914cbb2f7701e5}{getPiece}}(posFin);}
+\DoxyCodeLine{293     \mbox{\hyperlink{classSquare}{Square}} *CaseDeb = \mbox{\hyperlink{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}{echiquier}}-\/>\mbox{\hyperlink{classEchiquier_a58713a00ef6b003ceccf8dc9767ff948}{getSquare}}(posDeb);}
+\DoxyCodeLine{294     \mbox{\hyperlink{classSquare}{Square}} *CaseFin = \mbox{\hyperlink{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}{echiquier}}-\/>\mbox{\hyperlink{classEchiquier_a58713a00ef6b003ceccf8dc9767ff948}{getSquare}}(posFin);}
+\DoxyCodeLine{295     \textcolor{keywordflow}{if} (pieceEnDeplacement == \textcolor{keyword}{nullptr})\{}
+\DoxyCodeLine{296         cout << \textcolor{stringliteral}{"Il n'y a pas de piece a cette position !"} << endl;}
+\DoxyCodeLine{297         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{298     \}}
+\DoxyCodeLine{299 }
+\DoxyCodeLine{300     \textcolor{keywordflow}{if} (pieceEnDeplacement-\/>\mbox{\hyperlink{classPiece_a183cbb97af8157297281676c060a023d}{getCouleur}}() != \mbox{\hyperlink{classJeu_a724434ea22d2d5a1d1f5bcb3c0db11d1}{couleur\_joueur}})\{}
+\DoxyCodeLine{301         cout << \textcolor{stringliteral}{"Pièce de la mauvaise couleur !"} << endl;}
+\DoxyCodeLine{302         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{303     \}}
+\DoxyCodeLine{304 }
+\DoxyCodeLine{305     \textcolor{comment}{// Cas spécial : prise en passant}}
+\DoxyCodeLine{306     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *NomDeClasse = \textcolor{keyword}{typeid}(*pieceEnDeplacement).name() + 1;}
+\DoxyCodeLine{307     \textcolor{keywordflow}{if} (strcmp(NomDeClasse, \textcolor{stringliteral}{"Pion"}) == 0)\{}
+\DoxyCodeLine{308         \textcolor{keywordflow}{if} (this-\/>\mbox{\hyperlink{classJeu_af33483b23b0a1fce94b5be66ad054a63}{prise\_en\_passant}}(posDeb, posFin))\{}
+\DoxyCodeLine{309             cout << \textcolor{stringliteral}{"Prise en passant"} << endl;}
+\DoxyCodeLine{310             \mbox{\hyperlink{classSquare}{Square}}* casePionCapture = this-\/>\mbox{\hyperlink{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}{echiquier}}-\/>\mbox{\hyperlink{classEchiquier_a58713a00ef6b003ceccf8dc9767ff948}{getSquare}}(\mbox{\hyperlink{classPos}{Pos}}(\mbox{\hyperlink{classJeu_af6d80557d3b8670c60f3feb555b9f868}{getDernierMouv}}().substr(2,2)));}
+\DoxyCodeLine{311             \mbox{\hyperlink{classPiece}{Piece}}* pionCapture = casePionCapture-\/>\mbox{\hyperlink{classSquare_a98e118b2bc38a089613ec4279817d08b}{getPiece}}();}
+\DoxyCodeLine{312             this-\/>\mbox{\hyperlink{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}{echiquier}}-\/>\mbox{\hyperlink{classEchiquier_ad68f425e54ab80f0a695ea4c87f4b49d}{pose\_piece}}(\textcolor{keyword}{nullptr}, casePionCapture );}
+\DoxyCodeLine{313             \textcolor{keywordflow}{if}(\mbox{\hyperlink{classJeu_a4f56d830f99805ab770b7280e91d9cb6}{met\_en\_echec}}(posDeb, posFin, \mbox{\hyperlink{classJeu_a724434ea22d2d5a1d1f5bcb3c0db11d1}{couleur\_joueur}}))\{}
+\DoxyCodeLine{314                 this-\/>\mbox{\hyperlink{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}{echiquier}}-\/>\mbox{\hyperlink{classEchiquier_ad68f425e54ab80f0a695ea4c87f4b49d}{pose\_piece}}(pionCapture, casePionCapture );}
+\DoxyCodeLine{315                 cout << \textcolor{stringliteral}{"Prise en passant met en echec !"};}
+\DoxyCodeLine{316                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{317             \}}
+\DoxyCodeLine{318             \textcolor{keywordflow}{if}(!continueJeu)\{}
+\DoxyCodeLine{319                 this-\/>\mbox{\hyperlink{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}{echiquier}}-\/>\mbox{\hyperlink{classEchiquier_ad68f425e54ab80f0a695ea4c87f4b49d}{pose\_piece}}(pionCapture, casePionCapture );}
+\DoxyCodeLine{320                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{321             \}}
+\DoxyCodeLine{322             pionCapture-\/>\mbox{\hyperlink{classPiece_a32fe6f8a49343ac641bbae8baaeb7e37}{set\_etat}}(\mbox{\hyperlink{piece_8hpp_ac870e865cf50ebb064bc55340a4d2e48a177cd8b4ca72da2d4facf80ff85a2f3e}{Capture}});}
+\DoxyCodeLine{323             this-\/>\mbox{\hyperlink{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}{echiquier}}-\/>\mbox{\hyperlink{classEchiquier_aecad5d6c8eb6a615bb9a83c145e603ed}{deplace\_piece}}(CaseDeb, CaseFin);}
+\DoxyCodeLine{324             pieceEnDeplacement-\/>\mbox{\hyperlink{classPiece_ace44c909e0a09dcb56b8bd1701958268}{incr\_nb\_deplacement}}();}
+\DoxyCodeLine{325             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{326         \}}
+\DoxyCodeLine{327     \}}
+\DoxyCodeLine{328     cout << \textcolor{stringliteral}{"Pas de prise en passant"} << endl;}
+\DoxyCodeLine{329 }
+\DoxyCodeLine{330     \textcolor{comment}{//Validité du coup}}
+\DoxyCodeLine{331     \textcolor{keywordflow}{if}(!(strcmp(NomDeClasse, \textcolor{stringliteral}{"Roi"}) == 0 ))\{}
+\DoxyCodeLine{332         \textcolor{keywordflow}{if} (pieceADestination != \textcolor{keyword}{nullptr})\{}
+\DoxyCodeLine{333             \textcolor{keywordflow}{if} (pieceADestination-\/>\mbox{\hyperlink{classPiece_a183cbb97af8157297281676c060a023d}{getCouleur}}() != pieceEnDeplacement-\/>\mbox{\hyperlink{classPiece_a183cbb97af8157297281676c060a023d}{getCouleur}}())\{}
+\DoxyCodeLine{334                 \textcolor{keywordflow}{if} (strcmp(NomDeClasse, \textcolor{stringliteral}{"Pion"}) == 0)\{}
+\DoxyCodeLine{335                     \textcolor{keywordflow}{if} (!pieceEnDeplacement-\/>\mbox{\hyperlink{classPiece_a99f3ab3092ed25a5de6f7faaeb0e60ba}{mouvement\_legal}}(*\mbox{\hyperlink{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}{echiquier}}-\/>\mbox{\hyperlink{classEchiquier_a58713a00ef6b003ceccf8dc9767ff948}{getSquare}}(posFin), \textcolor{keyword}{true})) \{}
+\DoxyCodeLine{336                         cout << \textcolor{stringliteral}{"Mouvement invalide !"} << endl;}
+\DoxyCodeLine{337                         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{338                     \}}
+\DoxyCodeLine{339                 \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{340                     \textcolor{keywordflow}{if} (!pieceEnDeplacement-\/>\mbox{\hyperlink{classPiece_a99f3ab3092ed25a5de6f7faaeb0e60ba}{mouvement\_legal}}(*\mbox{\hyperlink{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}{echiquier}}-\/>\mbox{\hyperlink{classEchiquier_a58713a00ef6b003ceccf8dc9767ff948}{getSquare}}(posFin))) \{}
+\DoxyCodeLine{341                         cout << \textcolor{stringliteral}{"Mouvement invalide !"} << endl;}
+\DoxyCodeLine{342                         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{343                     \}}
+\DoxyCodeLine{344                 \}}
+\DoxyCodeLine{345             \} \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{346                 cout << \textcolor{stringliteral}{"La case de destination est dejà occupée par une de vos pièce !"} << endl;}
+\DoxyCodeLine{347                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{348             \}}
+\DoxyCodeLine{349         \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{350             \textcolor{keywordflow}{if} (!pieceEnDeplacement-\/>\mbox{\hyperlink{classPiece_a99f3ab3092ed25a5de6f7faaeb0e60ba}{mouvement\_legal}}(*\mbox{\hyperlink{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}{echiquier}}-\/>\mbox{\hyperlink{classEchiquier_a58713a00ef6b003ceccf8dc9767ff948}{getSquare}}(posFin))) \{}
+\DoxyCodeLine{351                 cout << \textcolor{stringliteral}{"Mouvement invalide !"} << endl;}
+\DoxyCodeLine{352                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{353             \}}
+\DoxyCodeLine{354         \}}
+\DoxyCodeLine{355     \}}
+\DoxyCodeLine{356     cout << \textcolor{stringliteral}{"Verification de la validité du coup passée !"} << endl;}
+\DoxyCodeLine{357     \textcolor{comment}{//Passage libre}}
+\DoxyCodeLine{358     \textcolor{keywordflow}{if} ((strcmp(NomDeClasse, \textcolor{stringliteral}{"Pion"}) == 0}
+\DoxyCodeLine{359         || strcmp(NomDeClasse, \textcolor{stringliteral}{"Roi"}) == 0}
+\DoxyCodeLine{360         || strcmp(NomDeClasse, \textcolor{stringliteral}{"Dame"}) == 0}
+\DoxyCodeLine{361         || strcmp(NomDeClasse, \textcolor{stringliteral}{"Fou"}) == 0}
+\DoxyCodeLine{362         || strcmp(NomDeClasse, \textcolor{stringliteral}{"Tour"}) == 0))\{}
+\DoxyCodeLine{363         \textcolor{keywordflow}{if} (!this-\/>\mbox{\hyperlink{classJeu_a89c279c3ba4caebd5b2fcb9f0ee3a704}{passage\_possible}}(posDeb, posFin))\{}
+\DoxyCodeLine{364             cout << \textcolor{stringliteral}{"Passage impossible !"} << endl;}
+\DoxyCodeLine{365             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{366         \}}
+\DoxyCodeLine{367     \}}
+\DoxyCodeLine{368     cout << \textcolor{stringliteral}{"Passage libre !"} << endl;}
+\DoxyCodeLine{369     \textcolor{comment}{// Le coup met en echec son roi}}
+\DoxyCodeLine{370     \textcolor{keywordflow}{if} (this-\/>\mbox{\hyperlink{classJeu_a4f56d830f99805ab770b7280e91d9cb6}{met\_en\_echec}}(posDeb, posFin ,this-\/>\mbox{\hyperlink{classJeu_a80cc49d2972e1cce9446e81d49e4db33}{getJoueur}}()))\{}
+\DoxyCodeLine{371         cout << \textcolor{stringliteral}{"Ce coup vous met en échec !"} << endl;}
+\DoxyCodeLine{372         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{373     \}}
+\DoxyCodeLine{374     cout << \textcolor{stringliteral}{"Ne met pas en echec !"} << endl;}
+\DoxyCodeLine{375 }
+\DoxyCodeLine{376     \textcolor{comment}{//On s'arrete là pour les test, pas de déplacement}}
+\DoxyCodeLine{377     \textcolor{keywordflow}{if}(!continueJeu) \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{378 }
+\DoxyCodeLine{379     \textcolor{comment}{//Déplacement de la pièce}}
+\DoxyCodeLine{380     this-\/>\mbox{\hyperlink{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}{echiquier}}-\/>\mbox{\hyperlink{classEchiquier_aecad5d6c8eb6a615bb9a83c145e603ed}{deplace\_piece}}(CaseDeb, CaseFin);}
+\DoxyCodeLine{381     pieceEnDeplacement-\/>\mbox{\hyperlink{classPiece_ace44c909e0a09dcb56b8bd1701958268}{incr\_nb\_deplacement}}();}
+\DoxyCodeLine{382     cout << \textcolor{stringliteral}{"Piece déplacée !"} << endl;}
+\DoxyCodeLine{383 }
+\DoxyCodeLine{384     \textcolor{comment}{//Vérifie si le coup amène un pion à la promotion}}
+\DoxyCodeLine{385     \textcolor{keywordflow}{if} (this-\/>\mbox{\hyperlink{classJeu_a9404843266b400a3c1bffeae20f84d67}{promotion\_possible}}(posFin))\{}
+\DoxyCodeLine{386         cout << \textcolor{stringliteral}{"Promotion disponible !\(\backslash\)n Attente de la promotion (Q(ueen) R(ook) B(ishop) K(night)) :"} << endl;}
+\DoxyCodeLine{387 }
+\DoxyCodeLine{388         \textcolor{keywordtype}{string} prom\_input;}
+\DoxyCodeLine{389         getline(cin, prom\_input);}
+\DoxyCodeLine{390 }
+\DoxyCodeLine{391         \textcolor{keywordflow}{while} (!\mbox{\hyperlink{utilitaires_8cc_a5febbb16c9f025f776f1c5fdda66b416}{promotion\_valide}}(prom\_input))\{}
+\DoxyCodeLine{392             cout << \textcolor{stringliteral}{"L'input n'est pas valide !"} << endl;}
+\DoxyCodeLine{393             cout << \textcolor{stringliteral}{"Attente de la promotion (Q(ueen) R(ook) B(ishop) K(night)) :"} << endl;}
+\DoxyCodeLine{394             getline(cin, prom\_input);}
+\DoxyCodeLine{395         \}}
+\DoxyCodeLine{396 }
+\DoxyCodeLine{397         this-\/>\mbox{\hyperlink{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}{echiquier}}-\/>\mbox{\hyperlink{classEchiquier_a84530cf38cda93980c31e92b087774dc}{promotion}}(pieceEnDeplacement, prom\_input);}
+\DoxyCodeLine{398 }
+\DoxyCodeLine{399     \}}
+\DoxyCodeLine{400     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{401 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classJeu_afd352838388e22cf37e40c500a06b195}\label{classJeu_afd352838388e22cf37e40c500a06b195}} 
+\index{Jeu@{Jeu}!echec\_au\_roi@{echec\_au\_roi}}
+\index{echec\_au\_roi@{echec\_au\_roi}!Jeu@{Jeu}}
+\doxysubsubsection{\texorpdfstring{echec\_au\_roi()}{echec\_au\_roi()}}
+{\footnotesize\ttfamily bool Jeu\+::echec\+\_\+au\+\_\+roi (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23f}{couleur\+\_\+t}}}]{c }\end{DoxyParamCaption})}
+
+
+
+Vérifie si le roi d\textquotesingle{}une couleur donnée est en échec. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & Couleur du roi à vérifier. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si le roi est en échec, false sinon. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{148                                  \{}
+\DoxyCodeLine{149     \mbox{\hyperlink{classSquare}{Square}}* posRoi = this-\/>\mbox{\hyperlink{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}{echiquier}}-\/>\mbox{\hyperlink{classEchiquier_a4cf6563b18af0914a337837bce35d859}{position\_roi}}(c);}
+\DoxyCodeLine{150     \textcolor{keywordflow}{if} (posRoi == \textcolor{keyword}{nullptr})\{}
+\DoxyCodeLine{151         cerr << \textcolor{stringliteral}{"Le roi n'a pas ete trouve"} << endl;}
+\DoxyCodeLine{152         exit(1);}
+\DoxyCodeLine{153     \}}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155     \textcolor{keywordflow}{return} this-\/>\mbox{\hyperlink{classJeu_a3b9c6e6562c1d7770d9afd80514cbd1e}{est\_capturable}}(*posRoi, c);}
+\DoxyCodeLine{156 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classJeu_a10abf60cf771330ed6aba4b2f77db63f}\label{classJeu_a10abf60cf771330ed6aba4b2f77db63f}} 
+\index{Jeu@{Jeu}!enleve\_echec@{enleve\_echec}}
+\index{enleve\_echec@{enleve\_echec}!Jeu@{Jeu}}
+\doxysubsubsection{\texorpdfstring{enleve\_echec()}{enleve\_echec()}}
+{\footnotesize\ttfamily bool Jeu\+::enleve\+\_\+echec (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPiece}{Piece}} $\ast$}]{piece }\end{DoxyParamCaption})}
+
+
+
+Teste tous les mouvements possibles de la piece pour voir si elle peut enlever si il en existe un où son roi n\textquotesingle{}est pas en echec. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em piece} & Pointeur vers la pièce à promouvoir. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si il existe une position où le roi n\textquotesingle{}est pas en echec, false sinon 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{498                                       \{}
+\DoxyCodeLine{499     \mbox{\hyperlink{classSquare}{Square}}* caseDeb = pieceTest-\/>getSquare();}
+\DoxyCodeLine{500     \mbox{\hyperlink{classPos}{Pos}} posDeb = \mbox{\hyperlink{classPos}{Pos}}(caseDeb-\/>\mbox{\hyperlink{classPos_a761a20952dd60060f8360a5ff34c77b9}{getX}}(), caseDeb-\/>\mbox{\hyperlink{classPos_a84ea042df4f429ed8c128b80271263f1}{getY}}());}
+\DoxyCodeLine{501 }
+\DoxyCodeLine{502     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{echiquier_8hpp_adc3c2556e84bebbe78c8a87fc459a6f8}{TAILLE\_PLATEAU}}; i++)}
+\DoxyCodeLine{503     \{}
+\DoxyCodeLine{504         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{echiquier_8hpp_adc3c2556e84bebbe78c8a87fc459a6f8}{TAILLE\_PLATEAU}}; j++)}
+\DoxyCodeLine{505         \{}
+\DoxyCodeLine{506             \mbox{\hyperlink{classPos}{Pos}} pos\_ij = \mbox{\hyperlink{classPos}{Pos}}(i,j);}
+\DoxyCodeLine{507             \textcolor{keywordflow}{if} (\mbox{\hyperlink{classJeu_aa548c275b683a929846d6839bc2d2e5d}{deplace\_piece}}(posDeb, pos\_ij, \textcolor{keyword}{false}))}
+\DoxyCodeLine{508             \{}
+\DoxyCodeLine{509                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{510             \}      }
+\DoxyCodeLine{511         \}}
+\DoxyCodeLine{512     \}}
+\DoxyCodeLine{513     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{514 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classJeu_a3b9c6e6562c1d7770d9afd80514cbd1e}\label{classJeu_a3b9c6e6562c1d7770d9afd80514cbd1e}} 
+\index{Jeu@{Jeu}!est\_capturable@{est\_capturable}}
+\index{est\_capturable@{est\_capturable}!Jeu@{Jeu}}
+\doxysubsubsection{\texorpdfstring{est\_capturable()}{est\_capturable()}}
+{\footnotesize\ttfamily bool Jeu\+::est\+\_\+capturable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPos}{Pos}}}]{pos,  }\item[{\mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23f}{couleur\+\_\+t}}}]{c }\end{DoxyParamCaption})}
+
+
+
+Vérifie si une position donnée est capturable par une couleur donnée. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & Position à vérifier. \\
+\hline
+{\em c} & Couleur de la pièce qui peut capturer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si la position est capturable, false sinon. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{123                                             \{}
+\DoxyCodeLine{124     \mbox{\hyperlink{classSquare}{Square}} dest = *this-\/>\mbox{\hyperlink{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}{echiquier}}-\/>\mbox{\hyperlink{classEchiquier_a58713a00ef6b003ceccf8dc9767ff948}{getSquare}}(pos);}
+\DoxyCodeLine{125     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0 ; i < \mbox{\hyperlink{echiquier_8hpp_adc3c2556e84bebbe78c8a87fc459a6f8}{TAILLE\_PLATEAU}} ; ++i)\{}
+\DoxyCodeLine{126         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0 ; j < \mbox{\hyperlink{echiquier_8hpp_adc3c2556e84bebbe78c8a87fc459a6f8}{TAILLE\_PLATEAU}} ; ++j)\{}
+\DoxyCodeLine{127             \mbox{\hyperlink{classPos}{Pos}} pos\_ij(i, j);}
+\DoxyCodeLine{128             \mbox{\hyperlink{classPiece}{Piece}} *piece = this-\/>\mbox{\hyperlink{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}{echiquier}}-\/>\mbox{\hyperlink{classEchiquier_a94d5f39cc1d0cb8628914cbb2f7701e5}{getPiece}}(pos\_ij);}
+\DoxyCodeLine{129             \textcolor{keywordflow}{if} (piece != \textcolor{keyword}{nullptr} \&\& piece-\/>\mbox{\hyperlink{classPiece_a183cbb97af8157297281676c060a023d}{getCouleur}}() != c)\{}
+\DoxyCodeLine{130                 \textcolor{keywordflow}{if} (strcmp(\textcolor{keyword}{typeid}(*piece).name() + 1, \textcolor{stringliteral}{"Cavalier"}) == 0)\{}
+\DoxyCodeLine{131                     \textcolor{keywordflow}{if} (piece-\/>\mbox{\hyperlink{classPiece_a99f3ab3092ed25a5de6f7faaeb0e60ba}{mouvement\_legal}}(dest))\{}
+\DoxyCodeLine{132                         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{133                     \}}
+\DoxyCodeLine{134                 \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{135                     \textcolor{keywordflow}{if} (piece-\/>\mbox{\hyperlink{classPiece_a99f3ab3092ed25a5de6f7faaeb0e60ba}{mouvement\_legal}}(dest, \textcolor{keyword}{true})}
+\DoxyCodeLine{136                         \&\& this-\/>passage\_possible(pos\_ij, dest)}
+\DoxyCodeLine{137                     )\{}
+\DoxyCodeLine{138                         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{139                     \}}
+\DoxyCodeLine{140                 \}}
+\DoxyCodeLine{141             \}}
+\DoxyCodeLine{142         \}}
+\DoxyCodeLine{143     \}}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{146 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classJeu_af6d80557d3b8670c60f3feb555b9f868}\label{classJeu_af6d80557d3b8670c60f3feb555b9f868}} 
+\index{Jeu@{Jeu}!getDernierMouv@{getDernierMouv}}
+\index{getDernierMouv@{getDernierMouv}!Jeu@{Jeu}}
+\doxysubsubsection{\texorpdfstring{getDernierMouv()}{getDernierMouv()}}
+{\footnotesize\ttfamily string Jeu\+::get\+Dernier\+Mouv (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Obtient le dernier mouvement effectué. 
+
+\begin{DoxyReturn}{Returns}
+Chaîne de caractères représentant le dernier mouvement. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{16                            \{}
+\DoxyCodeLine{17     \textcolor{keywordflow}{return} this-\/>\mbox{\hyperlink{classJeu_ae17948f23ecc46694cc005e91d756003}{dernier\_mouvement}};}
+\DoxyCodeLine{18 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classJeu_a80cc49d2972e1cce9446e81d49e4db33}\label{classJeu_a80cc49d2972e1cce9446e81d49e4db33}} 
+\index{Jeu@{Jeu}!getJoueur@{getJoueur}}
+\index{getJoueur@{getJoueur}!Jeu@{Jeu}}
+\doxysubsubsection{\texorpdfstring{getJoueur()}{getJoueur()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23f}{couleur\+\_\+t}} Jeu\+::get\+Joueur (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Obtient la couleur du joueur actuel. 
+
+\begin{DoxyReturn}{Returns}
+Couleur du joueur actuel (Blanc ou Noir). 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{24                         \{}
+\DoxyCodeLine{25     \textcolor{keywordflow}{return} this-\/>\mbox{\hyperlink{classJeu_a724434ea22d2d5a1d1f5bcb3c0db11d1}{couleur\_joueur}};}
+\DoxyCodeLine{26 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classJeu_a975f3402c4ab078646f67cff6887551c}\label{classJeu_a975f3402c4ab078646f67cff6887551c}} 
+\index{Jeu@{Jeu}!grand\_roque@{grand\_roque}}
+\index{grand\_roque@{grand\_roque}!Jeu@{Jeu}}
+\doxysubsubsection{\texorpdfstring{grand\_roque()}{grand\_roque()}}
+{\footnotesize\ttfamily bool Jeu\+::grand\+\_\+roque (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23f}{couleur\+\_\+t}}}]{c }\end{DoxyParamCaption})}
+
+
+
+Réalise le grand roque pour une couleur donnée. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & Couleur pour laquelle réaliser le grand roque. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si le roque a été réalisé avec succès, false sinon. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{238                                  \{}
+\DoxyCodeLine{239     \textcolor{keywordflow}{if} (c == \mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23fa58b0623118011f228f9e035e740ca481}{Blanc}})\{}
+\DoxyCodeLine{240         \textcolor{keywordflow}{if}(this-\/>\mbox{\hyperlink{classJeu_a89c279c3ba4caebd5b2fcb9f0ee3a704}{passage\_possible}}(\mbox{\hyperlink{classPos}{Pos}}(\textcolor{stringliteral}{"e1"}), \mbox{\hyperlink{classPos}{Pos}}(\textcolor{stringliteral}{"a1"} ))}
+\DoxyCodeLine{241             \&\& this-\/>\mbox{\hyperlink{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}{echiquier}}-\/>\mbox{\hyperlink{classEchiquier_a94d5f39cc1d0cb8628914cbb2f7701e5}{getPiece}}(\mbox{\hyperlink{classPos}{Pos}}(\textcolor{stringliteral}{"e1"}))-\/>getNbDeplacement() == 0}
+\DoxyCodeLine{242             \&\& this-\/>\mbox{\hyperlink{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}{echiquier}}-\/>\mbox{\hyperlink{classEchiquier_a94d5f39cc1d0cb8628914cbb2f7701e5}{getPiece}}(\mbox{\hyperlink{classPos}{Pos}}(\textcolor{stringliteral}{"a1"}))-\/>getNbDeplacement() == 0}
+\DoxyCodeLine{243             \&\& this-\/>\mbox{\hyperlink{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}{echiquier}}-\/>\mbox{\hyperlink{classEchiquier_a94d5f39cc1d0cb8628914cbb2f7701e5}{getPiece}}(\mbox{\hyperlink{classPos}{Pos}}(\textcolor{stringliteral}{"e1"})) != \textcolor{keyword}{nullptr}}
+\DoxyCodeLine{244             \&\& this-\/>\mbox{\hyperlink{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}{echiquier}}-\/>\mbox{\hyperlink{classEchiquier_a94d5f39cc1d0cb8628914cbb2f7701e5}{getPiece}}(\mbox{\hyperlink{classPos}{Pos}}(\textcolor{stringliteral}{"a1"})) != \textcolor{keyword}{nullptr})\{}
+\DoxyCodeLine{245             \textcolor{keywordflow}{if}(!this-\/>\mbox{\hyperlink{classJeu_aa548c275b683a929846d6839bc2d2e5d}{deplace\_piece}}(\mbox{\hyperlink{classPos}{Pos}}(\textcolor{stringliteral}{"e1"}), \mbox{\hyperlink{classPos}{Pos}}(\textcolor{stringliteral}{"c1"}), \textcolor{keyword}{true}))\{}
+\DoxyCodeLine{246                 cout << \textcolor{stringliteral}{"Mouvement du roi impossible !"} << endl;}
+\DoxyCodeLine{247                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{248             \}}
+\DoxyCodeLine{249             this-\/>\mbox{\hyperlink{classJeu_aa548c275b683a929846d6839bc2d2e5d}{deplace\_piece}}(\mbox{\hyperlink{classPos}{Pos}}(\textcolor{stringliteral}{"a1"}), \mbox{\hyperlink{classPos}{Pos}}(\textcolor{stringliteral}{"d1"}), \textcolor{keyword}{true});}
+\DoxyCodeLine{250             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{251         \}}
+\DoxyCodeLine{252     \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{253         \textcolor{keywordflow}{if}(this-\/>\mbox{\hyperlink{classJeu_a89c279c3ba4caebd5b2fcb9f0ee3a704}{passage\_possible}}(\mbox{\hyperlink{classPos}{Pos}}(\textcolor{stringliteral}{"e8"}), \mbox{\hyperlink{classPos}{Pos}}(\textcolor{stringliteral}{"a8"} ))}
+\DoxyCodeLine{254             \&\& this-\/>\mbox{\hyperlink{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}{echiquier}}-\/>\mbox{\hyperlink{classEchiquier_a94d5f39cc1d0cb8628914cbb2f7701e5}{getPiece}}(\mbox{\hyperlink{classPos}{Pos}}(\textcolor{stringliteral}{"e8"}))-\/>getNbDeplacement() == 0}
+\DoxyCodeLine{255             \&\& this-\/>\mbox{\hyperlink{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}{echiquier}}-\/>\mbox{\hyperlink{classEchiquier_a94d5f39cc1d0cb8628914cbb2f7701e5}{getPiece}}(\mbox{\hyperlink{classPos}{Pos}}(\textcolor{stringliteral}{"a8"}))-\/>getNbDeplacement() == 0}
+\DoxyCodeLine{256             \&\& this-\/>\mbox{\hyperlink{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}{echiquier}}-\/>\mbox{\hyperlink{classEchiquier_a94d5f39cc1d0cb8628914cbb2f7701e5}{getPiece}}(\mbox{\hyperlink{classPos}{Pos}}(\textcolor{stringliteral}{"e8"})) != \textcolor{keyword}{nullptr}}
+\DoxyCodeLine{257             \&\& this-\/>\mbox{\hyperlink{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}{echiquier}}-\/>\mbox{\hyperlink{classEchiquier_a94d5f39cc1d0cb8628914cbb2f7701e5}{getPiece}}(\mbox{\hyperlink{classPos}{Pos}}(\textcolor{stringliteral}{"a8"})) != \textcolor{keyword}{nullptr})\{}
+\DoxyCodeLine{258             \textcolor{keywordflow}{if}(!this-\/>\mbox{\hyperlink{classJeu_aa548c275b683a929846d6839bc2d2e5d}{deplace\_piece}}(\mbox{\hyperlink{classPos}{Pos}}(\textcolor{stringliteral}{"e8"}), \mbox{\hyperlink{classPos}{Pos}}(\textcolor{stringliteral}{"c8"}), \textcolor{keyword}{true}))\{}
+\DoxyCodeLine{259                 cout << \textcolor{stringliteral}{"Mouvement du roi impossible !"} << endl;}
+\DoxyCodeLine{260                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{261             \}}
+\DoxyCodeLine{262             this-\/>\mbox{\hyperlink{classJeu_aa548c275b683a929846d6839bc2d2e5d}{deplace\_piece}}(\mbox{\hyperlink{classPos}{Pos}}(\textcolor{stringliteral}{"a8"}), \mbox{\hyperlink{classPos}{Pos}}(\textcolor{stringliteral}{"d8"}), \textcolor{keyword}{true});}
+\DoxyCodeLine{263             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{264         \}}
+\DoxyCodeLine{265     \}}
+\DoxyCodeLine{266 }
+\DoxyCodeLine{267     cout << \textcolor{stringliteral}{"Grand roque impossible"} << endl;}
+\DoxyCodeLine{268     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{269 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classJeu_af7603b939ebf4958cba03f06ceb4890f}\label{classJeu_af7603b939ebf4958cba03f06ceb4890f}} 
+\index{Jeu@{Jeu}!mat@{mat}}
+\index{mat@{mat}!Jeu@{Jeu}}
+\doxysubsubsection{\texorpdfstring{mat()}{mat()}}
+{\footnotesize\ttfamily bool Jeu\+::mat (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23f}{couleur\+\_\+t}}}]{c }\end{DoxyParamCaption})}
+
+
+
+regarde si le roi est en mat /!\textbackslash{} ne fonctionne pas 
+
+\begin{DoxyReturn}{Returns}
+true si le roi de couleur c est mat 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{486                         \{}
+\DoxyCodeLine{487     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} p : this-\/>\mbox{\hyperlink{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}{echiquier}}-\/>\mbox{\hyperlink{classEchiquier_aad1f3112f03fc38fd100671fb591e55b}{getPieces}}(c))}
+\DoxyCodeLine{488     \{}
+\DoxyCodeLine{489         \textcolor{keywordflow}{if} (p-\/>getEtat() == \mbox{\hyperlink{piece_8hpp_ac870e865cf50ebb064bc55340a4d2e48a30ac2eb3397a19d0e4563f9e53c1ffd4}{EnJeu}} \&\& this-\/>enleve\_echec(p))}
+\DoxyCodeLine{490         \{}
+\DoxyCodeLine{491             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{492         \}}
+\DoxyCodeLine{493     \}}
+\DoxyCodeLine{494     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{495 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classJeu_a4f56d830f99805ab770b7280e91d9cb6}\label{classJeu_a4f56d830f99805ab770b7280e91d9cb6}} 
+\index{Jeu@{Jeu}!met\_en\_echec@{met\_en\_echec}}
+\index{met\_en\_echec@{met\_en\_echec}!Jeu@{Jeu}}
+\doxysubsubsection{\texorpdfstring{met\_en\_echec()}{met\_en\_echec()}}
+{\footnotesize\ttfamily bool Jeu\+::met\+\_\+en\+\_\+echec (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPos}{Pos}}}]{pos\+Deb,  }\item[{\mbox{\hyperlink{classPos}{Pos}}}]{pos\+Fin,  }\item[{\mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23f}{couleur\+\_\+t}}}]{c }\end{DoxyParamCaption})}
+
+
+
+Vérifie si un déplacement entre deux positions met en échec le roi d\textquotesingle{}une couleur donnée. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos\+Deb} & Position de départ. \\
+\hline
+{\em pos\+Fin} & Position d\textquotesingle{}arrivée. \\
+\hline
+{\em c} & Couleur du roi à vérifier. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si le déplacement met en échec le roi, false sinon. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{158                                                          \{}
+\DoxyCodeLine{159     \mbox{\hyperlink{classSquare}{Square}} *CaseDeb = \mbox{\hyperlink{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}{echiquier}}-\/>\mbox{\hyperlink{classEchiquier_a58713a00ef6b003ceccf8dc9767ff948}{getSquare}}(posDeb);}
+\DoxyCodeLine{160     \mbox{\hyperlink{classSquare}{Square}} *CaseFin = \mbox{\hyperlink{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}{echiquier}}-\/>\mbox{\hyperlink{classEchiquier_a58713a00ef6b003ceccf8dc9767ff948}{getSquare}}(posFin);}
+\DoxyCodeLine{161     \mbox{\hyperlink{classPiece}{Piece}} *pieceDepart = CaseDeb-\/>\mbox{\hyperlink{classSquare_a98e118b2bc38a089613ec4279817d08b}{getPiece}}();}
+\DoxyCodeLine{162     \mbox{\hyperlink{classPiece}{Piece}} *pieceFin = CaseFin-\/>\mbox{\hyperlink{classSquare_a98e118b2bc38a089613ec4279817d08b}{getPiece}}();}
+\DoxyCodeLine{163     \textcolor{keywordtype}{bool} echec;}
+\DoxyCodeLine{164     \textcolor{comment}{//Deplacement au niveau de l'échiquier (pour tester l'échec)}}
+\DoxyCodeLine{165     \mbox{\hyperlink{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}{echiquier}}-\/>\mbox{\hyperlink{classEchiquier_aecad5d6c8eb6a615bb9a83c145e603ed}{deplace\_piece}}(CaseDeb, CaseFin);}
+\DoxyCodeLine{166     \textcolor{comment}{//On effectue le test}}
+\DoxyCodeLine{167     echec = \mbox{\hyperlink{classJeu_afd352838388e22cf37e40c500a06b195}{echec\_au\_roi}}(c);}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169     \textcolor{comment}{//On repositionne les pièces dans les deux cas}}
+\DoxyCodeLine{170     \mbox{\hyperlink{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}{echiquier}}-\/>\mbox{\hyperlink{classEchiquier_ad68f425e54ab80f0a695ea4c87f4b49d}{pose\_piece}}(pieceDepart,CaseDeb);}
+\DoxyCodeLine{171     \mbox{\hyperlink{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}{echiquier}}-\/>\mbox{\hyperlink{classEchiquier_ad68f425e54ab80f0a695ea4c87f4b49d}{pose\_piece}}(pieceFin, CaseFin);}
+\DoxyCodeLine{172     \textcolor{keywordflow}{if} (pieceDepart != \textcolor{keyword}{nullptr})\{}
+\DoxyCodeLine{173         pieceDepart-\/>\mbox{\hyperlink{classPiece_a5182a3547d9cdf4eed6223d1cb6a53ae}{setSquare}}(CaseDeb);}
+\DoxyCodeLine{174     \}}
+\DoxyCodeLine{175     \textcolor{keywordflow}{if} (pieceFin != \textcolor{keyword}{nullptr})\{}
+\DoxyCodeLine{176         pieceFin-\/>\mbox{\hyperlink{classPiece_a5182a3547d9cdf4eed6223d1cb6a53ae}{setSquare}}(CaseFin);}
+\DoxyCodeLine{177     \}}
+\DoxyCodeLine{178     \textcolor{keywordflow}{return} echec;}
+\DoxyCodeLine{179 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classJeu_a89c279c3ba4caebd5b2fcb9f0ee3a704}\label{classJeu_a89c279c3ba4caebd5b2fcb9f0ee3a704}} 
+\index{Jeu@{Jeu}!passage\_possible@{passage\_possible}}
+\index{passage\_possible@{passage\_possible}!Jeu@{Jeu}}
+\doxysubsubsection{\texorpdfstring{passage\_possible()}{passage\_possible()}}
+{\footnotesize\ttfamily bool Jeu\+::passage\+\_\+possible (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPos}{Pos}}}]{pos\+Deb,  }\item[{\mbox{\hyperlink{classPos}{Pos}}}]{pos\+Fin }\end{DoxyParamCaption})}
+
+
+
+Vérifie si le passage entre deux cases est possible, ie il n\textquotesingle{}y a pas de pièces (adverses ou pas) gènant le chemin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos\+Deb} & Position de départ. \\
+\hline
+{\em pos\+Fin} & Position d\textquotesingle{}arrivée. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si le passage est possible, false sinon. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{30                                                 \{}
+\DoxyCodeLine{31     \textcolor{comment}{// Pas de test pour le L du cavalier car il passe au dessus des pièces}}
+\DoxyCodeLine{32     \textcolor{keywordtype}{int} x0 = posDeb.\mbox{\hyperlink{classPos_a761a20952dd60060f8360a5ff34c77b9}{getX}}();}
+\DoxyCodeLine{33     \textcolor{keywordtype}{int} y0 = posDeb.\mbox{\hyperlink{classPos_a84ea042df4f429ed8c128b80271263f1}{getY}}();}
+\DoxyCodeLine{34     \textcolor{keywordtype}{int} xFinal = posFin.\mbox{\hyperlink{classPos_a761a20952dd60060f8360a5ff34c77b9}{getX}}();}
+\DoxyCodeLine{35     \textcolor{keywordtype}{int} yFinal = posFin.\mbox{\hyperlink{classPos_a84ea042df4f429ed8c128b80271263f1}{getY}}();}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     \textcolor{comment}{// horizontale}}
+\DoxyCodeLine{38     \textcolor{keywordflow}{if} (x0 == xFinal)\{}
+\DoxyCodeLine{39         \textcolor{keywordtype}{int} x = x0;}
+\DoxyCodeLine{40         \textcolor{keywordflow}{if} (y0 < yFinal)\{}
+\DoxyCodeLine{41             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = y0 + 1 ; i < yFinal ; ++i) \{}
+\DoxyCodeLine{42                 \textcolor{keywordflow}{if} (this-\/>\mbox{\hyperlink{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}{echiquier}}-\/>\mbox{\hyperlink{classEchiquier_a94d5f39cc1d0cb8628914cbb2f7701e5}{getPiece}}(\mbox{\hyperlink{classPos}{Pos}}(x, i)) != \textcolor{keyword}{nullptr})\{}
+\DoxyCodeLine{43                     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{44                 \}}
+\DoxyCodeLine{45             \}}
+\DoxyCodeLine{46         \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{47             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = yFinal + 1 ; i < y0 ; ++i) \{}
+\DoxyCodeLine{48                 \textcolor{keywordflow}{if} (this-\/>\mbox{\hyperlink{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}{echiquier}}-\/>\mbox{\hyperlink{classEchiquier_a94d5f39cc1d0cb8628914cbb2f7701e5}{getPiece}}(\mbox{\hyperlink{classPos}{Pos}}(x, i)) != \textcolor{keyword}{nullptr})\{}
+\DoxyCodeLine{49                     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{50                 \}}
+\DoxyCodeLine{51             \}}
+\DoxyCodeLine{52         \}}
+\DoxyCodeLine{53     \}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55     \textcolor{comment}{// verticale}}
+\DoxyCodeLine{56     \textcolor{keywordflow}{if} (y0 == yFinal)\{}
+\DoxyCodeLine{57         \textcolor{keywordtype}{int} y = y0;}
+\DoxyCodeLine{58         \textcolor{keywordflow}{if} (x0 < xFinal)\{}
+\DoxyCodeLine{59             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = x0 + 1 ; i < xFinal ; ++i) \{}
+\DoxyCodeLine{60                 \textcolor{keywordflow}{if} (this-\/>\mbox{\hyperlink{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}{echiquier}}-\/>\mbox{\hyperlink{classEchiquier_a94d5f39cc1d0cb8628914cbb2f7701e5}{getPiece}}(\mbox{\hyperlink{classPos}{Pos}}(i, y)) != \textcolor{keyword}{nullptr})\{}
+\DoxyCodeLine{61                     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{62                 \}}
+\DoxyCodeLine{63             \}}
+\DoxyCodeLine{64         \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{65             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = xFinal + 1 ; i < x0 ; ++i) \{}
+\DoxyCodeLine{66                 \textcolor{keywordflow}{if} (this-\/>\mbox{\hyperlink{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}{echiquier}}-\/>\mbox{\hyperlink{classEchiquier_a94d5f39cc1d0cb8628914cbb2f7701e5}{getPiece}}(\mbox{\hyperlink{classPos}{Pos}}(i, y)) != \textcolor{keyword}{nullptr})\{}
+\DoxyCodeLine{67                     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{68                 \}}
+\DoxyCodeLine{69             \}}
+\DoxyCodeLine{70         \}}
+\DoxyCodeLine{71     \}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73     \textcolor{comment}{// diagonale}}
+\DoxyCodeLine{74     \textcolor{keywordflow}{if} (abs(x0 -\/ xFinal) == abs(y0 -\/ yFinal))\{}
+\DoxyCodeLine{75         \textcolor{keywordtype}{int} x = x0;}
+\DoxyCodeLine{76         \textcolor{keywordtype}{int} y = y0;}
+\DoxyCodeLine{77         \textcolor{keywordflow}{if} (x0 < xFinal)\{}
+\DoxyCodeLine{78             \textcolor{keywordflow}{if} (y0 < yFinal)\{}
+\DoxyCodeLine{79                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = x0 + 1 ; i < xFinal ; ++i) \{}
+\DoxyCodeLine{80                     ++x;}
+\DoxyCodeLine{81                     ++y;}
+\DoxyCodeLine{82                     \textcolor{keywordflow}{if} (this-\/>\mbox{\hyperlink{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}{echiquier}}-\/>\mbox{\hyperlink{classEchiquier_a94d5f39cc1d0cb8628914cbb2f7701e5}{getPiece}}(\mbox{\hyperlink{classPos}{Pos}}(x, y)) != \textcolor{keyword}{nullptr})\{}
+\DoxyCodeLine{83                         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{84                     \}}
+\DoxyCodeLine{85                 \}}
+\DoxyCodeLine{86             \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{87                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = x0 + 1 ; i < xFinal ; ++i) \{}
+\DoxyCodeLine{88                     ++x;}
+\DoxyCodeLine{89                     -\/-\/y;}
+\DoxyCodeLine{90                     \textcolor{keywordflow}{if} (this-\/>\mbox{\hyperlink{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}{echiquier}}-\/>\mbox{\hyperlink{classEchiquier_a94d5f39cc1d0cb8628914cbb2f7701e5}{getPiece}}(\mbox{\hyperlink{classPos}{Pos}}(x, y)) != \textcolor{keyword}{nullptr})\{}
+\DoxyCodeLine{91                         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{92                     \}}
+\DoxyCodeLine{93                 \}}
+\DoxyCodeLine{94             \}}
+\DoxyCodeLine{95         \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{96             \textcolor{keywordflow}{if} (y0 < yFinal)\{}
+\DoxyCodeLine{97                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = xFinal + 1 ; i < x0 ; ++i) \{}
+\DoxyCodeLine{98                     -\/-\/x;}
+\DoxyCodeLine{99                     ++y;}
+\DoxyCodeLine{100                     \textcolor{keywordflow}{if} (this-\/>\mbox{\hyperlink{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}{echiquier}}-\/>\mbox{\hyperlink{classEchiquier_a94d5f39cc1d0cb8628914cbb2f7701e5}{getPiece}}(\mbox{\hyperlink{classPos}{Pos}}(x, y)) != \textcolor{keyword}{nullptr})\{}
+\DoxyCodeLine{101                         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{102                     \}}
+\DoxyCodeLine{103                 \}}
+\DoxyCodeLine{104             \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{105                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = xFinal + 1 ; i < x0 ; ++i) \{}
+\DoxyCodeLine{106                     -\/-\/x;}
+\DoxyCodeLine{107                     -\/-\/y;}
+\DoxyCodeLine{108                     \textcolor{keywordflow}{if} (this-\/>\mbox{\hyperlink{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}{echiquier}}-\/>\mbox{\hyperlink{classEchiquier_a94d5f39cc1d0cb8628914cbb2f7701e5}{getPiece}}(\mbox{\hyperlink{classPos}{Pos}}(x, y)) != \textcolor{keyword}{nullptr})\{}
+\DoxyCodeLine{109                         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{110                     \}}
+\DoxyCodeLine{111                 \}}
+\DoxyCodeLine{112             \}}
+\DoxyCodeLine{113         \}}
+\DoxyCodeLine{114     \}}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{117 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classJeu_aa6370a47a4f8c408e513cac9459802e1}\label{classJeu_aa6370a47a4f8c408e513cac9459802e1}} 
+\index{Jeu@{Jeu}!petit\_roque@{petit\_roque}}
+\index{petit\_roque@{petit\_roque}!Jeu@{Jeu}}
+\doxysubsubsection{\texorpdfstring{petit\_roque()}{petit\_roque()}}
+{\footnotesize\ttfamily bool Jeu\+::petit\+\_\+roque (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23f}{couleur\+\_\+t}}}]{c }\end{DoxyParamCaption})}
+
+
+
+Réalise le petit roque pour une couleur donnée. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & Couleur pour laquelle réaliser le petit roque. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si le roque a été réalisé avec succès, false sinon. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{205                                  \{}
+\DoxyCodeLine{206     \textcolor{keywordflow}{if} (c == \mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23fa58b0623118011f228f9e035e740ca481}{Blanc}})\{}
+\DoxyCodeLine{207         \textcolor{keywordflow}{if}(this-\/>\mbox{\hyperlink{classJeu_a89c279c3ba4caebd5b2fcb9f0ee3a704}{passage\_possible}}(\mbox{\hyperlink{classPos}{Pos}}(\textcolor{stringliteral}{"e1"}), \mbox{\hyperlink{classPos}{Pos}}(\textcolor{stringliteral}{"h1"} ))}
+\DoxyCodeLine{208             \&\& this-\/>\mbox{\hyperlink{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}{echiquier}}-\/>\mbox{\hyperlink{classEchiquier_a94d5f39cc1d0cb8628914cbb2f7701e5}{getPiece}}(\mbox{\hyperlink{classPos}{Pos}}(\textcolor{stringliteral}{"e1"}))-\/>getNbDeplacement() == 0}
+\DoxyCodeLine{209             \&\& this-\/>\mbox{\hyperlink{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}{echiquier}}-\/>\mbox{\hyperlink{classEchiquier_a94d5f39cc1d0cb8628914cbb2f7701e5}{getPiece}}(\mbox{\hyperlink{classPos}{Pos}}(\textcolor{stringliteral}{"h1"}))-\/>getNbDeplacement() == 0}
+\DoxyCodeLine{210             \&\& this-\/>\mbox{\hyperlink{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}{echiquier}}-\/>\mbox{\hyperlink{classEchiquier_a94d5f39cc1d0cb8628914cbb2f7701e5}{getPiece}}(\mbox{\hyperlink{classPos}{Pos}}(\textcolor{stringliteral}{"e1"})) != \textcolor{keyword}{nullptr}}
+\DoxyCodeLine{211             \&\& this-\/>\mbox{\hyperlink{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}{echiquier}}-\/>\mbox{\hyperlink{classEchiquier_a94d5f39cc1d0cb8628914cbb2f7701e5}{getPiece}}(\mbox{\hyperlink{classPos}{Pos}}(\textcolor{stringliteral}{"h1"})) != \textcolor{keyword}{nullptr})\{}
+\DoxyCodeLine{212             \textcolor{keywordflow}{if}(!this-\/>\mbox{\hyperlink{classJeu_aa548c275b683a929846d6839bc2d2e5d}{deplace\_piece}}(\mbox{\hyperlink{classPos}{Pos}}(\textcolor{stringliteral}{"e1"}), \mbox{\hyperlink{classPos}{Pos}}(\textcolor{stringliteral}{"g1"}), \textcolor{keyword}{true}))\{}
+\DoxyCodeLine{213                 cout << \textcolor{stringliteral}{"Movement du roi impossible"} << endl;}
+\DoxyCodeLine{214                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{215             \}}
+\DoxyCodeLine{216             this-\/>\mbox{\hyperlink{classJeu_aa548c275b683a929846d6839bc2d2e5d}{deplace\_piece}}(\mbox{\hyperlink{classPos}{Pos}}(\textcolor{stringliteral}{"h1"}), \mbox{\hyperlink{classPos}{Pos}}(\textcolor{stringliteral}{"f1"}), \textcolor{keyword}{true});}
+\DoxyCodeLine{217             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{218         \}}
+\DoxyCodeLine{219     \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{220         \textcolor{keywordflow}{if}(this-\/>\mbox{\hyperlink{classJeu_a89c279c3ba4caebd5b2fcb9f0ee3a704}{passage\_possible}}(\mbox{\hyperlink{classPos}{Pos}}(\textcolor{stringliteral}{"e8"}), \mbox{\hyperlink{classPos}{Pos}}(\textcolor{stringliteral}{"h8"} ))}
+\DoxyCodeLine{221             \&\& this-\/>\mbox{\hyperlink{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}{echiquier}}-\/>\mbox{\hyperlink{classEchiquier_a94d5f39cc1d0cb8628914cbb2f7701e5}{getPiece}}(\mbox{\hyperlink{classPos}{Pos}}(\textcolor{stringliteral}{"e8"}))-\/>getNbDeplacement() == 0}
+\DoxyCodeLine{222             \&\& this-\/>\mbox{\hyperlink{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}{echiquier}}-\/>\mbox{\hyperlink{classEchiquier_a94d5f39cc1d0cb8628914cbb2f7701e5}{getPiece}}(\mbox{\hyperlink{classPos}{Pos}}(\textcolor{stringliteral}{"h8"}))-\/>getNbDeplacement() == 0}
+\DoxyCodeLine{223             \&\& this-\/>\mbox{\hyperlink{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}{echiquier}}-\/>\mbox{\hyperlink{classEchiquier_a94d5f39cc1d0cb8628914cbb2f7701e5}{getPiece}}(\mbox{\hyperlink{classPos}{Pos}}(\textcolor{stringliteral}{"e8"})) != \textcolor{keyword}{nullptr}}
+\DoxyCodeLine{224             \&\& this-\/>\mbox{\hyperlink{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}{echiquier}}-\/>\mbox{\hyperlink{classEchiquier_a94d5f39cc1d0cb8628914cbb2f7701e5}{getPiece}}(\mbox{\hyperlink{classPos}{Pos}}(\textcolor{stringliteral}{"h8"})) != \textcolor{keyword}{nullptr})\{}
+\DoxyCodeLine{225             \textcolor{keywordflow}{if}(!this-\/>\mbox{\hyperlink{classJeu_aa548c275b683a929846d6839bc2d2e5d}{deplace\_piece}}(\mbox{\hyperlink{classPos}{Pos}}(\textcolor{stringliteral}{"e8"}), \mbox{\hyperlink{classPos}{Pos}}(\textcolor{stringliteral}{"g8"}), \textcolor{keyword}{true}))\{}
+\DoxyCodeLine{226                 cout << \textcolor{stringliteral}{"Mouvement du roi impossible"} << endl;}
+\DoxyCodeLine{227                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{228             \}}
+\DoxyCodeLine{229             this-\/>\mbox{\hyperlink{classJeu_aa548c275b683a929846d6839bc2d2e5d}{deplace\_piece}}(\mbox{\hyperlink{classPos}{Pos}}(\textcolor{stringliteral}{"h8"}), \mbox{\hyperlink{classPos}{Pos}}(\textcolor{stringliteral}{"f8"}), \textcolor{keyword}{true});}
+\DoxyCodeLine{230             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{231         \}}
+\DoxyCodeLine{232     \}}
+\DoxyCodeLine{233 }
+\DoxyCodeLine{234     cout << \textcolor{stringliteral}{"Petit roque impossible"} << endl;}
+\DoxyCodeLine{235     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{236 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classJeu_af33483b23b0a1fce94b5be66ad054a63}\label{classJeu_af33483b23b0a1fce94b5be66ad054a63}} 
+\index{Jeu@{Jeu}!prise\_en\_passant@{prise\_en\_passant}}
+\index{prise\_en\_passant@{prise\_en\_passant}!Jeu@{Jeu}}
+\doxysubsubsection{\texorpdfstring{prise\_en\_passant()}{prise\_en\_passant()}}
+{\footnotesize\ttfamily bool Jeu\+::prise\+\_\+en\+\_\+passant (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPos}{Pos}}}]{pos\+Deb,  }\item[{\mbox{\hyperlink{classPos}{Pos}}}]{pos\+Fin }\end{DoxyParamCaption})}
+
+
+
+Vérifie si une prise en passant est possible entre deux positions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos\+Deb} & Position de départ. \\
+\hline
+{\em pos\+Fin} & Position d\textquotesingle{}arrivée. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si une prise en passant est possible, false sinon. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{181                                                 \{}
+\DoxyCodeLine{182     \textcolor{comment}{//On regarde si le dernier mouvmeent était un mouvement classique}}
+\DoxyCodeLine{183     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classJeu_af6d80557d3b8670c60f3feb555b9f868}{getDernierMouv}}().empty() || !\mbox{\hyperlink{utilitaires_8cc_ad14525111d35ce5b62b9a9fa5b58db2e}{entree\_mouvement}}(\mbox{\hyperlink{classJeu_af6d80557d3b8670c60f3feb555b9f868}{getDernierMouv}}()))\{}
+\DoxyCodeLine{184         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{185     \}}
+\DoxyCodeLine{186     \mbox{\hyperlink{classPos}{Pos}} debutDernierMouv = \mbox{\hyperlink{classPos}{Pos}}(\mbox{\hyperlink{classJeu_af6d80557d3b8670c60f3feb555b9f868}{getDernierMouv}}().substr(0,2));}
+\DoxyCodeLine{187     \mbox{\hyperlink{classPos}{Pos}} finDernierMouv = \mbox{\hyperlink{classPos}{Pos}}(\mbox{\hyperlink{classJeu_af6d80557d3b8670c60f3feb555b9f868}{getDernierMouv}}().substr(2,2));}
+\DoxyCodeLine{188     \mbox{\hyperlink{classPiece}{Piece}} *dernierePieceJouee = \mbox{\hyperlink{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}{echiquier}}-\/>\mbox{\hyperlink{classEchiquier_a94d5f39cc1d0cb8628914cbb2f7701e5}{getPiece}}(finDernierMouv);}
+\DoxyCodeLine{189 }
+\DoxyCodeLine{190     \textcolor{comment}{// On regarde si la dernière pièce jouée est un pion}}
+\DoxyCodeLine{191     \textcolor{keywordflow}{if} ((dernierePieceJouee != \textcolor{keyword}{nullptr} }
+\DoxyCodeLine{192             \&\& strcmp(\textcolor{keyword}{typeid}(*dernierePieceJouee).name()+1, \textcolor{stringliteral}{"Pion"}) == 0)}
+\DoxyCodeLine{193         \textcolor{comment}{// Si son mouvement était bien celui attendu (Noir ou Blanc)}}
+\DoxyCodeLine{194         \&\& (debutDernierMouv.\mbox{\hyperlink{classPos_a761a20952dd60060f8360a5ff34c77b9}{getX}}() == finDernierMouv.\mbox{\hyperlink{classPos_a761a20952dd60060f8360a5ff34c77b9}{getX}}() + 2}
+\DoxyCodeLine{195                 || debutDernierMouv.\mbox{\hyperlink{classPos_a761a20952dd60060f8360a5ff34c77b9}{getX}}() == finDernierMouv.\mbox{\hyperlink{classPos_a761a20952dd60060f8360a5ff34c77b9}{getX}}() -\/ 2)}
+\DoxyCodeLine{196         \textcolor{comment}{// Et si le mouvement actuel est bien une prise en passant correspondante}}
+\DoxyCodeLine{197         \&\& (dernierePieceJouee-\/>\mbox{\hyperlink{classPiece_a8adb7ee8aa5d890e1f9741fcd3c2bda1}{getSquare}}()-\/>\mbox{\hyperlink{classPos_a84ea042df4f429ed8c128b80271263f1}{getY}}() == posFin.\mbox{\hyperlink{classPos_a84ea042df4f429ed8c128b80271263f1}{getY}}()}
+\DoxyCodeLine{198             \&\& abs(posDeb.\mbox{\hyperlink{classPos_a761a20952dd60060f8360a5ff34c77b9}{getX}}() -\/ posFin.\mbox{\hyperlink{classPos_a761a20952dd60060f8360a5ff34c77b9}{getX}}()) == abs(posDeb.\mbox{\hyperlink{classPos_a84ea042df4f429ed8c128b80271263f1}{getY}}() -\/ posFin.\mbox{\hyperlink{classPos_a84ea042df4f429ed8c128b80271263f1}{getY}}())}
+\DoxyCodeLine{199             \&\& abs(finDernierMouv.\mbox{\hyperlink{classPos_a761a20952dd60060f8360a5ff34c77b9}{getX}}() -\/ posFin.\mbox{\hyperlink{classPos_a761a20952dd60060f8360a5ff34c77b9}{getX}}()) != 0}
+\DoxyCodeLine{200                     ))}
+\DoxyCodeLine{201                     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{202     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{203 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classJeu_a9404843266b400a3c1bffeae20f84d67}\label{classJeu_a9404843266b400a3c1bffeae20f84d67}} 
+\index{Jeu@{Jeu}!promotion\_possible@{promotion\_possible}}
+\index{promotion\_possible@{promotion\_possible}!Jeu@{Jeu}}
+\doxysubsubsection{\texorpdfstring{promotion\_possible()}{promotion\_possible()}}
+{\footnotesize\ttfamily bool Jeu\+::promotion\+\_\+possible (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPos}{Pos}}}]{pos\+Fin }\end{DoxyParamCaption})}
+
+
+
+Vérifie si une promotion est possible. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos\+Fin} & Case du dernier mouvement joué \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si une promotion est possible, false sinon. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{271                                       \{}
+\DoxyCodeLine{272     \mbox{\hyperlink{classSquare}{Square}}* caseFin = this-\/>\mbox{\hyperlink{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}{echiquier}}-\/>\mbox{\hyperlink{classEchiquier_a58713a00ef6b003ceccf8dc9767ff948}{getSquare}}(posFin);}
+\DoxyCodeLine{273     \mbox{\hyperlink{classPiece}{Piece}} *pieceJouee = caseFin-\/>\mbox{\hyperlink{classSquare_a98e118b2bc38a089613ec4279817d08b}{getPiece}}();}
+\DoxyCodeLine{274     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *NomDeClasse = \textcolor{keyword}{typeid}(*pieceJouee).name() + 1;}
+\DoxyCodeLine{275     \mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23f}{couleur\_t}} couleur = pieceJouee-\/>\mbox{\hyperlink{classPiece_a183cbb97af8157297281676c060a023d}{getCouleur}}();}
+\DoxyCodeLine{276     \textcolor{keywordtype}{int} ligneCase = caseFin-\/>\mbox{\hyperlink{classPos_a761a20952dd60060f8360a5ff34c77b9}{getX}}();}
+\DoxyCodeLine{277     \textcolor{comment}{//On teste que la piece soit un pion et qu'il soit bien placé}}
+\DoxyCodeLine{278     \textcolor{keywordflow}{if} (strcmp(NomDeClasse, \textcolor{stringliteral}{"Pion"}) == 0}
+\DoxyCodeLine{279         \&\& ((couleur == \mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23faa7b5bb6c14d7e04bce22bf5ee184be20}{Noir}} \&\& ligneCase == 0)}
+\DoxyCodeLine{280             || (couleur == \mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23fa58b0623118011f228f9e035e740ca481}{Blanc}} \&\& ligneCase == 7)))}
+\DoxyCodeLine{281                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{282     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{283 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classJeu_a2595cf7d26df14628da14fbaa5c39dcb}\label{classJeu_a2595cf7d26df14628da14fbaa5c39dcb}} 
+\index{Jeu@{Jeu}!setDernierMouv@{setDernierMouv}}
+\index{setDernierMouv@{setDernierMouv}!Jeu@{Jeu}}
+\doxysubsubsection{\texorpdfstring{setDernierMouv()}{setDernierMouv()}}
+{\footnotesize\ttfamily void Jeu\+::set\+Dernier\+Mouv (\begin{DoxyParamCaption}\item[{string}]{move }\end{DoxyParamCaption})}
+
+
+
+Définit le dernier mouvement effectué. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em move} & Chaîne de caractères représentant le dernier mouvement. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{12                                    \{}
+\DoxyCodeLine{13     this-\/>\mbox{\hyperlink{classJeu_ae17948f23ecc46694cc005e91d756003}{dernier\_mouvement}} = move;}
+\DoxyCodeLine{14 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classJeu_a183c45e05d91a601c1dd417d4fca4660}\label{classJeu_a183c45e05d91a601c1dd417d4fca4660}} 
+\index{Jeu@{Jeu}!setJoueur@{setJoueur}}
+\index{setJoueur@{setJoueur}!Jeu@{Jeu}}
+\doxysubsubsection{\texorpdfstring{setJoueur()}{setJoueur()}}
+{\footnotesize\ttfamily void Jeu\+::set\+Joueur (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23f}{couleur\+\_\+t}}}]{c }\end{DoxyParamCaption})}
+
+
+
+Définit la couleur du joueur actuel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & Couleur du joueur (Blanc ou Noir). \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{20                               \{}
+\DoxyCodeLine{21     this-\/>\mbox{\hyperlink{classJeu_a724434ea22d2d5a1d1f5bcb3c0db11d1}{couleur\_joueur}} = c;}
+\DoxyCodeLine{22 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{classJeu_a724434ea22d2d5a1d1f5bcb3c0db11d1}\label{classJeu_a724434ea22d2d5a1d1f5bcb3c0db11d1}} 
+\index{Jeu@{Jeu}!couleur\_joueur@{couleur\_joueur}}
+\index{couleur\_joueur@{couleur\_joueur}!Jeu@{Jeu}}
+\doxysubsubsection{\texorpdfstring{couleur\_joueur}{couleur\_joueur}}
+{\footnotesize\ttfamily \mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23f}{couleur\+\_\+t}} Jeu\+::couleur\+\_\+joueur\hspace{0.3cm}{\ttfamily [private]}}
+
+Couleur du joueur actuel (Blanc ou Noir). \mbox{\Hypertarget{classJeu_ae17948f23ecc46694cc005e91d756003}\label{classJeu_ae17948f23ecc46694cc005e91d756003}} 
+\index{Jeu@{Jeu}!dernier\_mouvement@{dernier\_mouvement}}
+\index{dernier\_mouvement@{dernier\_mouvement}!Jeu@{Jeu}}
+\doxysubsubsection{\texorpdfstring{dernier\_mouvement}{dernier\_mouvement}}
+{\footnotesize\ttfamily string Jeu\+::dernier\+\_\+mouvement\hspace{0.3cm}{\ttfamily [private]}}
+
+Chaîne de caractères représentant le dernier mouvement effectué. \mbox{\Hypertarget{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}\label{classJeu_a0ba11572e0b5d0e29da16b6644ee7989}} 
+\index{Jeu@{Jeu}!echiquier@{echiquier}}
+\index{echiquier@{echiquier}!Jeu@{Jeu}}
+\doxysubsubsection{\texorpdfstring{echiquier}{echiquier}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEchiquier}{Echiquier}}$\ast$ Jeu\+::echiquier\hspace{0.3cm}{\ttfamily [private]}}
+
+Pointeur vers l\textquotesingle{}échiquier utilisé dans le jeu. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{jeu_8hpp}{jeu.\+hpp}}\item 
+src/\mbox{\hyperlink{jeu_8cc}{jeu.\+cc}}\end{DoxyCompactItemize}

@@ -1,0 +1,135 @@
+\hypertarget{classPion}{}\doxysection{Pion Class Reference}
+\label{classPion}\index{Pion@{Pion}}
+
+
+{\ttfamily \#include $<$pion.\+hpp$>$}
+
+
+
+Inheritance diagram for Pion\+:
+% FIG 0
+
+
+Collaboration diagram for Pion\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPion_a0e04cf3579471e81f1d998d2214d5c52}{Pion}} (\mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23f}{couleur\+\_\+t}} c, int \mbox{\hyperlink{classPiece_ac40cffee50da10a50361ff4791fdd528}{id}}, \mbox{\hyperlink{classSquare}{Square}} $\ast$pos)
+\item 
+bool \mbox{\hyperlink{classPion_a3b49764990707c8756156c7e2f1b5100}{mouvement\+\_\+legal}} (\mbox{\hyperlink{classSquare}{Square}}, bool)
+\begin{DoxyCompactList}\small\item\em Vérifie si un mouvement vers une case donnée est légal pour la pièce. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPion_a0e04cf3579471e81f1d998d2214d5c52}\label{classPion_a0e04cf3579471e81f1d998d2214d5c52}} 
+\index{Pion@{Pion}!Pion@{Pion}}
+\index{Pion@{Pion}!Pion@{Pion}}
+\doxysubsubsection{\texorpdfstring{Pion()}{Pion()}}
+{\footnotesize\ttfamily Pion\+::\+Pion (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23f}{couleur\+\_\+t}}}]{c,  }\item[{int}]{id,  }\item[{\mbox{\hyperlink{classSquare}{Square}} $\ast$}]{pos }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{3                                                :}
+\DoxyCodeLine{4         \mbox{\hyperlink{classPiece_a975177511ab70f692546b04eefd19610}{Piece}}(color, (color == \mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23fa58b0623118011f228f9e035e740ca481}{Blanc}}) ? \textcolor{stringliteral}{"\(\backslash\)u265F"} : \textcolor{stringliteral}{"\(\backslash\)u2659"}, \textcolor{keywordtype}{id}, pos) \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPion_a3b49764990707c8756156c7e2f1b5100}\label{classPion_a3b49764990707c8756156c7e2f1b5100}} 
+\index{Pion@{Pion}!mouvement\_legal@{mouvement\_legal}}
+\index{mouvement\_legal@{mouvement\_legal}!Pion@{Pion}}
+\doxysubsubsection{\texorpdfstring{mouvement\_legal()}{mouvement\_legal()}}
+{\footnotesize\ttfamily bool Pion\+::mouvement\+\_\+legal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSquare}{Square}}}]{square,  }\item[{bool}]{mouv\+Capture }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Vérifie si un mouvement vers une case donnée est légal pour la pièce. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em square} & La case vers laquelle effectuer le mouvement. \\
+\hline
+{\em mouv\+Capture} & Spécifie si le mouvement est un mouvement de capture (pour les pions) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si le mouvement est légal, false sinon. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classPiece_a99f3ab3092ed25a5de6f7faaeb0e60ba}{Piece}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{6                                                              \{}
+\DoxyCodeLine{7     \textcolor{keywordflow}{if} (mouvementCapture)\{}
+\DoxyCodeLine{8         \textcolor{keywordflow}{if} (this-\/>\mbox{\hyperlink{classPiece_a183cbb97af8157297281676c060a023d}{getCouleur}}() == \mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23fa58b0623118011f228f9e035e740ca481}{Blanc}})\{}
+\DoxyCodeLine{9             \textcolor{keywordflow}{if} (\textcolor{comment}{// diagonale gauche}}
+\DoxyCodeLine{10                 (dest.getY() == this-\/>position-\/>getY() -\/ 1}
+\DoxyCodeLine{11                 \&\& dest.getX() == this-\/>position-\/>getX() + 1)}
+\DoxyCodeLine{12                 \textcolor{comment}{// diagonale droite}}
+\DoxyCodeLine{13                 || (dest.getY() == this-\/>position-\/>getY() + 1}
+\DoxyCodeLine{14                 \&\& dest.getX() == this-\/>position-\/>getX() + 1) }
+\DoxyCodeLine{15                 )\{}
+\DoxyCodeLine{16                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{17             \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{18                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{19             \}}
+\DoxyCodeLine{20         \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{21             \textcolor{keywordflow}{if} (\textcolor{comment}{// diagonale gauche}}
+\DoxyCodeLine{22                 (dest.getY() == this-\/>position-\/>getY() -\/ 1}
+\DoxyCodeLine{23                  \&\& dest.getX() == this-\/>position-\/>getX() -\/ 1) }
+\DoxyCodeLine{24                 \textcolor{comment}{// diagonale droite}}
+\DoxyCodeLine{25                 || (dest.getY() == this-\/>position-\/>getY() + 1}
+\DoxyCodeLine{26                     \&\& dest.getX() == this-\/>position-\/>getX() -\/ 1) }
+\DoxyCodeLine{27                 )\{}
+\DoxyCodeLine{28                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{29             \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{30                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{31             \}}
+\DoxyCodeLine{32         \}}
+\DoxyCodeLine{33     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{34         \textcolor{keywordflow}{if} (this-\/>\mbox{\hyperlink{classPiece_a183cbb97af8157297281676c060a023d}{getCouleur}}() == \mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23fa58b0623118011f228f9e035e740ca481}{Blanc}})\{}
+\DoxyCodeLine{35             \textcolor{comment}{// Ligne augmente}}
+\DoxyCodeLine{36             \textcolor{keywordflow}{if} ((dest.getY() == this-\/>position-\/>getY() }
+\DoxyCodeLine{37                  \&\& dest.getX() == this-\/>position-\/>getX() + 1)}
+\DoxyCodeLine{38                 )\{}
+\DoxyCodeLine{39                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{40             \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (this-\/>\mbox{\hyperlink{classPiece_acbe43198d3a91888390654cb5833698c}{getNbDeplacement}}() == 0}
+\DoxyCodeLine{41                     \textcolor{comment}{// 1er deplacement donc 2 cases possibles}}
+\DoxyCodeLine{42                       \&\& dest.getY() == this-\/>position-\/>getY()}
+\DoxyCodeLine{43                       \&\& dest.getX() == this-\/>position-\/>getX() + 2}
+\DoxyCodeLine{44                       )\{}
+\DoxyCodeLine{45                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{46             \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{47                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{48             \}}
+\DoxyCodeLine{49         \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{50             \textcolor{comment}{// Noir -\/> Ligne décroit}}
+\DoxyCodeLine{51             \textcolor{keywordflow}{if} ((dest.getY() == this-\/>position-\/>getY()}
+\DoxyCodeLine{52                  \&\& dest.getX() == this-\/>position-\/>getX() -\/ 1)}
+\DoxyCodeLine{53                 )\{}
+\DoxyCodeLine{54                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{55             \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (this-\/>\mbox{\hyperlink{classPiece_acbe43198d3a91888390654cb5833698c}{getNbDeplacement}}() == 0}
+\DoxyCodeLine{56                     \textcolor{comment}{// 1er deplacement donc 2 cases possibles}}
+\DoxyCodeLine{57                       \&\& dest.getY() == this-\/>position-\/>getY()}
+\DoxyCodeLine{58                       \&\& dest.getX() == this-\/>position-\/>getX() -\/ 2}
+\DoxyCodeLine{59                     )\{}
+\DoxyCodeLine{60                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{61             \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{62                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{63             \}}
+\DoxyCodeLine{64         \}}
+\DoxyCodeLine{65     \}}
+\DoxyCodeLine{66 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/pieces/\mbox{\hyperlink{pion_8hpp}{pion.\+hpp}}\item 
+src/pieces/\mbox{\hyperlink{pion_8cc}{pion.\+cc}}\end{DoxyCompactItemize}

@@ -1,0 +1,210 @@
+\hypertarget{utilitaires_8cc}{}\doxysection{src/utilitaires.cc File Reference}
+\label{utilitaires_8cc}\index{src/utilitaires.cc@{src/utilitaires.cc}}
+{\ttfamily \#include \char`\"{}../include/jeu.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/utilitaires.\+hpp\char`\"{}}\newline
+Include dependency graph for utilitaires.\+cc\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{utilitaires_8cc_a708c31f2c27fa7e1a774667dc6114b11}{entree\+\_\+valide}} (string const \&input)
+\item 
+bool \mbox{\hyperlink{utilitaires_8cc_a5febbb16c9f025f776f1c5fdda66b416}{promotion\+\_\+valide}} (string const \&input)
+\item 
+bool \mbox{\hyperlink{utilitaires_8cc_ad14525111d35ce5b62b9a9fa5b58db2e}{entree\+\_\+mouvement}} (string const \&input)
+\item 
+bool \mbox{\hyperlink{utilitaires_8cc_a49e83092091959f73ed86065a3d2931e}{entree\+\_\+petit\+\_\+rock}} (string const \&input)
+\item 
+bool \mbox{\hyperlink{utilitaires_8cc_ae9894de126527cec4d9282bd82584fc9}{entree\+\_\+grand\+\_\+rock}} (string const \&input)
+\item 
+bool \mbox{\hyperlink{utilitaires_8cc_acca1db4fdc3b52fcde650d1cdf753a28}{entree\+\_\+sortie}} (string const \&input)
+\item 
+bool \mbox{\hyperlink{utilitaires_8cc_a8406ace430e41be02609c14428f5b071}{entree\+\_\+egalite}} (string const \&input)
+\item 
+bool \mbox{\hyperlink{utilitaires_8cc_aec0d18758c74ffb21d50f1a97b64168a}{entree\+\_\+abandon}} (string const \&input)
+\item 
+bool \mbox{\hyperlink{utilitaires_8cc_ab54e0960f2ea3b9eff2ca06c0c0430a3}{promotion\+\_\+dame}} (string const \&input)
+\item 
+bool \mbox{\hyperlink{utilitaires_8cc_a0f0f5a01140876dbf31b693daf03df3e}{promotion\+\_\+tour}} (string const \&input)
+\item 
+bool \mbox{\hyperlink{utilitaires_8cc_a00a12909d38086aed980813f25931ef3}{promotion\+\_\+fou}} (string const \&input)
+\item 
+bool \mbox{\hyperlink{utilitaires_8cc_a7d14e942d11087db3a79141adf5f7292}{promotion\+\_\+cavalier}} (string const \&input)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{utilitaires_8cc_aec0d18758c74ffb21d50f1a97b64168a}\label{utilitaires_8cc_aec0d18758c74ffb21d50f1a97b64168a}} 
+\index{utilitaires.cc@{utilitaires.cc}!entree\_abandon@{entree\_abandon}}
+\index{entree\_abandon@{entree\_abandon}!utilitaires.cc@{utilitaires.cc}}
+\doxysubsubsection{\texorpdfstring{entree\_abandon()}{entree\_abandon()}}
+{\footnotesize\ttfamily bool entree\+\_\+abandon (\begin{DoxyParamCaption}\item[{string const \&}]{input }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{45                                          \{}
+\DoxyCodeLine{46     regex pattern(\textcolor{stringliteral}{"/resign\(\backslash\)\(\backslash\)s*"});}
+\DoxyCodeLine{47     \textcolor{keywordflow}{return} regex\_match(input,pattern);}
+\DoxyCodeLine{48 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{utilitaires_8cc_a8406ace430e41be02609c14428f5b071}\label{utilitaires_8cc_a8406ace430e41be02609c14428f5b071}} 
+\index{utilitaires.cc@{utilitaires.cc}!entree\_egalite@{entree\_egalite}}
+\index{entree\_egalite@{entree\_egalite}!utilitaires.cc@{utilitaires.cc}}
+\doxysubsubsection{\texorpdfstring{entree\_egalite()}{entree\_egalite()}}
+{\footnotesize\ttfamily bool entree\+\_\+egalite (\begin{DoxyParamCaption}\item[{string const \&}]{input }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{40                                          \{}
+\DoxyCodeLine{41     regex pattern(\textcolor{stringliteral}{"/draw\(\backslash\)\(\backslash\)s*"});}
+\DoxyCodeLine{42     \textcolor{keywordflow}{return} regex\_match(input,pattern);}
+\DoxyCodeLine{43 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{utilitaires_8cc_ae9894de126527cec4d9282bd82584fc9}\label{utilitaires_8cc_ae9894de126527cec4d9282bd82584fc9}} 
+\index{utilitaires.cc@{utilitaires.cc}!entree\_grand\_rock@{entree\_grand\_rock}}
+\index{entree\_grand\_rock@{entree\_grand\_rock}!utilitaires.cc@{utilitaires.cc}}
+\doxysubsubsection{\texorpdfstring{entree\_grand\_rock()}{entree\_grand\_rock()}}
+{\footnotesize\ttfamily bool entree\+\_\+grand\+\_\+rock (\begin{DoxyParamCaption}\item[{string const \&}]{input }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{30                                              \{}
+\DoxyCodeLine{31     regex pattern(\textcolor{stringliteral}{"(O|o|0)-\/(O|o|0)-\/(O|o|0)\(\backslash\)\(\backslash\)s*"});}
+\DoxyCodeLine{32     \textcolor{keywordflow}{return} regex\_match(input,pattern);}
+\DoxyCodeLine{33 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{utilitaires_8cc_ad14525111d35ce5b62b9a9fa5b58db2e}\label{utilitaires_8cc_ad14525111d35ce5b62b9a9fa5b58db2e}} 
+\index{utilitaires.cc@{utilitaires.cc}!entree\_mouvement@{entree\_mouvement}}
+\index{entree\_mouvement@{entree\_mouvement}!utilitaires.cc@{utilitaires.cc}}
+\doxysubsubsection{\texorpdfstring{entree\_mouvement()}{entree\_mouvement()}}
+{\footnotesize\ttfamily bool entree\+\_\+mouvement (\begin{DoxyParamCaption}\item[{string const \&}]{input }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{20                                            \{}
+\DoxyCodeLine{21     regex pattern(\textcolor{stringliteral}{"\string^ *[a-\/h][1-\/8][a-\/h][1-\/8] *\$|\string^ */(quit|draw|resign) *\$"});}
+\DoxyCodeLine{22     \textcolor{keywordflow}{return} regex\_match(input, pattern);}
+\DoxyCodeLine{23 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{utilitaires_8cc_a49e83092091959f73ed86065a3d2931e}\label{utilitaires_8cc_a49e83092091959f73ed86065a3d2931e}} 
+\index{utilitaires.cc@{utilitaires.cc}!entree\_petit\_rock@{entree\_petit\_rock}}
+\index{entree\_petit\_rock@{entree\_petit\_rock}!utilitaires.cc@{utilitaires.cc}}
+\doxysubsubsection{\texorpdfstring{entree\_petit\_rock()}{entree\_petit\_rock()}}
+{\footnotesize\ttfamily bool entree\+\_\+petit\+\_\+rock (\begin{DoxyParamCaption}\item[{string const \&}]{input }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{25                                              \{}
+\DoxyCodeLine{26     regex pattern(\textcolor{stringliteral}{"(O|o|0)-\/(O|o|0)\(\backslash\)\(\backslash\)s*"});}
+\DoxyCodeLine{27     \textcolor{keywordflow}{return} regex\_match(input,pattern);}
+\DoxyCodeLine{28 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{utilitaires_8cc_acca1db4fdc3b52fcde650d1cdf753a28}\label{utilitaires_8cc_acca1db4fdc3b52fcde650d1cdf753a28}} 
+\index{utilitaires.cc@{utilitaires.cc}!entree\_sortie@{entree\_sortie}}
+\index{entree\_sortie@{entree\_sortie}!utilitaires.cc@{utilitaires.cc}}
+\doxysubsubsection{\texorpdfstring{entree\_sortie()}{entree\_sortie()}}
+{\footnotesize\ttfamily bool entree\+\_\+sortie (\begin{DoxyParamCaption}\item[{string const \&}]{input }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{35                                         \{}
+\DoxyCodeLine{36     regex pattern(\textcolor{stringliteral}{"/quit\(\backslash\)\(\backslash\)s*"});}
+\DoxyCodeLine{37     \textcolor{keywordflow}{return} regex\_match(input,pattern);}
+\DoxyCodeLine{38 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{utilitaires_8cc_a708c31f2c27fa7e1a774667dc6114b11}\label{utilitaires_8cc_a708c31f2c27fa7e1a774667dc6114b11}} 
+\index{utilitaires.cc@{utilitaires.cc}!entree\_valide@{entree\_valide}}
+\index{entree\_valide@{entree\_valide}!utilitaires.cc@{utilitaires.cc}}
+\doxysubsubsection{\texorpdfstring{entree\_valide()}{entree\_valide()}}
+{\footnotesize\ttfamily bool entree\+\_\+valide (\begin{DoxyParamCaption}\item[{string const \&}]{input }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{4                                         \{}
+\DoxyCodeLine{5     \textcolor{keywordflow}{return} (\mbox{\hyperlink{utilitaires_8cc_ad14525111d35ce5b62b9a9fa5b58db2e}{entree\_mouvement}}(input)}
+\DoxyCodeLine{6         || \mbox{\hyperlink{utilitaires_8cc_a49e83092091959f73ed86065a3d2931e}{entree\_petit\_rock}}(input)}
+\DoxyCodeLine{7         || \mbox{\hyperlink{utilitaires_8cc_ae9894de126527cec4d9282bd82584fc9}{entree\_grand\_rock}}(input)}
+\DoxyCodeLine{8         || \mbox{\hyperlink{utilitaires_8cc_acca1db4fdc3b52fcde650d1cdf753a28}{entree\_sortie}}(input)}
+\DoxyCodeLine{9         || \mbox{\hyperlink{utilitaires_8cc_a8406ace430e41be02609c14428f5b071}{entree\_egalite}}(input)}
+\DoxyCodeLine{10         || \mbox{\hyperlink{utilitaires_8cc_aec0d18758c74ffb21d50f1a97b64168a}{entree\_abandon}}(input));}
+\DoxyCodeLine{11 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{utilitaires_8cc_a7d14e942d11087db3a79141adf5f7292}\label{utilitaires_8cc_a7d14e942d11087db3a79141adf5f7292}} 
+\index{utilitaires.cc@{utilitaires.cc}!promotion\_cavalier@{promotion\_cavalier}}
+\index{promotion\_cavalier@{promotion\_cavalier}!utilitaires.cc@{utilitaires.cc}}
+\doxysubsubsection{\texorpdfstring{promotion\_cavalier()}{promotion\_cavalier()}}
+{\footnotesize\ttfamily bool promotion\+\_\+cavalier (\begin{DoxyParamCaption}\item[{string const \&}]{input }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{65                                              \{}
+\DoxyCodeLine{66     regex pattern(\textcolor{stringliteral}{"(N|n)\(\backslash\)\(\backslash\)s*"});}
+\DoxyCodeLine{67     \textcolor{keywordflow}{return} regex\_match(input,pattern);}
+\DoxyCodeLine{68 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{utilitaires_8cc_ab54e0960f2ea3b9eff2ca06c0c0430a3}\label{utilitaires_8cc_ab54e0960f2ea3b9eff2ca06c0c0430a3}} 
+\index{utilitaires.cc@{utilitaires.cc}!promotion\_dame@{promotion\_dame}}
+\index{promotion\_dame@{promotion\_dame}!utilitaires.cc@{utilitaires.cc}}
+\doxysubsubsection{\texorpdfstring{promotion\_dame()}{promotion\_dame()}}
+{\footnotesize\ttfamily bool promotion\+\_\+dame (\begin{DoxyParamCaption}\item[{string const \&}]{input }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{50                                          \{}
+\DoxyCodeLine{51     regex pattern(\textcolor{stringliteral}{"(Q|q)\(\backslash\)\(\backslash\)s*"});}
+\DoxyCodeLine{52     \textcolor{keywordflow}{return} regex\_match(input,pattern);}
+\DoxyCodeLine{53 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{utilitaires_8cc_a00a12909d38086aed980813f25931ef3}\label{utilitaires_8cc_a00a12909d38086aed980813f25931ef3}} 
+\index{utilitaires.cc@{utilitaires.cc}!promotion\_fou@{promotion\_fou}}
+\index{promotion\_fou@{promotion\_fou}!utilitaires.cc@{utilitaires.cc}}
+\doxysubsubsection{\texorpdfstring{promotion\_fou()}{promotion\_fou()}}
+{\footnotesize\ttfamily bool promotion\+\_\+fou (\begin{DoxyParamCaption}\item[{string const \&}]{input }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{60                                         \{}
+\DoxyCodeLine{61     regex pattern(\textcolor{stringliteral}{"(B|b)\(\backslash\)\(\backslash\)s*"});}
+\DoxyCodeLine{62     \textcolor{keywordflow}{return} regex\_match(input,pattern);}
+\DoxyCodeLine{63 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{utilitaires_8cc_a0f0f5a01140876dbf31b693daf03df3e}\label{utilitaires_8cc_a0f0f5a01140876dbf31b693daf03df3e}} 
+\index{utilitaires.cc@{utilitaires.cc}!promotion\_tour@{promotion\_tour}}
+\index{promotion\_tour@{promotion\_tour}!utilitaires.cc@{utilitaires.cc}}
+\doxysubsubsection{\texorpdfstring{promotion\_tour()}{promotion\_tour()}}
+{\footnotesize\ttfamily bool promotion\+\_\+tour (\begin{DoxyParamCaption}\item[{string const \&}]{input }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{55                                          \{}
+\DoxyCodeLine{56     regex pattern(\textcolor{stringliteral}{"(R|r)\(\backslash\)\(\backslash\)s*"});}
+\DoxyCodeLine{57     \textcolor{keywordflow}{return} regex\_match(input,pattern);}
+\DoxyCodeLine{58 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{utilitaires_8cc_a5febbb16c9f025f776f1c5fdda66b416}\label{utilitaires_8cc_a5febbb16c9f025f776f1c5fdda66b416}} 
+\index{utilitaires.cc@{utilitaires.cc}!promotion\_valide@{promotion\_valide}}
+\index{promotion\_valide@{promotion\_valide}!utilitaires.cc@{utilitaires.cc}}
+\doxysubsubsection{\texorpdfstring{promotion\_valide()}{promotion\_valide()}}
+{\footnotesize\ttfamily bool promotion\+\_\+valide (\begin{DoxyParamCaption}\item[{string const \&}]{input }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{13                                            \{}
+\DoxyCodeLine{14     \textcolor{keywordflow}{return} \mbox{\hyperlink{utilitaires_8cc_ab54e0960f2ea3b9eff2ca06c0c0430a3}{promotion\_dame}}(input)}
+\DoxyCodeLine{15         || \mbox{\hyperlink{utilitaires_8cc_a0f0f5a01140876dbf31b693daf03df3e}{promotion\_tour}}(input)}
+\DoxyCodeLine{16         || \mbox{\hyperlink{utilitaires_8cc_a00a12909d38086aed980813f25931ef3}{promotion\_fou}}(input)}
+\DoxyCodeLine{17         || \mbox{\hyperlink{utilitaires_8cc_a7d14e942d11087db3a79141adf5f7292}{promotion\_cavalier}}(input);}
+\DoxyCodeLine{18 \}}
+
+\end{DoxyCode}

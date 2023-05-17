@@ -1,0 +1,254 @@
+\hypertarget{classPos}{}\doxysection{Pos Class Reference}
+\label{classPos}\index{Pos@{Pos}}
+
+
+Classe représentant une position dans un espace bidimensionnel.  
+
+
+
+
+{\ttfamily \#include $<$pos.\+hpp$>$}
+
+
+
+Inheritance diagram for Pos\+:
+% FIG 0
+
+
+Collaboration diagram for Pos\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPos_a2bc6640b2acd4c1bca662b96b9e78713}{Pos}} (int \mbox{\hyperlink{classPos_a4bcafee8dc3800fb8c3792de54996496}{x}}, int \mbox{\hyperlink{classPos_a6b309684454df6615bce567e09437348}{y}})
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe \mbox{\hyperlink{classPos}{Pos}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPos_a434a53502e5e37f746d25f9d235d29e2}{Pos}} (string str)
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe \mbox{\hyperlink{classPos}{Pos}} prenant une chaîne de caractères pour initialiser les coordonnées. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPos_a8d95bba956461094e08d4a3ee2bbdfab}{$\sim$\+Pos}} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de la classe \mbox{\hyperlink{classPos}{Pos}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPos_a761a20952dd60060f8360a5ff34c77b9}{getX}} () const
+\begin{DoxyCompactList}\small\item\em Obtient la coordonnée X de la position. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classPos_a84ea042df4f429ed8c128b80271263f1}{getY}} () const
+\begin{DoxyCompactList}\small\item\em Obtient la coordonnée Y de la position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPos_a4ff60cb39bd74a9af6a050668eeac56a}{setX}} (int \mbox{\hyperlink{classPos_a4bcafee8dc3800fb8c3792de54996496}{x}})
+\begin{DoxyCompactList}\small\item\em Modifie la coordonnée X de la position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPos_a40ab1818dcd3fb9febc7a55bf5cdb681}{setY}} (int \mbox{\hyperlink{classPos_a6b309684454df6615bce567e09437348}{y}})
+\begin{DoxyCompactList}\small\item\em Modifie la coordonnée Y de la position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPos_aa9deb49d60d6a863be83054932b4d357}{affiche\+\_\+xy}} () const
+\begin{DoxyCompactList}\small\item\em Affiche les coordonnées X et Y de la position. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classPos_a8085f102e3af6e1937e2e30929f11f44}{operator==}} (const \mbox{\hyperlink{classPos}{Pos}} \&other) const
+\begin{DoxyCompactList}\small\item\em Surcharge de l\textquotesingle{}opérateur d\textquotesingle{}égalité pour comparer deux positions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classPos_a4bcafee8dc3800fb8c3792de54996496}{x}}
+\item 
+int \mbox{\hyperlink{classPos_a6b309684454df6615bce567e09437348}{y}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe représentant une position dans un espace bidimensionnel. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPos_a2bc6640b2acd4c1bca662b96b9e78713}\label{classPos_a2bc6640b2acd4c1bca662b96b9e78713}} 
+\index{Pos@{Pos}!Pos@{Pos}}
+\index{Pos@{Pos}!Pos@{Pos}}
+\doxysubsubsection{\texorpdfstring{Pos()}{Pos()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Pos\+::\+Pos (\begin{DoxyParamCaption}\item[{int}]{x = {\ttfamily 0},  }\item[{int}]{y = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Constructeur de la classe \mbox{\hyperlink{classPos}{Pos}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Coordonnée X de la position. \\
+\hline
+{\em y} & Coordonnée Y de la position. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{4     : \mbox{\hyperlink{classPos_a4bcafee8dc3800fb8c3792de54996496}{x}}(\mbox{\hyperlink{classPos_a4bcafee8dc3800fb8c3792de54996496}{x}}), \mbox{\hyperlink{classPos_a6b309684454df6615bce567e09437348}{y}}(\mbox{\hyperlink{classPos_a6b309684454df6615bce567e09437348}{y}}) \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classPos_a434a53502e5e37f746d25f9d235d29e2}\label{classPos_a434a53502e5e37f746d25f9d235d29e2}} 
+\index{Pos@{Pos}!Pos@{Pos}}
+\index{Pos@{Pos}!Pos@{Pos}}
+\doxysubsubsection{\texorpdfstring{Pos()}{Pos()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Pos\+::\+Pos (\begin{DoxyParamCaption}\item[{string}]{str }\end{DoxyParamCaption})}
+
+
+
+Constructeur de la classe \mbox{\hyperlink{classPos}{Pos}} prenant une chaîne de caractères pour initialiser les coordonnées. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & Chaîne de caractères représentant la position au format d\textquotesingle{}une pièce d\textquotesingle{}échiquier. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{6                      :}
+\DoxyCodeLine{7     \mbox{\hyperlink{classPos_a4bcafee8dc3800fb8c3792de54996496}{x}}( couple[1] -\/ \textcolor{charliteral}{'0'} -\/ 1), \mbox{\hyperlink{classPos_a6b309684454df6615bce567e09437348}{y}}(couple[0] -\/ \textcolor{charliteral}{'a'}) \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classPos_a8d95bba956461094e08d4a3ee2bbdfab}\label{classPos_a8d95bba956461094e08d4a3ee2bbdfab}} 
+\index{Pos@{Pos}!````~Pos@{$\sim$Pos}}
+\index{````~Pos@{$\sim$Pos}!Pos@{Pos}}
+\doxysubsubsection{\texorpdfstring{$\sim$Pos()}{~Pos()}}
+{\footnotesize\ttfamily Pos\+::$\sim$\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructeur de la classe \mbox{\hyperlink{classPos}{Pos}}. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{9 \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPos_aa9deb49d60d6a863be83054932b4d357}\label{classPos_aa9deb49d60d6a863be83054932b4d357}} 
+\index{Pos@{Pos}!affiche\_xy@{affiche\_xy}}
+\index{affiche\_xy@{affiche\_xy}!Pos@{Pos}}
+\doxysubsubsection{\texorpdfstring{affiche\_xy()}{affiche\_xy()}}
+{\footnotesize\ttfamily void Pos\+::affiche\+\_\+xy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Affiche les coordonnées X et Y de la position. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{19                           \{}
+\DoxyCodeLine{20     cout << \textcolor{stringliteral}{"x = "} << to\_string(this-\/>\mbox{\hyperlink{classPos_a761a20952dd60060f8360a5ff34c77b9}{getX}}()) }
+\DoxyCodeLine{21             << \textcolor{stringliteral}{" y = "} << to\_string(this-\/>\mbox{\hyperlink{classPos_a84ea042df4f429ed8c128b80271263f1}{getY}}()) << endl;}
+\DoxyCodeLine{22 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classPos_a761a20952dd60060f8360a5ff34c77b9}\label{classPos_a761a20952dd60060f8360a5ff34c77b9}} 
+\index{Pos@{Pos}!getX@{getX}}
+\index{getX@{getX}!Pos@{Pos}}
+\doxysubsubsection{\texorpdfstring{getX()}{getX()}}
+{\footnotesize\ttfamily int Pos\+::getX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Obtient la coordonnée X de la position. 
+
+\begin{DoxyReturn}{Returns}
+La coordonnée X. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{11 \{ \textcolor{keywordflow}{return} this-\/>\mbox{\hyperlink{classPos_a4bcafee8dc3800fb8c3792de54996496}{x}}; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classPos_a84ea042df4f429ed8c128b80271263f1}\label{classPos_a84ea042df4f429ed8c128b80271263f1}} 
+\index{Pos@{Pos}!getY@{getY}}
+\index{getY@{getY}!Pos@{Pos}}
+\doxysubsubsection{\texorpdfstring{getY()}{getY()}}
+{\footnotesize\ttfamily int Pos\+::getY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Obtient la coordonnée Y de la position. 
+
+\begin{DoxyReturn}{Returns}
+La coordonnée Y. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{13 \{ \textcolor{keywordflow}{return} this-\/>\mbox{\hyperlink{classPos_a6b309684454df6615bce567e09437348}{y}}; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classPos_a8085f102e3af6e1937e2e30929f11f44}\label{classPos_a8085f102e3af6e1937e2e30929f11f44}} 
+\index{Pos@{Pos}!operator==@{operator==}}
+\index{operator==@{operator==}!Pos@{Pos}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Pos\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPos}{Pos}} \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+Surcharge de l\textquotesingle{}opérateur d\textquotesingle{}égalité pour comparer deux positions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & L\textquotesingle{}autre position à comparer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si les positions sont égales, false sinon. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{24                                           \{}
+\DoxyCodeLine{25     \textcolor{keywordflow}{return} (this-\/>\mbox{\hyperlink{classPos_a4bcafee8dc3800fb8c3792de54996496}{x}} == other.\mbox{\hyperlink{classPos_a761a20952dd60060f8360a5ff34c77b9}{getX}}() \&\& this-\/>y == other.\mbox{\hyperlink{classPos_a84ea042df4f429ed8c128b80271263f1}{getY}}());}
+\DoxyCodeLine{26 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classPos_a4ff60cb39bd74a9af6a050668eeac56a}\label{classPos_a4ff60cb39bd74a9af6a050668eeac56a}} 
+\index{Pos@{Pos}!setX@{setX}}
+\index{setX@{setX}!Pos@{Pos}}
+\doxysubsubsection{\texorpdfstring{setX()}{setX()}}
+{\footnotesize\ttfamily void Pos\+::setX (\begin{DoxyParamCaption}\item[{int}]{x }\end{DoxyParamCaption})}
+
+
+
+Modifie la coordonnée X de la position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Nouvelle coordonnée X. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{15 \{ this-\/>\mbox{\hyperlink{classPos_a4bcafee8dc3800fb8c3792de54996496}{x}} = \mbox{\hyperlink{classPos_a4bcafee8dc3800fb8c3792de54996496}{x}}; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classPos_a40ab1818dcd3fb9febc7a55bf5cdb681}\label{classPos_a40ab1818dcd3fb9febc7a55bf5cdb681}} 
+\index{Pos@{Pos}!setY@{setY}}
+\index{setY@{setY}!Pos@{Pos}}
+\doxysubsubsection{\texorpdfstring{setY()}{setY()}}
+{\footnotesize\ttfamily void Pos\+::setY (\begin{DoxyParamCaption}\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Modifie la coordonnée Y de la position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em y} & Nouvelle coordonnée Y. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{17 \{ this-\/>\mbox{\hyperlink{classPos_a6b309684454df6615bce567e09437348}{y}} = \mbox{\hyperlink{classPos_a6b309684454df6615bce567e09437348}{y}}; \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{classPos_a4bcafee8dc3800fb8c3792de54996496}\label{classPos_a4bcafee8dc3800fb8c3792de54996496}} 
+\index{Pos@{Pos}!x@{x}}
+\index{x@{x}!Pos@{Pos}}
+\doxysubsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily int Pos\+::x\hspace{0.3cm}{\ttfamily [private]}}
+
+Coordonnée X de la position \mbox{\Hypertarget{classPos_a6b309684454df6615bce567e09437348}\label{classPos_a6b309684454df6615bce567e09437348}} 
+\index{Pos@{Pos}!y@{y}}
+\index{y@{y}!Pos@{Pos}}
+\doxysubsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily int Pos\+::y\hspace{0.3cm}{\ttfamily [private]}}
+
+Coordonnée Y de la position 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{pos_8hpp}{pos.\+hpp}}\item 
+src/\mbox{\hyperlink{pos_8cc}{pos.\+cc}}\end{DoxyCompactItemize}

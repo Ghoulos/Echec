@@ -1,0 +1,210 @@
+\hypertarget{classSquare}{}\doxysection{Square Class Reference}
+\label{classSquare}\index{Square@{Square}}
+
+
+Classe représentant une case d\textquotesingle{}un plateau de jeu.  
+
+
+
+
+{\ttfamily \#include $<$square.\+hpp$>$}
+
+
+
+Inheritance diagram for Square\+:
+% FIG 0
+
+
+Collaboration diagram for Square\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSquare_a966e734ddcf1a88bda5911e4dddeaacd}{Square}} (int \mbox{\hyperlink{classPos_a4bcafee8dc3800fb8c3792de54996496}{x}}, int \mbox{\hyperlink{classPos_a6b309684454df6615bce567e09437348}{y}}, \mbox{\hyperlink{classPiece}{Piece}} $\ast$\mbox{\hyperlink{classSquare_a52eab334fb3f4fe8d29f1f1b7570a52f}{piece}}=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe \mbox{\hyperlink{classSquare}{Square}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSquare_a85463a0e54231f5cbc701aae9202b421}{Square}} (string str, \mbox{\hyperlink{classPiece}{Piece}} $\ast$\mbox{\hyperlink{classSquare_a52eab334fb3f4fe8d29f1f1b7570a52f}{piece}}=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe \mbox{\hyperlink{classSquare}{Square}} prenant une chaîne de caractères pour initialiser les coordonnées. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSquare_a90af7ce1060cff7b717ceddb333846b8}{$\sim$\+Square}} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de la classe \mbox{\hyperlink{classSquare}{Square}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSquare_ab33953dc0e41e5be1309bec6a572aa42}{set\+Piece}} (\mbox{\hyperlink{classPiece}{Piece}} $\ast$\mbox{\hyperlink{classSquare_a52eab334fb3f4fe8d29f1f1b7570a52f}{piece}})
+\begin{DoxyCompactList}\small\item\em Modifie la pièce présente dans la case. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPiece}{Piece}} $\ast$ \mbox{\hyperlink{classSquare_a98e118b2bc38a089613ec4279817d08b}{get\+Piece}} () const
+\begin{DoxyCompactList}\small\item\em Obtient la pièce présente dans la case. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classSquare_a6a59ecba9b78405c7cd4328bc593b5c1}{est\+\_\+vide}} ()
+\begin{DoxyCompactList}\small\item\em Vérifie si la case est vide (c\textquotesingle{}est-\/à-\/dire si le pointeur est null). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSquare_a98a11c764e706c572950d0c66d5f1324}{affiche}} ()
+\begin{DoxyCompactList}\small\item\em Affiche la pièce de la case si elle existe, 5 espaces sinon. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPiece}{Piece}} $\ast$ \mbox{\hyperlink{classSquare_a52eab334fb3f4fe8d29f1f1b7570a52f}{piece}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe représentant une case d\textquotesingle{}un plateau de jeu. 
+
+La classe \mbox{\hyperlink{classSquare}{Square}} hérite de la classe \mbox{\hyperlink{classPos}{Pos}} pour représenter les coordonnées de la case 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSquare_a966e734ddcf1a88bda5911e4dddeaacd}\label{classSquare_a966e734ddcf1a88bda5911e4dddeaacd}} 
+\index{Square@{Square}!Square@{Square}}
+\index{Square@{Square}!Square@{Square}}
+\doxysubsubsection{\texorpdfstring{Square()}{Square()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Square\+::\+Square (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{\mbox{\hyperlink{classPiece}{Piece}} $\ast$}]{piece = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Constructeur de la classe \mbox{\hyperlink{classSquare}{Square}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Coordonnée X de la case. \\
+\hline
+{\em y} & Coordonnée Y de la case. \\
+\hline
+{\em piece} & Pointeur vers la pièce à placer dans la case (par défaut nullptr si la case est vide). \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{4     : \mbox{\hyperlink{classPos_a2bc6640b2acd4c1bca662b96b9e78713}{Pos}}(\mbox{\hyperlink{classPos_a4bcafee8dc3800fb8c3792de54996496}{x}},\mbox{\hyperlink{classPos_a6b309684454df6615bce567e09437348}{y}}), \mbox{\hyperlink{classSquare_a52eab334fb3f4fe8d29f1f1b7570a52f}{piece}}(\mbox{\hyperlink{classSquare_a52eab334fb3f4fe8d29f1f1b7570a52f}{piece}})\{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSquare_a85463a0e54231f5cbc701aae9202b421}\label{classSquare_a85463a0e54231f5cbc701aae9202b421}} 
+\index{Square@{Square}!Square@{Square}}
+\index{Square@{Square}!Square@{Square}}
+\doxysubsubsection{\texorpdfstring{Square()}{Square()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Square\+::\+Square (\begin{DoxyParamCaption}\item[{string}]{str,  }\item[{\mbox{\hyperlink{classPiece}{Piece}} $\ast$}]{piece = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Constructeur de la classe \mbox{\hyperlink{classSquare}{Square}} prenant une chaîne de caractères pour initialiser les coordonnées. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & Chaîne de caractères représentant la position de la case au format d\textquotesingle{}un échiquier \\
+\hline
+{\em piece} & Pointeur vers la pièce à placer dans la case (par défaut nullptr si la case est vide). \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{7     : \mbox{\hyperlink{classPos_a2bc6640b2acd4c1bca662b96b9e78713}{Pos}}(pos), \mbox{\hyperlink{classSquare_a52eab334fb3f4fe8d29f1f1b7570a52f}{piece}}(\mbox{\hyperlink{classSquare_a52eab334fb3f4fe8d29f1f1b7570a52f}{piece}})\{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSquare_a90af7ce1060cff7b717ceddb333846b8}\label{classSquare_a90af7ce1060cff7b717ceddb333846b8}} 
+\index{Square@{Square}!````~Square@{$\sim$Square}}
+\index{````~Square@{$\sim$Square}!Square@{Square}}
+\doxysubsubsection{\texorpdfstring{$\sim$Square()}{~Square()}}
+{\footnotesize\ttfamily Square\+::$\sim$\+Square (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructeur de la classe \mbox{\hyperlink{classSquare}{Square}}. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{9 \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSquare_a98a11c764e706c572950d0c66d5f1324}\label{classSquare_a98a11c764e706c572950d0c66d5f1324}} 
+\index{Square@{Square}!affiche@{affiche}}
+\index{affiche@{affiche}!Square@{Square}}
+\doxysubsubsection{\texorpdfstring{affiche()}{affiche()}}
+{\footnotesize\ttfamily void Square\+::affiche (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Affiche la pièce de la case si elle existe, 5 espaces sinon. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{17                     \{}
+\DoxyCodeLine{18     \textcolor{keywordflow}{if} (\mbox{\hyperlink{classSquare_a6a59ecba9b78405c7cd4328bc593b5c1}{est\_vide}}())}
+\DoxyCodeLine{19     \{}
+\DoxyCodeLine{20         cout << \textcolor{stringliteral}{"     "};}
+\DoxyCodeLine{21     \}}
+\DoxyCodeLine{22     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{23         cout << \textcolor{stringliteral}{"\(\backslash\)u0020\(\backslash\)u0020"};}
+\DoxyCodeLine{24         this-\/>\mbox{\hyperlink{classSquare_a52eab334fb3f4fe8d29f1f1b7570a52f}{piece}}-\/>\mbox{\hyperlink{classPiece_a2cb195ab09042354c6694e1899143d0a}{affiche}}();}
+\DoxyCodeLine{25         cout << \textcolor{stringliteral}{"\(\backslash\)u0020"} << \textcolor{stringliteral}{" "};}
+\DoxyCodeLine{26     \}}
+\DoxyCodeLine{27     }
+\DoxyCodeLine{28 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSquare_a6a59ecba9b78405c7cd4328bc593b5c1}\label{classSquare_a6a59ecba9b78405c7cd4328bc593b5c1}} 
+\index{Square@{Square}!est\_vide@{est\_vide}}
+\index{est\_vide@{est\_vide}!Square@{Square}}
+\doxysubsubsection{\texorpdfstring{est\_vide()}{est\_vide()}}
+{\footnotesize\ttfamily bool Square\+::est\+\_\+vide (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Vérifie si la case est vide (c\textquotesingle{}est-\/à-\/dire si le pointeur est null). 
+
+\begin{DoxyReturn}{Returns}
+true si la case est vide, false sinon. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{15 \{\textcolor{keywordflow}{return} (\mbox{\hyperlink{classSquare_a52eab334fb3f4fe8d29f1f1b7570a52f}{piece}} == \textcolor{keyword}{nullptr});\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSquare_a98e118b2bc38a089613ec4279817d08b}\label{classSquare_a98e118b2bc38a089613ec4279817d08b}} 
+\index{Square@{Square}!getPiece@{getPiece}}
+\index{getPiece@{getPiece}!Square@{Square}}
+\doxysubsubsection{\texorpdfstring{getPiece()}{getPiece()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPiece}{Piece}} $\ast$ Square\+::get\+Piece (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Obtient la pièce présente dans la case. 
+
+\begin{DoxyReturn}{Returns}
+Pointeur vers la pièce présente dans la case. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{13 \{ \textcolor{keywordflow}{return} this-\/>\mbox{\hyperlink{classSquare_a52eab334fb3f4fe8d29f1f1b7570a52f}{piece}}; \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSquare_ab33953dc0e41e5be1309bec6a572aa42}\label{classSquare_ab33953dc0e41e5be1309bec6a572aa42}} 
+\index{Square@{Square}!setPiece@{setPiece}}
+\index{setPiece@{setPiece}!Square@{Square}}
+\doxysubsubsection{\texorpdfstring{setPiece()}{setPiece()}}
+{\footnotesize\ttfamily void Square\+::set\+Piece (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPiece}{Piece}} $\ast$}]{piece }\end{DoxyParamCaption})}
+
+
+
+Modifie la pièce présente dans la case. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em piece} & Pointeur vers la nouvelle pièce à placer dans la case. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{11 \{ this-\/>piece = \mbox{\hyperlink{classSquare_a52eab334fb3f4fe8d29f1f1b7570a52f}{piece}}; \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{classSquare_a52eab334fb3f4fe8d29f1f1b7570a52f}\label{classSquare_a52eab334fb3f4fe8d29f1f1b7570a52f}} 
+\index{Square@{Square}!piece@{piece}}
+\index{piece@{piece}!Square@{Square}}
+\doxysubsubsection{\texorpdfstring{piece}{piece}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPiece}{Piece}}$\ast$ Square\+::piece\hspace{0.3cm}{\ttfamily [private]}}
+
+Pointeur vers la pièce présente dans la case 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{square_8hpp}{square.\+hpp}}\item 
+src/\mbox{\hyperlink{square_8cc}{square.\+cc}}\end{DoxyCompactItemize}

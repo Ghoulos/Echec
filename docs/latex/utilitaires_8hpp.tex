@@ -1,0 +1,250 @@
+\hypertarget{utilitaires_8hpp}{}\doxysection{include/utilitaires.hpp File Reference}
+\label{utilitaires_8hpp}\index{include/utilitaires.hpp@{include/utilitaires.hpp}}
+This graph shows which files directly or indirectly include this file\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{utilitaires_8hpp_ad7d5a4012f0a63c7a365e82d6612fcf2}{entree\+\_\+valide}} (const string \&input)
+\begin{DoxyCompactList}\small\item\em Vérifie si une entrée donnée est valide. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{utilitaires_8hpp_a0d523e5439abfb35f3f12ea91940b8d5}{promotion\+\_\+valide}} (const string \&input)
+\begin{DoxyCompactList}\small\item\em Vérifie si une entrée de promotion donnée est valide. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{utilitaires_8hpp_aa859c99c72e5ab18d9452b8d5377e5ee}{entree\+\_\+mouvement}} (const string \&input)
+\begin{DoxyCompactList}\small\item\em Vérifie si une entrée donnée correspond à un mouvement. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{utilitaires_8hpp_a8b5d7b5ae94af19cc408b612c81b7ecf}{entree\+\_\+petit\+\_\+rock}} (const string \&input)
+\begin{DoxyCompactList}\small\item\em Vérifie si une entrée donnée correspond à un petit roque. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{utilitaires_8hpp_aa08ac1e21bb04eb4b7e85033f01f15c0}{entree\+\_\+grand\+\_\+rock}} (const string \&input)
+\begin{DoxyCompactList}\small\item\em Vérifie si une entrée donnée correspond à un grand roque. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{utilitaires_8hpp_aa2f1e6f21b1a0f753422fcaf1406a357}{entree\+\_\+sortie}} (const string \&input)
+\begin{DoxyCompactList}\small\item\em Vérifie si une entrée donnée correspond à une sortie ie \textquotesingle{}/quit\textquotesingle{}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{utilitaires_8hpp_a1695d3107cb2ecb0a7615b78f1385844}{entree\+\_\+egalite}} (const string \&input)
+\begin{DoxyCompactList}\small\item\em Vérifie si une entrée donnée correspond à une demande d\textquotesingle{}égalité ie \textquotesingle{}/draw\textquotesingle{}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{utilitaires_8hpp_adc6774b3c398e19de685a10d5ef6f878}{entree\+\_\+abandon}} (const string \&input)
+\begin{DoxyCompactList}\small\item\em Vérifie si une entrée donnée correspond à un abandon is \textquotesingle{}/resign\textquotesingle{}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{utilitaires_8hpp_a06d9dffdaf6c2ee4d16ef00993f95d0e}{promotion\+\_\+dame}} (const string \&input)
+\begin{DoxyCompactList}\small\item\em Vérifie si une entrée de promotion donnée correspond à une promotion en dame. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{utilitaires_8hpp_aaf213a6e94e51dab440b14e6eb466d63}{promotion\+\_\+tour}} (const string \&input)
+\begin{DoxyCompactList}\small\item\em Vérifie si une entrée de promotion donnée correspond à une promotion en tour. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{utilitaires_8hpp_aa246428f77873b2452724bbb277a4374}{promotion\+\_\+fou}} (const string \&input)
+\begin{DoxyCompactList}\small\item\em Vérifie si une entrée de promotion donnée correspond à une promotion en fou. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{utilitaires_8hpp_ae153fafdc6b7a75ab370e721095bca79}{promotion\+\_\+cavalier}} (const string \&input)
+\begin{DoxyCompactList}\small\item\em Vérifie si une entrée de promotion donnée correspond à une promotion en cavalier. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{utilitaires_8hpp_adc6774b3c398e19de685a10d5ef6f878}\label{utilitaires_8hpp_adc6774b3c398e19de685a10d5ef6f878}} 
+\index{utilitaires.hpp@{utilitaires.hpp}!entree\_abandon@{entree\_abandon}}
+\index{entree\_abandon@{entree\_abandon}!utilitaires.hpp@{utilitaires.hpp}}
+\doxysubsubsection{\texorpdfstring{entree\_abandon()}{entree\_abandon()}}
+{\footnotesize\ttfamily bool entree\+\_\+abandon (\begin{DoxyParamCaption}\item[{const string \&}]{input }\end{DoxyParamCaption})}
+
+
+
+Vérifie si une entrée donnée correspond à un abandon is \textquotesingle{}/resign\textquotesingle{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Chaîne de caractères représentant l\textquotesingle{}entrée à vérifier. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si l\textquotesingle{}entrée correspond à un abandon, false sinon. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utilitaires_8hpp_a1695d3107cb2ecb0a7615b78f1385844}\label{utilitaires_8hpp_a1695d3107cb2ecb0a7615b78f1385844}} 
+\index{utilitaires.hpp@{utilitaires.hpp}!entree\_egalite@{entree\_egalite}}
+\index{entree\_egalite@{entree\_egalite}!utilitaires.hpp@{utilitaires.hpp}}
+\doxysubsubsection{\texorpdfstring{entree\_egalite()}{entree\_egalite()}}
+{\footnotesize\ttfamily bool entree\+\_\+egalite (\begin{DoxyParamCaption}\item[{const string \&}]{input }\end{DoxyParamCaption})}
+
+
+
+Vérifie si une entrée donnée correspond à une demande d\textquotesingle{}égalité ie \textquotesingle{}/draw\textquotesingle{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Chaîne de caractères représentant l\textquotesingle{}entrée à vérifier. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si l\textquotesingle{}entrée correspond à une demande d\textquotesingle{}égalité, false sinon. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utilitaires_8hpp_aa08ac1e21bb04eb4b7e85033f01f15c0}\label{utilitaires_8hpp_aa08ac1e21bb04eb4b7e85033f01f15c0}} 
+\index{utilitaires.hpp@{utilitaires.hpp}!entree\_grand\_rock@{entree\_grand\_rock}}
+\index{entree\_grand\_rock@{entree\_grand\_rock}!utilitaires.hpp@{utilitaires.hpp}}
+\doxysubsubsection{\texorpdfstring{entree\_grand\_rock()}{entree\_grand\_rock()}}
+{\footnotesize\ttfamily bool entree\+\_\+grand\+\_\+rock (\begin{DoxyParamCaption}\item[{const string \&}]{input }\end{DoxyParamCaption})}
+
+
+
+Vérifie si une entrée donnée correspond à un grand roque. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Chaîne de caractères représentant l\textquotesingle{}entrée à vérifier. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si l\textquotesingle{}entrée correspond à un grand roque, false sinon. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utilitaires_8hpp_aa859c99c72e5ab18d9452b8d5377e5ee}\label{utilitaires_8hpp_aa859c99c72e5ab18d9452b8d5377e5ee}} 
+\index{utilitaires.hpp@{utilitaires.hpp}!entree\_mouvement@{entree\_mouvement}}
+\index{entree\_mouvement@{entree\_mouvement}!utilitaires.hpp@{utilitaires.hpp}}
+\doxysubsubsection{\texorpdfstring{entree\_mouvement()}{entree\_mouvement()}}
+{\footnotesize\ttfamily bool entree\+\_\+mouvement (\begin{DoxyParamCaption}\item[{const string \&}]{input }\end{DoxyParamCaption})}
+
+
+
+Vérifie si une entrée donnée correspond à un mouvement. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Chaîne de caractères représentant l\textquotesingle{}entrée à vérifier. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si l\textquotesingle{}entrée correspond à un mouvement, false sinon. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utilitaires_8hpp_a8b5d7b5ae94af19cc408b612c81b7ecf}\label{utilitaires_8hpp_a8b5d7b5ae94af19cc408b612c81b7ecf}} 
+\index{utilitaires.hpp@{utilitaires.hpp}!entree\_petit\_rock@{entree\_petit\_rock}}
+\index{entree\_petit\_rock@{entree\_petit\_rock}!utilitaires.hpp@{utilitaires.hpp}}
+\doxysubsubsection{\texorpdfstring{entree\_petit\_rock()}{entree\_petit\_rock()}}
+{\footnotesize\ttfamily bool entree\+\_\+petit\+\_\+rock (\begin{DoxyParamCaption}\item[{const string \&}]{input }\end{DoxyParamCaption})}
+
+
+
+Vérifie si une entrée donnée correspond à un petit roque. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Chaîne de caractères représentant l\textquotesingle{}entrée à vérifier. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si l\textquotesingle{}entrée correspond à un petit roque, false sinon. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utilitaires_8hpp_aa2f1e6f21b1a0f753422fcaf1406a357}\label{utilitaires_8hpp_aa2f1e6f21b1a0f753422fcaf1406a357}} 
+\index{utilitaires.hpp@{utilitaires.hpp}!entree\_sortie@{entree\_sortie}}
+\index{entree\_sortie@{entree\_sortie}!utilitaires.hpp@{utilitaires.hpp}}
+\doxysubsubsection{\texorpdfstring{entree\_sortie()}{entree\_sortie()}}
+{\footnotesize\ttfamily bool entree\+\_\+sortie (\begin{DoxyParamCaption}\item[{const string \&}]{input }\end{DoxyParamCaption})}
+
+
+
+Vérifie si une entrée donnée correspond à une sortie ie \textquotesingle{}/quit\textquotesingle{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Chaîne de caractères représentant l\textquotesingle{}entrée à vérifier. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si l\textquotesingle{}entrée correspond à une sortie, false sinon. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utilitaires_8hpp_ad7d5a4012f0a63c7a365e82d6612fcf2}\label{utilitaires_8hpp_ad7d5a4012f0a63c7a365e82d6612fcf2}} 
+\index{utilitaires.hpp@{utilitaires.hpp}!entree\_valide@{entree\_valide}}
+\index{entree\_valide@{entree\_valide}!utilitaires.hpp@{utilitaires.hpp}}
+\doxysubsubsection{\texorpdfstring{entree\_valide()}{entree\_valide()}}
+{\footnotesize\ttfamily bool entree\+\_\+valide (\begin{DoxyParamCaption}\item[{const string \&}]{input }\end{DoxyParamCaption})}
+
+
+
+Vérifie si une entrée donnée est valide. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Chaîne de caractères représentant l\textquotesingle{}entrée à vérifier. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si l\textquotesingle{}entrée est valide, false sinon. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utilitaires_8hpp_ae153fafdc6b7a75ab370e721095bca79}\label{utilitaires_8hpp_ae153fafdc6b7a75ab370e721095bca79}} 
+\index{utilitaires.hpp@{utilitaires.hpp}!promotion\_cavalier@{promotion\_cavalier}}
+\index{promotion\_cavalier@{promotion\_cavalier}!utilitaires.hpp@{utilitaires.hpp}}
+\doxysubsubsection{\texorpdfstring{promotion\_cavalier()}{promotion\_cavalier()}}
+{\footnotesize\ttfamily bool promotion\+\_\+cavalier (\begin{DoxyParamCaption}\item[{const string \&}]{input }\end{DoxyParamCaption})}
+
+
+
+Vérifie si une entrée de promotion donnée correspond à une promotion en cavalier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Chaîne de caractères représentant l\textquotesingle{}entrée de promotion à vérifier. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si l\textquotesingle{}entrée de promotion correspond à une promotion en cavalier, false sinon. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utilitaires_8hpp_a06d9dffdaf6c2ee4d16ef00993f95d0e}\label{utilitaires_8hpp_a06d9dffdaf6c2ee4d16ef00993f95d0e}} 
+\index{utilitaires.hpp@{utilitaires.hpp}!promotion\_dame@{promotion\_dame}}
+\index{promotion\_dame@{promotion\_dame}!utilitaires.hpp@{utilitaires.hpp}}
+\doxysubsubsection{\texorpdfstring{promotion\_dame()}{promotion\_dame()}}
+{\footnotesize\ttfamily bool promotion\+\_\+dame (\begin{DoxyParamCaption}\item[{const string \&}]{input }\end{DoxyParamCaption})}
+
+
+
+Vérifie si une entrée de promotion donnée correspond à une promotion en dame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Chaîne de caractères représentant l\textquotesingle{}entrée de promotion à vérifier. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si l\textquotesingle{}entrée de promotion correspond à une promotion en dame, false sinon. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utilitaires_8hpp_aa246428f77873b2452724bbb277a4374}\label{utilitaires_8hpp_aa246428f77873b2452724bbb277a4374}} 
+\index{utilitaires.hpp@{utilitaires.hpp}!promotion\_fou@{promotion\_fou}}
+\index{promotion\_fou@{promotion\_fou}!utilitaires.hpp@{utilitaires.hpp}}
+\doxysubsubsection{\texorpdfstring{promotion\_fou()}{promotion\_fou()}}
+{\footnotesize\ttfamily bool promotion\+\_\+fou (\begin{DoxyParamCaption}\item[{const string \&}]{input }\end{DoxyParamCaption})}
+
+
+
+Vérifie si une entrée de promotion donnée correspond à une promotion en fou. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Chaîne de caractères représentant l\textquotesingle{}entrée de promotion à vérifier. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si l\textquotesingle{}entrée de promotion correspond à une promotion en fou, false sinon. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utilitaires_8hpp_aaf213a6e94e51dab440b14e6eb466d63}\label{utilitaires_8hpp_aaf213a6e94e51dab440b14e6eb466d63}} 
+\index{utilitaires.hpp@{utilitaires.hpp}!promotion\_tour@{promotion\_tour}}
+\index{promotion\_tour@{promotion\_tour}!utilitaires.hpp@{utilitaires.hpp}}
+\doxysubsubsection{\texorpdfstring{promotion\_tour()}{promotion\_tour()}}
+{\footnotesize\ttfamily bool promotion\+\_\+tour (\begin{DoxyParamCaption}\item[{const string \&}]{input }\end{DoxyParamCaption})}
+
+
+
+Vérifie si une entrée de promotion donnée correspond à une promotion en tour. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Chaîne de caractères représentant l\textquotesingle{}entrée de promotion à vérifier. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si l\textquotesingle{}entrée de promotion correspond à une promotion en tour, false sinon. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utilitaires_8hpp_a0d523e5439abfb35f3f12ea91940b8d5}\label{utilitaires_8hpp_a0d523e5439abfb35f3f12ea91940b8d5}} 
+\index{utilitaires.hpp@{utilitaires.hpp}!promotion\_valide@{promotion\_valide}}
+\index{promotion\_valide@{promotion\_valide}!utilitaires.hpp@{utilitaires.hpp}}
+\doxysubsubsection{\texorpdfstring{promotion\_valide()}{promotion\_valide()}}
+{\footnotesize\ttfamily bool promotion\+\_\+valide (\begin{DoxyParamCaption}\item[{const string \&}]{input }\end{DoxyParamCaption})}
+
+
+
+Vérifie si une entrée de promotion donnée est valide. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Chaîne de caractères représentant l\textquotesingle{}entrée de promotion à vérifier. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si l\textquotesingle{}entrée de promotion est valide, false sinon. 
+\end{DoxyReturn}

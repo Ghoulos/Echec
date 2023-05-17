@@ -1,0 +1,81 @@
+\hypertarget{classRoi}{}\doxysection{Roi Class Reference}
+\label{classRoi}\index{Roi@{Roi}}
+
+
+{\ttfamily \#include $<$roi.\+hpp$>$}
+
+
+
+Inheritance diagram for Roi\+:
+% FIG 0
+
+
+Collaboration diagram for Roi\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRoi_acf9ca2c2a8fa582d260d554c1715994c}{Roi}} (\mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23f}{couleur\+\_\+t}} c, int \mbox{\hyperlink{classPiece_ac40cffee50da10a50361ff4791fdd528}{id}}, \mbox{\hyperlink{classSquare}{Square}} $\ast$pos)
+\item 
+bool \mbox{\hyperlink{classRoi_a96e8410e46f5dca4feca4aa7193b7d7a}{mouvement\+\_\+legal}} (\mbox{\hyperlink{classSquare}{Square}}, bool)
+\begin{DoxyCompactList}\small\item\em Vérifie si un mouvement vers une case donnée est légal pour la pièce. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classRoi_acf9ca2c2a8fa582d260d554c1715994c}\label{classRoi_acf9ca2c2a8fa582d260d554c1715994c}} 
+\index{Roi@{Roi}!Roi@{Roi}}
+\index{Roi@{Roi}!Roi@{Roi}}
+\doxysubsubsection{\texorpdfstring{Roi()}{Roi()}}
+{\footnotesize\ttfamily Roi\+::\+Roi (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23f}{couleur\+\_\+t}}}]{c,  }\item[{int}]{id,  }\item[{\mbox{\hyperlink{classSquare}{Square}} $\ast$}]{pos }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{4     : \mbox{\hyperlink{classPiece_a975177511ab70f692546b04eefd19610}{Piece}}(color,(color == \mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23fa58b0623118011f228f9e035e740ca481}{Blanc}}) ? \textcolor{stringliteral}{"\(\backslash\)u265A"} : \textcolor{stringliteral}{"\(\backslash\)u2654"},\textcolor{keywordtype}{id},pos)\{}
+\DoxyCodeLine{5 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRoi_a96e8410e46f5dca4feca4aa7193b7d7a}\label{classRoi_a96e8410e46f5dca4feca4aa7193b7d7a}} 
+\index{Roi@{Roi}!mouvement\_legal@{mouvement\_legal}}
+\index{mouvement\_legal@{mouvement\_legal}!Roi@{Roi}}
+\doxysubsubsection{\texorpdfstring{mouvement\_legal()}{mouvement\_legal()}}
+{\footnotesize\ttfamily bool Roi\+::mouvement\+\_\+legal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSquare}{Square}}}]{square,  }\item[{bool}]{mouv\+Capture = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Vérifie si un mouvement vers une case donnée est légal pour la pièce. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em square} & La case vers laquelle effectuer le mouvement. \\
+\hline
+{\em mouv\+Capture} & Spécifie si le mouvement est un mouvement de capture (pour les pions) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si le mouvement est légal, false sinon. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classPiece_a99f3ab3092ed25a5de6f7faaeb0e60ba}{Piece}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{7                                                                    \{}
+\DoxyCodeLine{8     \textcolor{keywordflow}{if} ((abs(dest.getY() -\/ this-\/>position-\/>getY()) > 1)}
+\DoxyCodeLine{9         || (abs(dest.getX() -\/ this-\/>position-\/>getX()) > 1))\{}
+\DoxyCodeLine{10         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{11     \}}
+\DoxyCodeLine{12     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{13 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/pieces/\mbox{\hyperlink{roi_8hpp}{roi.\+hpp}}\item 
+src/pieces/\mbox{\hyperlink{roi_8cc}{roi.\+cc}}\end{DoxyCompactItemize}

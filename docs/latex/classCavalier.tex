@@ -1,0 +1,80 @@
+\hypertarget{classCavalier}{}\doxysection{Cavalier Class Reference}
+\label{classCavalier}\index{Cavalier@{Cavalier}}
+
+
+{\ttfamily \#include $<$cavalier.\+hpp$>$}
+
+
+
+Inheritance diagram for Cavalier\+:
+% FIG 0
+
+
+Collaboration diagram for Cavalier\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCavalier_af93f55fa7e6eb223ba4f090112dbb6a9}{Cavalier}} (\mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23f}{couleur\+\_\+t}} c, int \mbox{\hyperlink{classPiece_ac40cffee50da10a50361ff4791fdd528}{id}}, \mbox{\hyperlink{classSquare}{Square}} $\ast$pos)
+\item 
+bool \mbox{\hyperlink{classCavalier_a779a9aac298b11620357036c44e2301c}{mouvement\+\_\+legal}} (\mbox{\hyperlink{classSquare}{Square}}, bool)
+\begin{DoxyCompactList}\small\item\em Vérifie si un mouvement vers une case donnée est légal pour la pièce. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCavalier_af93f55fa7e6eb223ba4f090112dbb6a9}\label{classCavalier_af93f55fa7e6eb223ba4f090112dbb6a9}} 
+\index{Cavalier@{Cavalier}!Cavalier@{Cavalier}}
+\index{Cavalier@{Cavalier}!Cavalier@{Cavalier}}
+\doxysubsubsection{\texorpdfstring{Cavalier()}{Cavalier()}}
+{\footnotesize\ttfamily Cavalier\+::\+Cavalier (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23f}{couleur\+\_\+t}}}]{c,  }\item[{int}]{id,  }\item[{\mbox{\hyperlink{classSquare}{Square}} $\ast$}]{pos }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{4     : \mbox{\hyperlink{classPiece_a975177511ab70f692546b04eefd19610}{Piece}}(color,(color == \mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23fa58b0623118011f228f9e035e740ca481}{Blanc}}) ? \textcolor{stringliteral}{"\(\backslash\)u265E"} : \textcolor{stringliteral}{"\(\backslash\)u2658"},\textcolor{keywordtype}{id},pos)\{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCavalier_a779a9aac298b11620357036c44e2301c}\label{classCavalier_a779a9aac298b11620357036c44e2301c}} 
+\index{Cavalier@{Cavalier}!mouvement\_legal@{mouvement\_legal}}
+\index{mouvement\_legal@{mouvement\_legal}!Cavalier@{Cavalier}}
+\doxysubsubsection{\texorpdfstring{mouvement\_legal()}{mouvement\_legal()}}
+{\footnotesize\ttfamily bool Cavalier\+::mouvement\+\_\+legal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSquare}{Square}}}]{square,  }\item[{bool}]{mouv\+Capture }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Vérifie si un mouvement vers une case donnée est légal pour la pièce. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em square} & La case vers laquelle effectuer le mouvement. \\
+\hline
+{\em mouv\+Capture} & Spécifie si le mouvement est un mouvement de capture (pour les pions) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si le mouvement est légal, false sinon. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classPiece_a99f3ab3092ed25a5de6f7faaeb0e60ba}{Piece}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{6                                                                 \{}
+\DoxyCodeLine{7     \textcolor{keywordflow}{if} (((abs(dest.getX() -\/ this-\/>position-\/>getX()) == 2) \&\& (abs(dest.getY() -\/ this-\/>position-\/>getY()) == 1))}
+\DoxyCodeLine{8         || ((abs(dest.getX() -\/ this-\/>position-\/>getX()) == 1) \&\& (abs(dest.getY() -\/ this-\/>position-\/>getY()) == 2)))\{}
+\DoxyCodeLine{9         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{10     \}}
+\DoxyCodeLine{11     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{12 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/pieces/\mbox{\hyperlink{cavalier_8hpp}{cavalier.\+hpp}}\item 
+src/pieces/\mbox{\hyperlink{cavalier_8cc}{cavalier.\+cc}}\end{DoxyCompactItemize}

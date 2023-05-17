@@ -1,0 +1,74 @@
+\hypertarget{piece_8hpp}{}\doxysection{include/piece.hpp File Reference}
+\label{piece_8hpp}\index{include/piece.hpp@{include/piece.hpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \char`\"{}square.\+hpp\char`\"{}}\newline
+Include dependency graph for piece.\+hpp\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classPiece}{Piece}}
+\begin{DoxyCompactList}\small\item\em Classe abstraite représentant une pièce du jeu d\textquotesingle{}échecs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23f}{couleur\+\_\+t}} \{ \mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23fa58b0623118011f228f9e035e740ca481}{Blanc}} = 0, 
+\mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23faa7b5bb6c14d7e04bce22bf5ee184be20}{Noir}} = 1
+ \}
+\item 
+enum \mbox{\hyperlink{piece_8hpp_ac870e865cf50ebb064bc55340a4d2e48}{etat\+\_\+t}} \{ \mbox{\hyperlink{piece_8hpp_ac870e865cf50ebb064bc55340a4d2e48a30ac2eb3397a19d0e4563f9e53c1ffd4}{En\+Jeu}} = 0, 
+\mbox{\hyperlink{piece_8hpp_ac870e865cf50ebb064bc55340a4d2e48ad96f5aa8290ec43a841a9ae0a9df946e}{Promue}} = 1, 
+\mbox{\hyperlink{piece_8hpp_ac870e865cf50ebb064bc55340a4d2e48a177cd8b4ca72da2d4facf80ff85a2f3e}{Capture}} = 2
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{piece_8hpp_a2fc0928aba15295ee980b903ed92f23f}\label{piece_8hpp_a2fc0928aba15295ee980b903ed92f23f}} 
+\index{piece.hpp@{piece.hpp}!couleur\_t@{couleur\_t}}
+\index{couleur\_t@{couleur\_t}!piece.hpp@{piece.hpp}}
+\doxysubsubsection{\texorpdfstring{couleur\_t}{couleur\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23f}{couleur\+\_\+t}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Blanc@{Blanc}!piece.hpp@{piece.hpp}}\index{piece.hpp@{piece.hpp}!Blanc@{Blanc}}}\mbox{\Hypertarget{piece_8hpp_a2fc0928aba15295ee980b903ed92f23fa58b0623118011f228f9e035e740ca481}\label{piece_8hpp_a2fc0928aba15295ee980b903ed92f23fa58b0623118011f228f9e035e740ca481}} 
+Blanc&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Noir@{Noir}!piece.hpp@{piece.hpp}}\index{piece.hpp@{piece.hpp}!Noir@{Noir}}}\mbox{\Hypertarget{piece_8hpp_a2fc0928aba15295ee980b903ed92f23faa7b5bb6c14d7e04bce22bf5ee184be20}\label{piece_8hpp_a2fc0928aba15295ee980b903ed92f23faa7b5bb6c14d7e04bce22bf5ee184be20}} 
+Noir&\\
+\hline
+
+\end{DoxyEnumFields}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{7 \{\mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23fa58b0623118011f228f9e035e740ca481}{Blanc}} = 0, \mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23faa7b5bb6c14d7e04bce22bf5ee184be20}{Noir}} = 1\} \mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23f}{couleur\_t}};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{piece_8hpp_ac870e865cf50ebb064bc55340a4d2e48}\label{piece_8hpp_ac870e865cf50ebb064bc55340a4d2e48}} 
+\index{piece.hpp@{piece.hpp}!etat\_t@{etat\_t}}
+\index{etat\_t@{etat\_t}!piece.hpp@{piece.hpp}}
+\doxysubsubsection{\texorpdfstring{etat\_t}{etat\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{piece_8hpp_ac870e865cf50ebb064bc55340a4d2e48}{etat\+\_\+t}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EnJeu@{EnJeu}!piece.hpp@{piece.hpp}}\index{piece.hpp@{piece.hpp}!EnJeu@{EnJeu}}}\mbox{\Hypertarget{piece_8hpp_ac870e865cf50ebb064bc55340a4d2e48a30ac2eb3397a19d0e4563f9e53c1ffd4}\label{piece_8hpp_ac870e865cf50ebb064bc55340a4d2e48a30ac2eb3397a19d0e4563f9e53c1ffd4}} 
+En\+Jeu&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Promue@{Promue}!piece.hpp@{piece.hpp}}\index{piece.hpp@{piece.hpp}!Promue@{Promue}}}\mbox{\Hypertarget{piece_8hpp_ac870e865cf50ebb064bc55340a4d2e48ad96f5aa8290ec43a841a9ae0a9df946e}\label{piece_8hpp_ac870e865cf50ebb064bc55340a4d2e48ad96f5aa8290ec43a841a9ae0a9df946e}} 
+Promue&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Capture@{Capture}!piece.hpp@{piece.hpp}}\index{piece.hpp@{piece.hpp}!Capture@{Capture}}}\mbox{\Hypertarget{piece_8hpp_ac870e865cf50ebb064bc55340a4d2e48a177cd8b4ca72da2d4facf80ff85a2f3e}\label{piece_8hpp_ac870e865cf50ebb064bc55340a4d2e48a177cd8b4ca72da2d4facf80ff85a2f3e}} 
+Capture&\\
+\hline
+
+\end{DoxyEnumFields}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{8 \{\mbox{\hyperlink{piece_8hpp_ac870e865cf50ebb064bc55340a4d2e48a30ac2eb3397a19d0e4563f9e53c1ffd4}{EnJeu}} = 0, \mbox{\hyperlink{piece_8hpp_ac870e865cf50ebb064bc55340a4d2e48ad96f5aa8290ec43a841a9ae0a9df946e}{Promue}} = 1, \mbox{\hyperlink{piece_8hpp_ac870e865cf50ebb064bc55340a4d2e48a177cd8b4ca72da2d4facf80ff85a2f3e}{Capture}} = 2\} \mbox{\hyperlink{piece_8hpp_ac870e865cf50ebb064bc55340a4d2e48}{etat\_t}};}
+
+\end{DoxyCode}

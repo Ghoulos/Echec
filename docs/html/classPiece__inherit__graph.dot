@@ -1,0 +1,19 @@
+digraph "Piece"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{Piece\n|# couleur\l# icone\l# position\l# etat\l# id\l# nbDeplacement\l|+ Piece()\l+ ~Piece()\l+ setSquare()\l+ getSquare()\l+ getCouleur()\l+ getEtat()\l+ getIcone()\l+ getId()\l+ getNbDeplacement()\l+ setNbDeplacement()\l+ incr_nb_deplacement()\l+ affiche()\l+ set_etat()\l+ mouvement_legal()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Classe abstraite représentant une pièce du jeu d'échecs."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{Cavalier\n||+ Cavalier()\l+ mouvement_legal()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCavalier.html",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node3 [label="{Dame\n||+ Dame()\l+ mouvement_legal()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDame.html",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node4 [label="{Fou\n||+ Fou()\l+ mouvement_legal()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classFou.html",tooltip=" "];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node5 [label="{Pion\n||+ Pion()\l+ mouvement_legal()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPion.html",tooltip=" "];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node6 [label="{Roi\n||+ Roi()\l+ mouvement_legal()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classRoi.html",tooltip=" "];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node7 [label="{Tour\n||+ Tour()\l+ mouvement_legal()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classTour.html",tooltip=" "];
+}

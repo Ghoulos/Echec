@@ -1,0 +1,642 @@
+\hypertarget{classEchiquier}{}\doxysection{Echiquier Class Reference}
+\label{classEchiquier}\index{Echiquier@{Echiquier}}
+
+
+Classe représentant l\textquotesingle{}échiquier du jeu d\textquotesingle{}échecs.  
+
+
+
+
+{\ttfamily \#include $<$echiquier.\+hpp$>$}
+
+
+
+Collaboration diagram for Echiquier\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEchiquier_a9df740c7920dd8957852a06a34d86e77}{Echiquier}} (bool initialiser\+\_\+pieces=true)
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe \mbox{\hyperlink{classEchiquier}{Echiquier}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEchiquier_af0b910349d14c53551997a8e5a9cbd3f}{$\sim$\+Echiquier}} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de la classe \mbox{\hyperlink{classEchiquier}{Echiquier}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSquare}{Square}} $\ast$ \mbox{\hyperlink{classEchiquier_a58713a00ef6b003ceccf8dc9767ff948}{get\+Square}} (int x, int y) const
+\begin{DoxyCompactList}\small\item\em Obtient la case à partir de ses coordonnées x et y. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSquare}{Square}} $\ast$ \mbox{\hyperlink{classEchiquier_a71a2e241dbd9382511c7ac666fca3ccb}{get\+Square}} (\mbox{\hyperlink{classPos}{Pos}} pos) const
+\begin{DoxyCompactList}\small\item\em Obtient la case à partir d\textquotesingle{}un objet de type \mbox{\hyperlink{classPos}{Pos}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPiece}{Piece}} $\ast$ \mbox{\hyperlink{classEchiquier_a94d5f39cc1d0cb8628914cbb2f7701e5}{get\+Piece}} (\mbox{\hyperlink{classPos}{Pos}} pos) const
+\begin{DoxyCompactList}\small\item\em Obtient la pièce présente dans une case donnée. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{classPiece}{Piece}} $\ast$ $>$ \mbox{\hyperlink{classEchiquier_aad1f3112f03fc38fd100671fb591e55b}{get\+Pieces}} (\mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23f}{couleur\+\_\+t}} c) const
+\begin{DoxyCompactList}\small\item\em Obtient le vecteur piece associé a une couelur (attribut pieces\mbox{[}couleur\mbox{]}) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEchiquier_a4832537b56976edd18da51b34f0f6b9d}{set\+Piece}} (\mbox{\hyperlink{classPiece}{Piece}} $\ast$piece, \mbox{\hyperlink{classSquare}{Square}} $\ast$square)
+\begin{DoxyCompactList}\small\item\em Place une pièce dans une case donnée. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSquare}{Square}} $\ast$ \mbox{\hyperlink{classEchiquier_a4cf6563b18af0914a337837bce35d859}{position\+\_\+roi}} (\mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23f}{couleur\+\_\+t}} couleur) const
+\begin{DoxyCompactList}\small\item\em Obtient la position du roi d\textquotesingle{}une couleur donnée. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classEchiquier_a1f82bde1134dc8abdcf992a4f96710de}{pgn\+Piece\+Name}} (const string piece, bool view\+\_\+pawn, bool view\+\_\+color=true) const
+\begin{DoxyCompactList}\small\item\em Obtient le nom P\+GN d\textquotesingle{}une pièce. (normalisme anglais) \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classEchiquier_af80b43248dc2e3d4b6bf8942cbaca65d}{canonical\+Position}} () const
+\begin{DoxyCompactList}\small\item\em Obtient la position canonique de l\textquotesingle{}échiquier. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEchiquier_af22265120d527dfb2fa91187c4ce01cf}{affiche}} () const
+\begin{DoxyCompactList}\small\item\em Affiche l\textquotesingle{}échiquier. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEchiquier_af0b47dd985820c255f9bba385dc101bc}{alloc\+\_\+mem\+\_\+echiquier}} ()
+\begin{DoxyCompactList}\small\item\em Alloue la mémoire pour l\textquotesingle{}échiquier (matrice de cases). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEchiquier_ace909de2adb176b2efdc1054c70f5b07}{init\+\_\+echiquier}} ()
+\begin{DoxyCompactList}\small\item\em Initialise l\textquotesingle{}échiquier en plaçant les cases vides. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEchiquier_a967301c80139f67a7e494e166255efa6}{placement\+\_\+initial}} ()
+\begin{DoxyCompactList}\small\item\em Place les pièces initiales sur l\textquotesingle{}échiquier. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEchiquier_ad68f425e54ab80f0a695ea4c87f4b49d}{pose\+\_\+piece}} (\mbox{\hyperlink{classPiece}{Piece}} $\ast$piece, \mbox{\hyperlink{classSquare}{Square}} $\ast$case\+Cible)
+\begin{DoxyCompactList}\small\item\em Place une pièce dans une case donnée. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPiece}{Piece}} $\ast$ \mbox{\hyperlink{classEchiquier_aecad5d6c8eb6a615bb9a83c145e603ed}{deplace\+\_\+piece}} (\mbox{\hyperlink{classSquare}{Square}} $\ast$origine, \mbox{\hyperlink{classSquare}{Square}} $\ast$destination)
+\begin{DoxyCompactList}\small\item\em Déplace une pièce d\textquotesingle{}une case à une autre. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPiece}{Piece}} $\ast$ \mbox{\hyperlink{classEchiquier_a3147d0896fb74f1c8091d8c492dcc18c}{deplace\+\_\+piece}} (const \mbox{\hyperlink{classPos}{Pos}} origine, const \mbox{\hyperlink{classPos}{Pos}} destination)
+\begin{DoxyCompactList}\small\item\em Déplace une pièce d\textquotesingle{}une case à une autre. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEchiquier_a84530cf38cda93980c31e92b087774dc}{promotion}} (\mbox{\hyperlink{classPiece}{Piece}} $\ast$piece, const string promotion)
+\begin{DoxyCompactList}\small\item\em Effectue la promotion d\textquotesingle{}une pièce. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSquare}{Square}} $\ast$$\ast$$\ast$ \mbox{\hyperlink{classEchiquier_ac52a3db2e7451caf6559121465cf786e}{plateau}}
+\item 
+vector$<$ \mbox{\hyperlink{classPiece}{Piece}} $\ast$ $>$ \mbox{\hyperlink{classEchiquier_a8b1ca00d548faf45d7e8f0311c0f9e03}{pieces}} \mbox{[}2\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe représentant l\textquotesingle{}échiquier du jeu d\textquotesingle{}échecs. 
+
+La classe \mbox{\hyperlink{classEchiquier}{Echiquier}} est responsable de la gestion de l\textquotesingle{}échiquier et des pièces qui y sont placées. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classEchiquier_a9df740c7920dd8957852a06a34d86e77}\label{classEchiquier_a9df740c7920dd8957852a06a34d86e77}} 
+\index{Echiquier@{Echiquier}!Echiquier@{Echiquier}}
+\index{Echiquier@{Echiquier}!Echiquier@{Echiquier}}
+\doxysubsubsection{\texorpdfstring{Echiquier()}{Echiquier()}}
+{\footnotesize\ttfamily Echiquier\+::\+Echiquier (\begin{DoxyParamCaption}\item[{bool}]{initialiser\+\_\+pieces = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Constructeur de la classe \mbox{\hyperlink{classEchiquier}{Echiquier}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em initialiser\+\_\+pieces} & Indique si les pièces doivent être placées initialement sur l\textquotesingle{}échiquier (par défaut true). \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{17 \{}
+\DoxyCodeLine{18     \mbox{\hyperlink{classEchiquier_af0b47dd985820c255f9bba385dc101bc}{alloc\_mem\_echiquier}}();}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20     \mbox{\hyperlink{classEchiquier_ace909de2adb176b2efdc1054c70f5b07}{init\_echiquier}}();}
+\DoxyCodeLine{21     }
+\DoxyCodeLine{22     \textcolor{keywordflow}{if} (placement\_init) \mbox{\hyperlink{classEchiquier_a967301c80139f67a7e494e166255efa6}{placement\_initial}}();}
+\DoxyCodeLine{23 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classEchiquier_af0b910349d14c53551997a8e5a9cbd3f}\label{classEchiquier_af0b910349d14c53551997a8e5a9cbd3f}} 
+\index{Echiquier@{Echiquier}!````~Echiquier@{$\sim$Echiquier}}
+\index{````~Echiquier@{$\sim$Echiquier}!Echiquier@{Echiquier}}
+\doxysubsubsection{\texorpdfstring{$\sim$Echiquier()}{~Echiquier()}}
+{\footnotesize\ttfamily Echiquier\+::$\sim$\+Echiquier (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructeur de la classe \mbox{\hyperlink{classEchiquier}{Echiquier}}. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{25 \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classEchiquier_af22265120d527dfb2fa91187c4ce01cf}\label{classEchiquier_af22265120d527dfb2fa91187c4ce01cf}} 
+\index{Echiquier@{Echiquier}!affiche@{affiche}}
+\index{affiche@{affiche}!Echiquier@{Echiquier}}
+\doxysubsubsection{\texorpdfstring{affiche()}{affiche()}}
+{\footnotesize\ttfamily void Echiquier\+::affiche (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Affiche l\textquotesingle{}échiquier. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{108                                \{}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110         \textcolor{keywordtype}{string} space5 = string(5,\textcolor{charliteral}{' '});}
+\DoxyCodeLine{111         cout << endl;}
+\DoxyCodeLine{112         cout << \textcolor{stringliteral}{"     a     b     c     d     e     f     g     h    "}<< endl;}
+\DoxyCodeLine{113         cout << \textcolor{stringliteral}{"  +-\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/+"} << endl;}
+\DoxyCodeLine{114         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i(7);i>=0;i-\/-\/) \{}
+\DoxyCodeLine{115                 cout << i+1 << \textcolor{stringliteral}{" "}; \textcolor{comment}{// numérotation ligne dans affichage}}
+\DoxyCodeLine{116                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j(0);j<8;j++) \{}
+\DoxyCodeLine{117                     cout << \textcolor{stringliteral}{"|"};}
+\DoxyCodeLine{118                     \mbox{\hyperlink{classEchiquier_ac52a3db2e7451caf6559121465cf786e}{plateau}}[i][j]-\/>\mbox{\hyperlink{classSquare_a98a11c764e706c572950d0c66d5f1324}{affiche}}();}
+\DoxyCodeLine{119                 \}}
+\DoxyCodeLine{120                 cout << \textcolor{stringliteral}{"|\(\backslash\)n  +-\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/+-\/-\/-\/-\/-\/+"};}
+\DoxyCodeLine{121                 cout << endl;}
+\DoxyCodeLine{122         \}}
+\DoxyCodeLine{123 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classEchiquier_af0b47dd985820c255f9bba385dc101bc}\label{classEchiquier_af0b47dd985820c255f9bba385dc101bc}} 
+\index{Echiquier@{Echiquier}!alloc\_mem\_echiquier@{alloc\_mem\_echiquier}}
+\index{alloc\_mem\_echiquier@{alloc\_mem\_echiquier}!Echiquier@{Echiquier}}
+\doxysubsubsection{\texorpdfstring{alloc\_mem\_echiquier()}{alloc\_mem\_echiquier()}}
+{\footnotesize\ttfamily void Echiquier\+::alloc\+\_\+mem\+\_\+echiquier (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Alloue la mémoire pour l\textquotesingle{}échiquier (matrice de cases). 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{125                                    \{}
+\DoxyCodeLine{126     this-\/>\mbox{\hyperlink{classEchiquier_ac52a3db2e7451caf6559121465cf786e}{plateau}} = \textcolor{keyword}{new} \mbox{\hyperlink{classSquare}{Square}}**[\mbox{\hyperlink{echiquier_8hpp_adc3c2556e84bebbe78c8a87fc459a6f8}{TAILLE\_PLATEAU}}];}
+\DoxyCodeLine{127     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{echiquier_8hpp_adc3c2556e84bebbe78c8a87fc459a6f8}{TAILLE\_PLATEAU}}; ++i) \{}
+\DoxyCodeLine{128         this-\/>\mbox{\hyperlink{classEchiquier_ac52a3db2e7451caf6559121465cf786e}{plateau}}[i] = \textcolor{keyword}{new} \mbox{\hyperlink{classSquare}{Square}}*[\mbox{\hyperlink{echiquier_8hpp_adc3c2556e84bebbe78c8a87fc459a6f8}{TAILLE\_PLATEAU}}];}
+\DoxyCodeLine{129     \}}
+\DoxyCodeLine{130 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classEchiquier_af80b43248dc2e3d4b6bf8942cbaca65d}\label{classEchiquier_af80b43248dc2e3d4b6bf8942cbaca65d}} 
+\index{Echiquier@{Echiquier}!canonicalPosition@{canonicalPosition}}
+\index{canonicalPosition@{canonicalPosition}!Echiquier@{Echiquier}}
+\doxysubsubsection{\texorpdfstring{canonicalPosition()}{canonicalPosition()}}
+{\footnotesize\ttfamily string Echiquier\+::canonical\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Obtient la position canonique de l\textquotesingle{}échiquier. 
+
+\begin{DoxyReturn}{Returns}
+Une chaîne de caractères représentant la position canonique de l\textquotesingle{}échiquier. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{93                                          \{}
+\DoxyCodeLine{94     \textcolor{keywordtype}{string} output;}
+\DoxyCodeLine{95     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i<\mbox{\hyperlink{echiquier_8hpp_adc3c2556e84bebbe78c8a87fc459a6f8}{TAILLE\_PLATEAU}}; i++)\{}
+\DoxyCodeLine{96         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j =0;j < \mbox{\hyperlink{echiquier_8hpp_adc3c2556e84bebbe78c8a87fc459a6f8}{TAILLE\_PLATEAU}};j++) \{}
+\DoxyCodeLine{97             \mbox{\hyperlink{classPos}{Pos}} pos\_i = \mbox{\hyperlink{classPos}{Pos}}(i, j);}
+\DoxyCodeLine{98             \textcolor{keywordflow}{if} (this-\/>\mbox{\hyperlink{classEchiquier_a94d5f39cc1d0cb8628914cbb2f7701e5}{getPiece}}(pos\_i) != \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{99                 \textcolor{comment}{// get pieces with theit PGN names,}}
+\DoxyCodeLine{100                 \textcolor{comment}{// true -\/> with P for pawns, true -\/> w/b for colors.}}
+\DoxyCodeLine{101                 output += \mbox{\hyperlink{classEchiquier_a1f82bde1134dc8abdcf992a4f96710de}{pgnPieceName}}(\mbox{\hyperlink{classEchiquier_a94d5f39cc1d0cb8628914cbb2f7701e5}{getPiece}}(pos\_i)-\/>getIcone(),\textcolor{keyword}{true},\textcolor{keyword}{true});}
+\DoxyCodeLine{102             output += \textcolor{stringliteral}{","};}
+\DoxyCodeLine{103         \}}
+\DoxyCodeLine{104     \}}
+\DoxyCodeLine{105     \textcolor{keywordflow}{return} output;}
+\DoxyCodeLine{106 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classEchiquier_a3147d0896fb74f1c8091d8c492dcc18c}\label{classEchiquier_a3147d0896fb74f1c8091d8c492dcc18c}} 
+\index{Echiquier@{Echiquier}!deplace\_piece@{deplace\_piece}}
+\index{deplace\_piece@{deplace\_piece}!Echiquier@{Echiquier}}
+\doxysubsubsection{\texorpdfstring{deplace\_piece()}{deplace\_piece()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPiece}{Piece}} $\ast$ Echiquier\+::deplace\+\_\+piece (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPos}{Pos}}}]{origine,  }\item[{const \mbox{\hyperlink{classPos}{Pos}}}]{destination }\end{DoxyParamCaption})}
+
+
+
+Déplace une pièce d\textquotesingle{}une case à une autre. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em origine} & Objet de type \mbox{\hyperlink{classPos}{Pos}} représentant les coordonnées de la case d\textquotesingle{}origine de la pièce. \\
+\hline
+{\em destination} & Objet de type \mbox{\hyperlink{classPos}{Pos}} représentant les coordonnées de la case de destination de la pièce. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointeur vers la pièce déplacée, ou nullptr si aucun déplacement n\textquotesingle{}a été effectué. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{195                                                                    \{}
+\DoxyCodeLine{196     \mbox{\hyperlink{classSquare}{Square}}* deb = \mbox{\hyperlink{classEchiquier_a58713a00ef6b003ceccf8dc9767ff948}{getSquare}}(posDebut);}
+\DoxyCodeLine{197     \mbox{\hyperlink{classSquare}{Square}}* fin = \mbox{\hyperlink{classEchiquier_a58713a00ef6b003ceccf8dc9767ff948}{getSquare}}(posFin);}
+\DoxyCodeLine{198     \textcolor{keywordflow}{return} \mbox{\hyperlink{classEchiquier_aecad5d6c8eb6a615bb9a83c145e603ed}{deplace\_piece}}(deb, fin);}
+\DoxyCodeLine{199 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classEchiquier_aecad5d6c8eb6a615bb9a83c145e603ed}\label{classEchiquier_aecad5d6c8eb6a615bb9a83c145e603ed}} 
+\index{Echiquier@{Echiquier}!deplace\_piece@{deplace\_piece}}
+\index{deplace\_piece@{deplace\_piece}!Echiquier@{Echiquier}}
+\doxysubsubsection{\texorpdfstring{deplace\_piece()}{deplace\_piece()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPiece}{Piece}} $\ast$ Echiquier\+::deplace\+\_\+piece (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSquare}{Square}} $\ast$}]{origine,  }\item[{\mbox{\hyperlink{classSquare}{Square}} $\ast$}]{destination }\end{DoxyParamCaption})}
+
+
+
+Déplace une pièce d\textquotesingle{}une case à une autre. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em origine} & Pointeur vers la case d\textquotesingle{}origine de la pièce. \\
+\hline
+{\em destination} & Pointeur vers la case de destination de la pièce. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointeur vers la pièce déplacée, ou nullptr si aucun déplacement n\textquotesingle{}a été effectué. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{183                                                                  \{}
+\DoxyCodeLine{184     cout << \textcolor{stringliteral}{"entree deplacepiece echiquier"} << endl;}
+\DoxyCodeLine{185     \mbox{\hyperlink{classPiece}{Piece}} *pieceSortante = CaseFin-\/>getPiece();}
+\DoxyCodeLine{186     \textcolor{keywordflow}{if} (pieceSortante != \textcolor{keyword}{nullptr})\{}
+\DoxyCodeLine{187         pieceSortante-\/>\mbox{\hyperlink{classPiece_a32fe6f8a49343ac641bbae8baaeb7e37}{set\_etat}}(\mbox{\hyperlink{piece_8hpp_ac870e865cf50ebb064bc55340a4d2e48a177cd8b4ca72da2d4facf80ff85a2f3e}{Capture}});}
+\DoxyCodeLine{188     \}}
+\DoxyCodeLine{189     this-\/>\mbox{\hyperlink{classEchiquier_ad68f425e54ab80f0a695ea4c87f4b49d}{pose\_piece}}(CaseDeb-\/>getPiece(), CaseFin);}
+\DoxyCodeLine{190     this-\/>\mbox{\hyperlink{classEchiquier_ad68f425e54ab80f0a695ea4c87f4b49d}{pose\_piece}}(\textcolor{keyword}{nullptr}, CaseDeb);}
+\DoxyCodeLine{191     cout << \mbox{\hyperlink{classEchiquier_a1f82bde1134dc8abdcf992a4f96710de}{pgnPieceName}}(CaseFin-\/>getPiece()-\/>getIcone(), 1, 1)<< endl ;}
+\DoxyCodeLine{192     \textcolor{keywordflow}{return} pieceSortante;}
+\DoxyCodeLine{193 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classEchiquier_a94d5f39cc1d0cb8628914cbb2f7701e5}\label{classEchiquier_a94d5f39cc1d0cb8628914cbb2f7701e5}} 
+\index{Echiquier@{Echiquier}!getPiece@{getPiece}}
+\index{getPiece@{getPiece}!Echiquier@{Echiquier}}
+\doxysubsubsection{\texorpdfstring{getPiece()}{getPiece()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPiece}{Piece}} $\ast$ Echiquier\+::get\+Piece (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPos}{Pos}}}]{pos }\end{DoxyParamCaption}) const}
+
+
+
+Obtient la pièce présente dans une case donnée. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & Objet de type \mbox{\hyperlink{classPos}{Pos}} représentant les coordonnées de la case. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointeur vers la pièce présente dans la case, ou nullptr si la case est vide. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{45                                        \{}
+\DoxyCodeLine{46     \textcolor{keywordflow}{return} \mbox{\hyperlink{classEchiquier_a58713a00ef6b003ceccf8dc9767ff948}{getSquare}}(pos)-\/>\mbox{\hyperlink{classSquare_a98e118b2bc38a089613ec4279817d08b}{getPiece}}();}
+\DoxyCodeLine{47 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classEchiquier_aad1f3112f03fc38fd100671fb591e55b}\label{classEchiquier_aad1f3112f03fc38fd100671fb591e55b}} 
+\index{Echiquier@{Echiquier}!getPieces@{getPieces}}
+\index{getPieces@{getPieces}!Echiquier@{Echiquier}}
+\doxysubsubsection{\texorpdfstring{getPieces()}{getPieces()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classPiece}{Piece}} $\ast$ $>$ Echiquier\+::get\+Pieces (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23f}{couleur\+\_\+t}}}]{c }\end{DoxyParamCaption}) const}
+
+
+
+Obtient le vecteur piece associé a une couelur (attribut pieces\mbox{[}couleur\mbox{]}) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & couleur cible \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+une ref à ce vectuer 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{48                                                      \{}
+\DoxyCodeLine{49     \textcolor{keywordflow}{return} this-\/>\mbox{\hyperlink{classEchiquier_a8b1ca00d548faf45d7e8f0311c0f9e03}{pieces}}[c];}
+\DoxyCodeLine{50 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classEchiquier_a58713a00ef6b003ceccf8dc9767ff948}\label{classEchiquier_a58713a00ef6b003ceccf8dc9767ff948}} 
+\index{Echiquier@{Echiquier}!getSquare@{getSquare}}
+\index{getSquare@{getSquare}!Echiquier@{Echiquier}}
+\doxysubsubsection{\texorpdfstring{getSquare()}{getSquare()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSquare}{Square}} $\ast$ Echiquier\+::get\+Square (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption}) const}
+
+
+
+Obtient la case à partir de ses coordonnées x et y. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Coordonnée X de la case. \\
+\hline
+{\em y} & Coordonnée Y de la case. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointeur vers la case correspondante. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{27                                               \{}
+\DoxyCodeLine{28     \textcolor{keywordflow}{if}((0 <= x \&\& x < \mbox{\hyperlink{echiquier_8hpp_adc3c2556e84bebbe78c8a87fc459a6f8}{TAILLE\_PLATEAU}})\&\&}
+\DoxyCodeLine{29         (0 <= y \&\& y < \mbox{\hyperlink{echiquier_8hpp_adc3c2556e84bebbe78c8a87fc459a6f8}{TAILLE\_PLATEAU}}))\{}
+\DoxyCodeLine{30             \textcolor{keywordflow}{return} this-\/>\mbox{\hyperlink{classEchiquier_ac52a3db2e7451caf6559121465cf786e}{plateau}}[x][y];}
+\DoxyCodeLine{31         \}}
+\DoxyCodeLine{32     \textcolor{keywordflow}{else} \{ \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};\}}
+\DoxyCodeLine{33 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classEchiquier_a71a2e241dbd9382511c7ac666fca3ccb}\label{classEchiquier_a71a2e241dbd9382511c7ac666fca3ccb}} 
+\index{Echiquier@{Echiquier}!getSquare@{getSquare}}
+\index{getSquare@{getSquare}!Echiquier@{Echiquier}}
+\doxysubsubsection{\texorpdfstring{getSquare()}{getSquare()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSquare}{Square}} $\ast$ Echiquier\+::get\+Square (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPos}{Pos}}}]{pos }\end{DoxyParamCaption}) const}
+
+
+
+Obtient la case à partir d\textquotesingle{}un objet de type \mbox{\hyperlink{classPos}{Pos}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & Objet de type \mbox{\hyperlink{classPos}{Pos}} représentant les coordonnées de la case. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointeur vers la case correspondante. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{35                                          \{}
+\DoxyCodeLine{36     \textcolor{keywordtype}{int} x = pos.\mbox{\hyperlink{classPos_a761a20952dd60060f8360a5ff34c77b9}{getX}}();}
+\DoxyCodeLine{37     \textcolor{keywordtype}{int} y = pos.\mbox{\hyperlink{classPos_a84ea042df4f429ed8c128b80271263f1}{getY}}();}
+\DoxyCodeLine{38     \textcolor{keywordflow}{if}((0 <= x \&\& x < \mbox{\hyperlink{echiquier_8hpp_adc3c2556e84bebbe78c8a87fc459a6f8}{TAILLE\_PLATEAU}})\&\&}
+\DoxyCodeLine{39         (0 <= y \&\& y < \mbox{\hyperlink{echiquier_8hpp_adc3c2556e84bebbe78c8a87fc459a6f8}{TAILLE\_PLATEAU}}))\{}
+\DoxyCodeLine{40             \textcolor{keywordflow}{return} this-\/>\mbox{\hyperlink{classEchiquier_ac52a3db2e7451caf6559121465cf786e}{plateau}}[x][y];}
+\DoxyCodeLine{41         \}}
+\DoxyCodeLine{42     \textcolor{keywordflow}{else} \{ \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};\}}
+\DoxyCodeLine{43 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classEchiquier_ace909de2adb176b2efdc1054c70f5b07}\label{classEchiquier_ace909de2adb176b2efdc1054c70f5b07}} 
+\index{Echiquier@{Echiquier}!init\_echiquier@{init\_echiquier}}
+\index{init\_echiquier@{init\_echiquier}!Echiquier@{Echiquier}}
+\doxysubsubsection{\texorpdfstring{init\_echiquier()}{init\_echiquier()}}
+{\footnotesize\ttfamily void Echiquier\+::init\+\_\+echiquier (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialise l\textquotesingle{}échiquier en plaçant les cases vides. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{132                               \{}
+\DoxyCodeLine{133     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{echiquier_8hpp_adc3c2556e84bebbe78c8a87fc459a6f8}{TAILLE\_PLATEAU}}; ++i) \{}
+\DoxyCodeLine{134         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{echiquier_8hpp_adc3c2556e84bebbe78c8a87fc459a6f8}{TAILLE\_PLATEAU}}; ++j) \{}
+\DoxyCodeLine{135             this-\/>\mbox{\hyperlink{classEchiquier_ac52a3db2e7451caf6559121465cf786e}{plateau}}[i][j] = \textcolor{keyword}{new} \mbox{\hyperlink{classSquare}{Square}}(i,j, \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{136         \}}
+\DoxyCodeLine{137     \}}
+\DoxyCodeLine{138 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classEchiquier_a1f82bde1134dc8abdcf992a4f96710de}\label{classEchiquier_a1f82bde1134dc8abdcf992a4f96710de}} 
+\index{Echiquier@{Echiquier}!pgnPieceName@{pgnPieceName}}
+\index{pgnPieceName@{pgnPieceName}!Echiquier@{Echiquier}}
+\doxysubsubsection{\texorpdfstring{pgnPieceName()}{pgnPieceName()}}
+{\footnotesize\ttfamily string Echiquier\+::pgn\+Piece\+Name (\begin{DoxyParamCaption}\item[{const string}]{piece,  }\item[{bool}]{view\+\_\+pawn,  }\item[{bool}]{view\+\_\+color = {\ttfamily true} }\end{DoxyParamCaption}) const}
+
+
+
+Obtient le nom P\+GN d\textquotesingle{}une pièce. (normalisme anglais) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em piece} & Nom de la pièce (ex\+: \char`\"{}\+K\char`\"{} pour le roi). \\
+\hline
+{\em view\+\_\+pawnn} & Indique si on visualise les pions. \\
+\hline
+{\em view\+\_\+color} & Indique si on visualise les couleurs (par défaut true). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Le nom P\+GN de la pièce. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{63                                                                                         \{}
+\DoxyCodeLine{64     \textcolor{comment}{//Modification du code originale pour la couleur}}
+\DoxyCodeLine{65     \textcolor{keywordtype}{string} psymb;}
+\DoxyCodeLine{66     \textcolor{keywordflow}{if}      (icone==\textcolor{stringliteral}{"\(\backslash\)u2656"}) psymb=\textcolor{stringliteral}{"R"};  \textcolor{comment}{// Tour W}}
+\DoxyCodeLine{67     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (icone==\textcolor{stringliteral}{"\(\backslash\)u2658"}) psymb=\textcolor{stringliteral}{"N"};  \textcolor{comment}{// Cavalier W}}
+\DoxyCodeLine{68     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (icone==\textcolor{stringliteral}{"\(\backslash\)u2657"}) psymb=\textcolor{stringliteral}{"B"};  \textcolor{comment}{// Fou W}}
+\DoxyCodeLine{69     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (icone==\textcolor{stringliteral}{"\(\backslash\)u2655"}) psymb=\textcolor{stringliteral}{"Q"};  \textcolor{comment}{// Dame W}}
+\DoxyCodeLine{70     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (icone==\textcolor{stringliteral}{"\(\backslash\)u2654"}) psymb=\textcolor{stringliteral}{"K"};  \textcolor{comment}{// Roi W}}
+\DoxyCodeLine{71     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (icone.rfind(\textcolor{stringliteral}{"\(\backslash\)u2659"},0)==0 \&\& view\_pawn) psymb= \textcolor{stringliteral}{"P"}; \textcolor{comment}{// Pawn W}}
+\DoxyCodeLine{72     \textcolor{keywordflow}{if} (psymb.size()>0) \{ \textcolor{comment}{// one of the BLACK piece has been found}}
+\DoxyCodeLine{73         \textcolor{keywordflow}{if} (view\_color)}
+\DoxyCodeLine{74             \textcolor{keywordflow}{return} \textcolor{stringliteral}{"b"}+psymb;}
+\DoxyCodeLine{75         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{76             \textcolor{keywordflow}{return} psymb;}
+\DoxyCodeLine{77     \}}
+\DoxyCodeLine{78     \textcolor{keywordflow}{if}      (icone==\textcolor{stringliteral}{"\(\backslash\)u265C"}) psymb= \textcolor{stringliteral}{"R"};  \textcolor{comment}{// Tour B}}
+\DoxyCodeLine{79     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (icone==\textcolor{stringliteral}{"\(\backslash\)u265E"}) psymb= \textcolor{stringliteral}{"N"};  \textcolor{comment}{// Cavalier B}}
+\DoxyCodeLine{80     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (icone==\textcolor{stringliteral}{"\(\backslash\)u265D"}) psymb= \textcolor{stringliteral}{"B"};  \textcolor{comment}{// Fou B}}
+\DoxyCodeLine{81     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (icone==\textcolor{stringliteral}{"\(\backslash\)u265B"}) psymb= \textcolor{stringliteral}{"Q"};  \textcolor{comment}{// Dame B}}
+\DoxyCodeLine{82     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (icone==\textcolor{stringliteral}{"\(\backslash\)u265A"}) psymb= \textcolor{stringliteral}{"K"};  \textcolor{comment}{// Roi B}}
+\DoxyCodeLine{83     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (icone.rfind(\textcolor{stringliteral}{"\(\backslash\)u265F"},0)==0 \&\& view\_pawn) psymb= \textcolor{stringliteral}{"P"}; \textcolor{comment}{// Pawn B}}
+\DoxyCodeLine{84     \textcolor{keywordflow}{if} (psymb.size()>0) \{ \textcolor{comment}{// one of the White piece has been found}}
+\DoxyCodeLine{85         \textcolor{keywordflow}{if} (view\_color)}
+\DoxyCodeLine{86             \textcolor{keywordflow}{return} \textcolor{stringliteral}{"w"}+psymb;}
+\DoxyCodeLine{87         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{88             \textcolor{keywordflow}{return} psymb;}
+\DoxyCodeLine{89     \}}
+\DoxyCodeLine{90     \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} \textcolor{stringliteral}{""};}
+\DoxyCodeLine{91 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classEchiquier_a967301c80139f67a7e494e166255efa6}\label{classEchiquier_a967301c80139f67a7e494e166255efa6}} 
+\index{Echiquier@{Echiquier}!placement\_initial@{placement\_initial}}
+\index{placement\_initial@{placement\_initial}!Echiquier@{Echiquier}}
+\doxysubsubsection{\texorpdfstring{placement\_initial()}{placement\_initial()}}
+{\footnotesize\ttfamily void Echiquier\+::placement\+\_\+initial (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Place les pièces initiales sur l\textquotesingle{}échiquier. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{140                                   \{}
+\DoxyCodeLine{141     \mbox{\hyperlink{classEchiquier_a8b1ca00d548faf45d7e8f0311c0f9e03}{pieces}}[\mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23fa58b0623118011f228f9e035e740ca481}{Blanc}}] = \{}
+\DoxyCodeLine{142         \textcolor{keyword}{new} \mbox{\hyperlink{classTour}{Tour}}    (\mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23fa58b0623118011f228f9e035e740ca481}{Blanc}}, 0, this-\/>\mbox{\hyperlink{classEchiquier_ac52a3db2e7451caf6559121465cf786e}{plateau}}[0][0]),}
+\DoxyCodeLine{143         \textcolor{keyword}{new} \mbox{\hyperlink{classCavalier}{Cavalier}}(\mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23fa58b0623118011f228f9e035e740ca481}{Blanc}}, 1, this-\/>\mbox{\hyperlink{classEchiquier_ac52a3db2e7451caf6559121465cf786e}{plateau}}[0][1]),}
+\DoxyCodeLine{144         \textcolor{keyword}{new} \mbox{\hyperlink{classFou}{Fou}}     (\mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23fa58b0623118011f228f9e035e740ca481}{Blanc}}, 2, this-\/>\mbox{\hyperlink{classEchiquier_ac52a3db2e7451caf6559121465cf786e}{plateau}}[0][2]),}
+\DoxyCodeLine{145         \textcolor{keyword}{new} \mbox{\hyperlink{classDame}{Dame}}   (\mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23fa58b0623118011f228f9e035e740ca481}{Blanc}}, 3, this-\/>\mbox{\hyperlink{classEchiquier_ac52a3db2e7451caf6559121465cf786e}{plateau}}[0][3]),}
+\DoxyCodeLine{146         \textcolor{keyword}{new} \mbox{\hyperlink{classRoi}{Roi}}     (\mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23fa58b0623118011f228f9e035e740ca481}{Blanc}}, 4, this-\/>\mbox{\hyperlink{classEchiquier_ac52a3db2e7451caf6559121465cf786e}{plateau}}[0][4]),}
+\DoxyCodeLine{147         \textcolor{keyword}{new} \mbox{\hyperlink{classFou}{Fou}}     (\mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23fa58b0623118011f228f9e035e740ca481}{Blanc}}, 5, this-\/>\mbox{\hyperlink{classEchiquier_ac52a3db2e7451caf6559121465cf786e}{plateau}}[0][5]),}
+\DoxyCodeLine{148         \textcolor{keyword}{new} \mbox{\hyperlink{classCavalier}{Cavalier}}(\mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23fa58b0623118011f228f9e035e740ca481}{Blanc}}, 6, this-\/>\mbox{\hyperlink{classEchiquier_ac52a3db2e7451caf6559121465cf786e}{plateau}}[0][6]),}
+\DoxyCodeLine{149         \textcolor{keyword}{new} \mbox{\hyperlink{classTour}{Tour}}    (\mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23fa58b0623118011f228f9e035e740ca481}{Blanc}}, 7, this-\/>\mbox{\hyperlink{classEchiquier_ac52a3db2e7451caf6559121465cf786e}{plateau}}[0][7]) }
+\DoxyCodeLine{150     \};     }
+\DoxyCodeLine{151     \mbox{\hyperlink{classEchiquier_a8b1ca00d548faf45d7e8f0311c0f9e03}{pieces}}[\mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23faa7b5bb6c14d7e04bce22bf5ee184be20}{Noir}}] = \{}
+\DoxyCodeLine{152         \textcolor{keyword}{new} \mbox{\hyperlink{classTour}{Tour}}    (\mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23faa7b5bb6c14d7e04bce22bf5ee184be20}{Noir}}, 0, this-\/>\mbox{\hyperlink{classEchiquier_ac52a3db2e7451caf6559121465cf786e}{plateau}}[7][0]),}
+\DoxyCodeLine{153         \textcolor{keyword}{new} \mbox{\hyperlink{classCavalier}{Cavalier}}(\mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23faa7b5bb6c14d7e04bce22bf5ee184be20}{Noir}}, 1, this-\/>\mbox{\hyperlink{classEchiquier_ac52a3db2e7451caf6559121465cf786e}{plateau}}[7][1]),}
+\DoxyCodeLine{154         \textcolor{keyword}{new} \mbox{\hyperlink{classFou}{Fou}}     (\mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23faa7b5bb6c14d7e04bce22bf5ee184be20}{Noir}}, 2, this-\/>\mbox{\hyperlink{classEchiquier_ac52a3db2e7451caf6559121465cf786e}{plateau}}[7][2]),}
+\DoxyCodeLine{155         \textcolor{keyword}{new} \mbox{\hyperlink{classDame}{Dame}}   (\mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23faa7b5bb6c14d7e04bce22bf5ee184be20}{Noir}}, 3, this-\/>\mbox{\hyperlink{classEchiquier_ac52a3db2e7451caf6559121465cf786e}{plateau}}[7][3]),}
+\DoxyCodeLine{156         \textcolor{keyword}{new} \mbox{\hyperlink{classRoi}{Roi}}     (\mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23faa7b5bb6c14d7e04bce22bf5ee184be20}{Noir}}, 4, this-\/>\mbox{\hyperlink{classEchiquier_ac52a3db2e7451caf6559121465cf786e}{plateau}}[7][4]),}
+\DoxyCodeLine{157         \textcolor{keyword}{new} \mbox{\hyperlink{classFou}{Fou}}     (\mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23faa7b5bb6c14d7e04bce22bf5ee184be20}{Noir}}, 5, this-\/>\mbox{\hyperlink{classEchiquier_ac52a3db2e7451caf6559121465cf786e}{plateau}}[7][5]),}
+\DoxyCodeLine{158         \textcolor{keyword}{new} \mbox{\hyperlink{classCavalier}{Cavalier}}(\mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23faa7b5bb6c14d7e04bce22bf5ee184be20}{Noir}}, 6, this-\/>\mbox{\hyperlink{classEchiquier_ac52a3db2e7451caf6559121465cf786e}{plateau}}[7][6]),}
+\DoxyCodeLine{159         \textcolor{keyword}{new} \mbox{\hyperlink{classTour}{Tour}}    (\mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23faa7b5bb6c14d7e04bce22bf5ee184be20}{Noir}}, 7, this-\/>\mbox{\hyperlink{classEchiquier_ac52a3db2e7451caf6559121465cf786e}{plateau}}[7][7])}
+\DoxyCodeLine{160     \};}
+\DoxyCodeLine{161     \textcolor{comment}{// alloc pawns}}
+\DoxyCodeLine{162     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i=0;i<8;i++) \{}
+\DoxyCodeLine{163         \mbox{\hyperlink{classEchiquier_a8b1ca00d548faf45d7e8f0311c0f9e03}{pieces}}[\mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23fa58b0623118011f228f9e035e740ca481}{Blanc}}].push\_back(\textcolor{keyword}{new} \mbox{\hyperlink{classPion}{Pion}}(\mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23fa58b0623118011f228f9e035e740ca481}{Blanc}}, 8+i, this-\/>\mbox{\hyperlink{classEchiquier_ac52a3db2e7451caf6559121465cf786e}{plateau}}[1][i]));}
+\DoxyCodeLine{164         \mbox{\hyperlink{classEchiquier_a8b1ca00d548faf45d7e8f0311c0f9e03}{pieces}}[\mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23faa7b5bb6c14d7e04bce22bf5ee184be20}{Noir}}].push\_back(\textcolor{keyword}{new} \mbox{\hyperlink{classPion}{Pion}}(\mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23faa7b5bb6c14d7e04bce22bf5ee184be20}{Noir}},  8+i, this-\/>\mbox{\hyperlink{classEchiquier_ac52a3db2e7451caf6559121465cf786e}{plateau}}[6][i]));}
+\DoxyCodeLine{165     \}}
+\DoxyCodeLine{166     \textcolor{comment}{// Pose des pieces en position initiale sur l'echiquier}}
+\DoxyCodeLine{167     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} p : \mbox{\hyperlink{classEchiquier_a8b1ca00d548faf45d7e8f0311c0f9e03}{pieces}}[\mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23fa58b0623118011f228f9e035e740ca481}{Blanc}}])}
+\DoxyCodeLine{168         \mbox{\hyperlink{classEchiquier_ad68f425e54ab80f0a695ea4c87f4b49d}{pose\_piece}}(p, p-\/>getSquare());}
+\DoxyCodeLine{169     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} p : \mbox{\hyperlink{classEchiquier_a8b1ca00d548faf45d7e8f0311c0f9e03}{pieces}}[\mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23faa7b5bb6c14d7e04bce22bf5ee184be20}{Noir}}])}
+\DoxyCodeLine{170         \mbox{\hyperlink{classEchiquier_ad68f425e54ab80f0a695ea4c87f4b49d}{pose\_piece}}(p, p-\/>getSquare());}
+\DoxyCodeLine{171 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classEchiquier_ad68f425e54ab80f0a695ea4c87f4b49d}\label{classEchiquier_ad68f425e54ab80f0a695ea4c87f4b49d}} 
+\index{Echiquier@{Echiquier}!pose\_piece@{pose\_piece}}
+\index{pose\_piece@{pose\_piece}!Echiquier@{Echiquier}}
+\doxysubsubsection{\texorpdfstring{pose\_piece()}{pose\_piece()}}
+{\footnotesize\ttfamily void Echiquier\+::pose\+\_\+piece (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPiece}{Piece}} $\ast$}]{piece,  }\item[{\mbox{\hyperlink{classSquare}{Square}} $\ast$}]{case\+Cible }\end{DoxyParamCaption})}
+
+
+
+Place une pièce dans une case donnée. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em piece} & Pointeur vers la pièce à placer. \\
+\hline
+{\em case\+Cible} & Pointeur vers la case dans laquelle placer la pièce. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{173                                                 \{}
+\DoxyCodeLine{174     \textcolor{keywordflow}{if}(p != \textcolor{keyword}{nullptr})\{}
+\DoxyCodeLine{175         p-\/>setSquare(pos);}
+\DoxyCodeLine{176         pos-\/>setPiece(p);}
+\DoxyCodeLine{177         }
+\DoxyCodeLine{178     \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{179         pos-\/>setPiece(\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{180     \}}
+\DoxyCodeLine{181 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classEchiquier_a4cf6563b18af0914a337837bce35d859}\label{classEchiquier_a4cf6563b18af0914a337837bce35d859}} 
+\index{Echiquier@{Echiquier}!position\_roi@{position\_roi}}
+\index{position\_roi@{position\_roi}!Echiquier@{Echiquier}}
+\doxysubsubsection{\texorpdfstring{position\_roi()}{position\_roi()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSquare}{Square}} $\ast$ Echiquier\+::position\+\_\+roi (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23f}{couleur\+\_\+t}}}]{couleur }\end{DoxyParamCaption}) const}
+
+
+
+Obtient la position du roi d\textquotesingle{}une couleur donnée. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em couleur} & Couleur du roi (blanc ou noir). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointeur vers la case occupée par le roi de la couleur spécifiée. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{56                                                           \{}
+\DoxyCodeLine{57     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} p : this-\/>\mbox{\hyperlink{classEchiquier_a8b1ca00d548faf45d7e8f0311c0f9e03}{pieces}}[color])}
+\DoxyCodeLine{58         \textcolor{keywordflow}{if} (p-\/>getIcone() == \textcolor{stringliteral}{"\(\backslash\)u2654"} || p-\/>getIcone() == \textcolor{stringliteral}{"\(\backslash\)u265A"})}
+\DoxyCodeLine{59             \textcolor{keywordflow}{return} p-\/>getSquare();}
+\DoxyCodeLine{60     \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{61 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classEchiquier_a84530cf38cda93980c31e92b087774dc}\label{classEchiquier_a84530cf38cda93980c31e92b087774dc}} 
+\index{Echiquier@{Echiquier}!promotion@{promotion}}
+\index{promotion@{promotion}!Echiquier@{Echiquier}}
+\doxysubsubsection{\texorpdfstring{promotion()}{promotion()}}
+{\footnotesize\ttfamily void Echiquier\+::promotion (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPiece}{Piece}} $\ast$}]{piece,  }\item[{const string}]{promotion }\end{DoxyParamCaption})}
+
+
+
+Effectue la promotion d\textquotesingle{}une pièce. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em piece} & Pointeur vers la pièce à promouvoir. \\
+\hline
+{\em promotion} & Chaîne de caractères représentant la pièce de promotion (ex\+: \char`\"{}\+Q\char`\"{} pour la reine). \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{201                                                         \{}
+\DoxyCodeLine{202     cout << \textcolor{stringliteral}{"Entree dans la promo"} << endl;}
+\DoxyCodeLine{203     \mbox{\hyperlink{piece_8hpp_a2fc0928aba15295ee980b903ed92f23f}{couleur\_t}} couleur = piece-\/>\mbox{\hyperlink{classPiece_a183cbb97af8157297281676c060a023d}{getCouleur}}();}
+\DoxyCodeLine{204     \textcolor{keywordtype}{int} nbDeplacement = piece-\/>\mbox{\hyperlink{classPiece_acbe43198d3a91888390654cb5833698c}{getNbDeplacement}}();}
+\DoxyCodeLine{205     \mbox{\hyperlink{classSquare}{Square}}* caseCible = piece-\/>\mbox{\hyperlink{classPiece_a8adb7ee8aa5d890e1f9741fcd3c2bda1}{getSquare}}();}
+\DoxyCodeLine{206     \textcolor{keywordtype}{int} x0 = caseCible-\/>\mbox{\hyperlink{classPos_a761a20952dd60060f8360a5ff34c77b9}{getX}}();}
+\DoxyCodeLine{207     \textcolor{keywordtype}{int} y0 = caseCible-\/>\mbox{\hyperlink{classPos_a84ea042df4f429ed8c128b80271263f1}{getY}}();}
+\DoxyCodeLine{208     \textcolor{keywordtype}{int} taille = this-\/>\mbox{\hyperlink{classEchiquier_a8b1ca00d548faf45d7e8f0311c0f9e03}{pieces}}[couleur].size();}
+\DoxyCodeLine{209     \textcolor{keywordflow}{if}(\mbox{\hyperlink{utilitaires_8cc_ab54e0960f2ea3b9eff2ca06c0c0430a3}{promotion\_dame}}(type))\{}
+\DoxyCodeLine{210         this-\/>\mbox{\hyperlink{classEchiquier_a8b1ca00d548faf45d7e8f0311c0f9e03}{pieces}}[couleur].push\_back((\textcolor{keyword}{new} \mbox{\hyperlink{classDame}{Dame}}(couleur, taille +1, this-\/>\mbox{\hyperlink{classEchiquier_ac52a3db2e7451caf6559121465cf786e}{plateau}}[x0][y0])));}
+\DoxyCodeLine{211 }
+\DoxyCodeLine{212     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\mbox{\hyperlink{utilitaires_8cc_a0f0f5a01140876dbf31b693daf03df3e}{promotion\_tour}}(type))\{}
+\DoxyCodeLine{213         this-\/>\mbox{\hyperlink{classEchiquier_a8b1ca00d548faf45d7e8f0311c0f9e03}{pieces}}[couleur].push\_back((\textcolor{keyword}{new} \mbox{\hyperlink{classTour}{Tour}}(couleur, taille +1, this-\/>\mbox{\hyperlink{classEchiquier_ac52a3db2e7451caf6559121465cf786e}{plateau}}[x0][y0])));}
+\DoxyCodeLine{214 }
+\DoxyCodeLine{215     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\mbox{\hyperlink{utilitaires_8cc_a00a12909d38086aed980813f25931ef3}{promotion\_fou}}(type))\{}
+\DoxyCodeLine{216         this-\/>\mbox{\hyperlink{classEchiquier_a8b1ca00d548faf45d7e8f0311c0f9e03}{pieces}}[couleur].push\_back((\textcolor{keyword}{new} \mbox{\hyperlink{classFou}{Fou}}(couleur, taille +1, this-\/>\mbox{\hyperlink{classEchiquier_ac52a3db2e7451caf6559121465cf786e}{plateau}}[x0][y0])));}
+\DoxyCodeLine{217 }
+\DoxyCodeLine{218     \} \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{219         this-\/>\mbox{\hyperlink{classEchiquier_a8b1ca00d548faf45d7e8f0311c0f9e03}{pieces}}[couleur].push\_back((\textcolor{keyword}{new} \mbox{\hyperlink{classCavalier}{Cavalier}}(couleur, taille +1, this-\/>\mbox{\hyperlink{classEchiquier_ac52a3db2e7451caf6559121465cf786e}{plateau}}[x0][y0])));}
+\DoxyCodeLine{220     \}}
+\DoxyCodeLine{221     cout << \textcolor{stringliteral}{"Piece remplacee !"} << endl  ;   }
+\DoxyCodeLine{222     piece-\/>\mbox{\hyperlink{classPiece_a32fe6f8a49343ac641bbae8baaeb7e37}{set\_etat}}(\mbox{\hyperlink{piece_8hpp_ac870e865cf50ebb064bc55340a4d2e48ad96f5aa8290ec43a841a9ae0a9df946e}{Promue}});}
+\DoxyCodeLine{223     this-\/>\mbox{\hyperlink{classEchiquier_a8b1ca00d548faf45d7e8f0311c0f9e03}{pieces}}[couleur].back()-\/>setNbDeplacement(nbDeplacement);}
+\DoxyCodeLine{224     this-\/>\mbox{\hyperlink{classEchiquier_ad68f425e54ab80f0a695ea4c87f4b49d}{pose\_piece}}(this-\/>\mbox{\hyperlink{classEchiquier_a8b1ca00d548faf45d7e8f0311c0f9e03}{pieces}}[couleur].back(), this-\/>\mbox{\hyperlink{classEchiquier_ac52a3db2e7451caf6559121465cf786e}{plateau}}[x0][y0]);}
+\DoxyCodeLine{225     cout << \textcolor{stringliteral}{"Fin promotion !"} << endl;}
+\DoxyCodeLine{226 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classEchiquier_a4832537b56976edd18da51b34f0f6b9d}\label{classEchiquier_a4832537b56976edd18da51b34f0f6b9d}} 
+\index{Echiquier@{Echiquier}!setPiece@{setPiece}}
+\index{setPiece@{setPiece}!Echiquier@{Echiquier}}
+\doxysubsubsection{\texorpdfstring{setPiece()}{setPiece()}}
+{\footnotesize\ttfamily void Echiquier\+::set\+Piece (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPiece}{Piece}} $\ast$}]{piece,  }\item[{\mbox{\hyperlink{classSquare}{Square}} $\ast$}]{square }\end{DoxyParamCaption})}
+
+
+
+Place une pièce dans une case donnée. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em piece} & Pointeur vers la pièce à placer. \\
+\hline
+{\em square} & Pointeur vers la case dans laquelle placer la pièce. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{52                                                    \{}
+\DoxyCodeLine{53     caseCible-\/>setPiece(p);}
+\DoxyCodeLine{54 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{classEchiquier_a8b1ca00d548faf45d7e8f0311c0f9e03}\label{classEchiquier_a8b1ca00d548faf45d7e8f0311c0f9e03}} 
+\index{Echiquier@{Echiquier}!pieces@{pieces}}
+\index{pieces@{pieces}!Echiquier@{Echiquier}}
+\doxysubsubsection{\texorpdfstring{pieces}{pieces}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{classPiece}{Piece}} $\ast$$>$ Echiquier\+::pieces\mbox{[}2\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+Vecteur de pointeurs vers les pièces présentes sur l\textquotesingle{}échiquier, triées par couleur (blanc ou noir). \mbox{\Hypertarget{classEchiquier_ac52a3db2e7451caf6559121465cf786e}\label{classEchiquier_ac52a3db2e7451caf6559121465cf786e}} 
+\index{Echiquier@{Echiquier}!plateau@{plateau}}
+\index{plateau@{plateau}!Echiquier@{Echiquier}}
+\doxysubsubsection{\texorpdfstring{plateau}{plateau}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSquare}{Square}}$\ast$$\ast$$\ast$ Echiquier\+::plateau\hspace{0.3cm}{\ttfamily [private]}}
+
+Matrice 2D de pointeurs vers les cases de l\textquotesingle{}échiquier. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{echiquier_8hpp}{echiquier.\+hpp}}\item 
+src/\mbox{\hyperlink{echiquier_8cc}{echiquier.\+cc}}\end{DoxyCompactItemize}

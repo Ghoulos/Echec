@@ -1,0 +1,29 @@
+\hypertarget{echiquier_8hpp}{}\doxysection{include/echiquier.hpp File Reference}
+\label{echiquier_8hpp}\index{include/echiquier.hpp@{include/echiquier.hpp}}
+{\ttfamily \#include \char`\"{}../include/square.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/piece.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/pos.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for echiquier.\+hpp\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classEchiquier}{Echiquier}}
+\begin{DoxyCompactList}\small\item\em Classe représentant l\textquotesingle{}échiquier du jeu d\textquotesingle{}échecs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{echiquier_8hpp_adc3c2556e84bebbe78c8a87fc459a6f8}{T\+A\+I\+L\+L\+E\+\_\+\+P\+L\+A\+T\+E\+AU}}~8
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{echiquier_8hpp_adc3c2556e84bebbe78c8a87fc459a6f8}\label{echiquier_8hpp_adc3c2556e84bebbe78c8a87fc459a6f8}} 
+\index{echiquier.hpp@{echiquier.hpp}!TAILLE\_PLATEAU@{TAILLE\_PLATEAU}}
+\index{TAILLE\_PLATEAU@{TAILLE\_PLATEAU}!echiquier.hpp@{echiquier.hpp}}
+\doxysubsubsection{\texorpdfstring{TAILLE\_PLATEAU}{TAILLE\_PLATEAU}}
+{\footnotesize\ttfamily \#define T\+A\+I\+L\+L\+E\+\_\+\+P\+L\+A\+T\+E\+AU~8}
+
