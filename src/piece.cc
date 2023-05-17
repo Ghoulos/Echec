@@ -5,11 +5,6 @@ Piece::Piece(couleur_t couleur, string icone, int id, Square *pos)
 
 Piece::~Piece() {}
 
-void Piece::capture(bool revient = false) {
-    if (revient) {this->etat = EnJeu;}
-    else {this->etat = Capture;}
-}
-
 void Piece::setSquare(Square *dest){
     this->position = dest;
 }
@@ -21,12 +16,10 @@ couleur_t Piece::getCouleur() const{
     return this->couleur;
 }
 
-size_t Piece::getNbDeplacement() const{
-    return this->nbDeplacement;
+etat_t Piece::getEtat() const{
+    return this->etat;
 }
-void Piece::setNbDeplacement(size_t i){
-    this->nbDeplacement = i;
-}
+
 string Piece::getIcone() const {
     return this->icone;
 }
@@ -34,13 +27,24 @@ string Piece::getIcone() const {
 int Piece::getId() const {
     return this->id;
 }
-bool Piece::mouvement_legal(Square sqr, bool f) {return false; };
+
+size_t Piece::getNbDeplacement() const{
+    return this->nbDeplacement;
+}
+
+void Piece::setNbDeplacement(size_t i){
+    this->nbDeplacement = i;
+}
 
 void Piece::incr_nb_deplacement(){
     (this->nbDeplacement)++;
 }
-void Piece::affiche()
-{
-    // Code pour afficher la pièce
+void Piece::affiche(){
     cout << this->icone;
 }
+
+void Piece::set_etat(etat_t etat) {
+    this->etat = etat;
+}
+
+bool Piece::mouvement_legal(Square sqr, bool f) {return false; };

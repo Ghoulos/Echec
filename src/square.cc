@@ -8,6 +8,10 @@ Square::Square(string pos, Piece * piece)
 
 Square::~Square() {}
 
+void Square::setPiece(Piece * piece) { this->piece = piece; }
+
+Piece* Square::getPiece() const { return this->piece; }
+
 bool Square::est_vide() {return (piece == nullptr);}
 
 void Square::affiche(){
@@ -22,7 +26,3 @@ void Square::affiche(){
     }
     
 }
-
-void Square::setPiece(Piece * piece) { this->piece = piece; }
-
-Piece* Square::getPiece() const { return this->piece; }

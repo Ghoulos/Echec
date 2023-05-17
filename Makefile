@@ -17,9 +17,6 @@ OBJECTS  := $(SOURCES:$(SRC_PATH)/%.cc=$(OBJ_PATH)/%.o)
 cli:
 	$(MAKE) $(BIN_PATH)/$(EXEC)
 
-test: cli
-	$(MAKE) -C ./test	
-
 docs:
 	mkdir -p ./docs
 	doxygen Doxyfile
@@ -42,3 +39,4 @@ $(OBJ_PATH)/main.o: $(SRC_PATH)/main.cc
 clean:
 	rm -fr $(OBJ_PATH)
 	rm -fr $(BIN_PATH)
+	rm test.log
